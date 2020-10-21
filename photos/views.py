@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Photo
 from .serializers.common import PhotoSerializer
+from .serializers.populated import PopulatedPhotoSerializer
 
 
 class PhotoListView(APIView):
@@ -13,7 +14,7 @@ class PhotoListView(APIView):
 
     def get(self, _request):
         photos_list = Photo.objects.all()
-        serialized_photo_list = PhotoSerializer(photos_list, many=True)
+        serialized_photo_list = PopulatedPhotoSerializer(photos_list, many=True)
         return Response(serialized_photo_list.data, status=status.HTTP_200_OK)
 
     def post(self, request):
@@ -35,7 +36,7 @@ class PhotoDetailView(APIView):
 
     def get(self, _request, pk):
         photo = self.get_photo(pk=pk)
-        serialized_single_photo = PhotoSerializer(photo)
+        serialized_single_photo = PopulatedPhotoSerializer(photo)
         return Response(serialized_single_photo.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):
