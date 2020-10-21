@@ -1,19 +1,21 @@
-# pylint: disable=no-name-in-module, import-error
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Photo
 from .serializers.common import PhotoSerializer
 
 
 class PhotoListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+
     def get(self, _request):
         photos_list = Photo.objects.all()
         serialized_photo_list = PhotoSerializer(photos_list, many=True)
         return Response(serialized_photo_list.data, status=status.HTTP_200_OK)
-    
+
     def post(self, request):
         photo_to_create = PhotoSerializer(data=request.data)
         if photo_to_create.is_valid():
@@ -23,6 +25,7 @@ class PhotoListView(APIView):
 
 
 class PhotoDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get_photo(self, pk):
         try:
@@ -43,7 +46,7 @@ class PhotoDetailView(APIView):
             return Response(updated_photo.data, status=status.HTTP_202_ACCEPTED)
         return Response(updated_photo.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-    def delete(self, request, pk):
+    def delete(self, _request, pk):
         photo_to_delete = self.get_photo(pk=pk)
         photo_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
