@@ -9,6 +9,10 @@ class Photo(models.Model):
     lens = models.CharField(max_length = 50, blank=True)
     image = models.CharField(max_length=400)
     location = models.CharField(max_length = 75)
+    categories = models.ManyToManyField(
+        'photo_categories.PhotoCategory',
+        related_name='photos'
+    )
 
     def __str__(self):
         return f'{self.title}'

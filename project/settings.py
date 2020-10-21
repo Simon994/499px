@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'photos',
     'jwt_auth',
     'comments',
+    'photo_categories',
 ]
 
 MIDDLEWARE = [
