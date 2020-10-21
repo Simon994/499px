@@ -11,6 +11,7 @@ from rest_framework.permissions import IsAuthenticated
 
 import jwt
 from .serializers.common import UserSerializer
+from .serializers.populated import PopulatedUserSerializer
 
 User = get_user_model()
 class RegisterView(APIView):
@@ -26,11 +27,13 @@ class RegisterView(APIView):
 
 
 class LoginView(APIView):
+
     def get_user(self, email):
         try:
             return User.objects.get(email=email)
         except User.DoesNotExist:
             raise PermissionDenied(detail='Invalid Credentials')
+
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
@@ -46,3 +49,11 @@ class LoginView(APIView):
         return Response(
             {'token': token, 'message': f'Welcome Back {user_to_login.username}'}
         )
+
+class ProfileView(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, request):
+        user = User.objects.get(pk=request.user.id)
+        serialized_user = PopulatedUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
