@@ -34,3 +34,16 @@ class PhotoDetailView(APIView):
         photo = self.get_photo(pk=pk)
         serialized_single_photo = PhotoSerializer(photo)
         return Response(serialized_single_photo.data, status=status.HTTP_200_OK)
+
+    def put(self, request, pk):
+        photo_to_update = self.get_photo(pk=pk)
+        updated_photo = PhotoSerializer(photo_to_update, data=request.data)
+        if updated_photo.is_valid():
+            updated_photo.save()
+            return Response(updated_photo.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_photo.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+    def delete(self, request, pk):
+        photo_to_delete = self.get_photo(pk=pk)
+        photo_to_delete.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
