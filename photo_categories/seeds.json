@@ -33,5 +33,19 @@
   "fields": {
     "name": "City & Architecture"
   }
+},
+{
+  "model": "photo_categories.photocategory",
+  "pk": 7,
+  "fields": {
+    "name": "Black and White"
+  }
+},
+{
+  "model": "photo_categories.photocategory",
+  "pk": 8,
+  "fields": {
+    "name": "Commercial"
+  }
 }
 ]
