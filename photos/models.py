@@ -9,3 +9,6 @@ class Photo(models.Model):
     lens = models.CharField(max_length = 50, blank=True)
     image = models.CharField(max_length=400)
     location = models.CharField(max_length = 75)
+
+    def __str__(self):
+        return f'{self.title}'
