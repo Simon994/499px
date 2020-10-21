@@ -1,0 +1,58 @@
+[
+{
+  "model": "photos.photo",
+  "pk": 1,
+  "fields": {
+    "title": "A basic photo",
+    "description": "",
+    "uploaded_at": "2020-10-20T17:26:08.140Z",
+    "taken_at": "2020-10-08T17:26:02Z",
+    "camera": "",
+    "lens": "",
+    "image": "https://en.wikipedia.org/wiki/Organic_wine#/media/File:Finca_Solano_Tempranillo_Crianza.jpg",
+    "location": "UK"
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 2,
+  "fields": {
+    "title": "Another photo from Admin",
+    "description": "Great photo.!",
+    "uploaded_at": "2020-10-21T10:40:34.955Z",
+    "taken_at": null,
+    "camera": "Cannon",
+    "lens": "35mm",
+    "image": "Simon.jpeg",
+    "location": "Cams"
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 3,
+  "fields": {
+    "title": "Bloop",
+    "description": "It's blooping",
+    "uploaded_at": "2020-10-21T10:41:06.743Z",
+    "taken_at": null,
+    "camera": "Nikon",
+    "lens": "50mm",
+    "image": "simon3.jgp",
+    "location": "here"
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 5,
+  "fields": {
+    "title": "A basic photo",
+    "description": "This is me adding on Insomnia",
+    "uploaded_at": "2020-10-21T11:33:12.238Z",
+    "taken_at": null,
+    "camera": "Sony",
+    "lens": "",
+    "image": "https://en.wikipedia.org/wiki/Organic_wine#/media/File:Finca_Solano_Tempranillo_Crianza.jpg",
+    "location": "North pole"
+  }
+}
+]
