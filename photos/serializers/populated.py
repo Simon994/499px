@@ -9,3 +9,4 @@ class PopulatedPhotoSerializer(PhotoSerializer):
     comments = CommentSerializer(many=True)
     categories = PhotoCategorySerializer(many=True)
     owner = NestedUserSerializer()
+    liked_by = NestedUserSerializer(many=True)

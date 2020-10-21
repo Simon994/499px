@@ -18,6 +18,11 @@ class Photo(models.Model):
         related_name='created_photo',
         on_delete=models.CASCADE
     )
+    liked_by = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='liked_photos'
+    )
+
 
     def __str__(self):
         return f'{self.title}'

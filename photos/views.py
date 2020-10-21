@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import NotFound, PermissionDenied
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
 from .models import Photo
 from .serializers.common import PhotoSerializer
@@ -58,3 +58,15 @@ class PhotoDetailView(APIView):
         self.is_photo_owner(photo_to_delete, request.user)
         photo_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class PhotoLikeView(PhotoDetailView):
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request, pk):
+        photo_to_like = self.get_photo(pk=pk)
+        photo_to_like.liked_by.add(request.user.id)
+        photo_to_like.save()
+        return Response(
+            {'Message': f'Like added to photo: {pk}'},
+            status=status.HTTP_202_ACCEPTED
+        )
