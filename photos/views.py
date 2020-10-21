@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import NotFound
+from rest_framework.exceptions import NotFound, PermissionDenied
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Photo
@@ -18,6 +18,7 @@ class PhotoListView(APIView):
         return Response(serialized_photo_list.data, status=status.HTTP_200_OK)
 
     def post(self, request):
+        request.data['owner'] = request.user.id
         photo_to_create = PhotoSerializer(data=request.data)
         if photo_to_create.is_valid():
             photo_to_create.save()
@@ -34,6 +35,10 @@ class PhotoDetailView(APIView):
         except Photo.DoesNotExist:
             raise NotFound()
 
+    def is_photo_owner(self, photo, user):
+        if(photo.owner.id != user.id):
+            raise PermissionDenied()
+
     def get(self, _request, pk):
         photo = self.get_photo(pk=pk)
         serialized_single_photo = PopulatedPhotoSerializer(photo)
@@ -41,13 +46,15 @@ class PhotoDetailView(APIView):
 
     def put(self, request, pk):
         photo_to_update = self.get_photo(pk=pk)
+        self.is_photo_owner(photo_to_update, request.user)
         updated_photo = PhotoSerializer(photo_to_update, data=request.data)
         if updated_photo.is_valid():
             updated_photo.save()
             return Response(updated_photo.data, status=status.HTTP_202_ACCEPTED)
         return Response(updated_photo.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-    def delete(self, _request, pk):
+    def delete(self, request, pk):
         photo_to_delete = self.get_photo(pk=pk)
+        self.is_photo_owner(photo_to_delete, request.user)
         photo_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
