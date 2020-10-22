@@ -6,7 +6,7 @@ from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import PermissionDenied
+from rest_framework.exceptions import PermissionDenied, NotFound
 from rest_framework.permissions import IsAuthenticated
 
 import jwt
@@ -56,4 +56,18 @@ class ProfileView(APIView):
     def get(self, request):
         user = User.objects.get(pk=request.user.id)
         serialized_user = PopulatedUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+
+class ProfileDetailView(APIView):
+
+    def get_user(self, pk):
+        try:
+            return User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            raise NotFound()
+
+    def get(self, _request, pk):
+        user_to_find = self.get_user(pk=pk)
+        serialized_user = PopulatedUserSerializer(user_to_find)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
