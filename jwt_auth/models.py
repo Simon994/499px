@@ -6,3 +6,8 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     profile_image = models.CharField(max_length=400)
+    followed_by = models.ManyToManyField(
+        'self',
+        related_name='followers',
+        symmetrical=False
+    )

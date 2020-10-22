@@ -21,4 +21,4 @@ class UserSerializer(serializers.ModelSerializer):
         return data
     class Meta:
         model = User
-        fields = ('id', 'posted_comments', 'liked_photos', 'created_photo', 'username', 'first_name', 'last_name', 'profile_image')
+        fields = ('id', 'posted_comments', 'liked_photos', 'created_photo', 'username', 'first_name', 'last_name', 'profile_image', 'followers')

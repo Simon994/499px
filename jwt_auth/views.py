@@ -71,3 +71,15 @@ class ProfileDetailView(APIView):
         user_to_find = self.get_user(pk=pk)
         serialized_user = PopulatedUserSerializer(user_to_find)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+class ProfileFollowView(ProfileDetailView):
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request, pk):
+        user_to_follow = self.get_user(pk=pk)
+        user_to_follow.followed_by.add(request.user.id)
+        user_to_follow.save()
+        return Response(
+            {'Message': f'User {pk} followed by {request.user.id}!'},
+            status=status.HTTP_202_ACCEPTED
+        )
