@@ -85,3 +85,12 @@ class ProfileFollowView(ProfileDetailView):
             {'Message': f'User {pk} followed by {request.user.id}!'},
             status=status.HTTP_202_ACCEPTED
         )
+
+    def delete(self, request, pk):
+        user_to_unfollow = self.get_user(pk=pk)
+        user_to_unfollow.followed_by.remove(request.user.id)
+        user_to_unfollow.save()
+        return Response(
+            {'Message': f'User {pk} UNfollowed by {request.user.id}!'},
+            status=status.HTTP_202_ACCEPTED
+        )
