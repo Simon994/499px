@@ -51,6 +51,7 @@ class LoginView(APIView):
             {'token': token, 'message': f'Welcome Back {user_to_login.username}'}
         )
 
+#returns (personal) information for a single profile information - for if user==owner only
 class ProfileView(APIView):
     permission_classes = (IsAuthenticated, )
 
@@ -58,6 +59,14 @@ class ProfileView(APIView):
         user = User.objects.get(pk=request.user.id)
         serialized_user = PopulatedUserSerializer(user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+class ProfileListView(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, _request):
+        users_list = User.objects.all()
+        serialized_users_list = PopulatedPublicUserSerializer(users_list, many=True)
+        return Response(serialized_users_list.data, status=status.HTTP_200_OK)
 
 
 class ProfileDetailView(APIView):
@@ -73,6 +82,7 @@ class ProfileDetailView(APIView):
         user_to_find = self.get_user(pk=pk)
         serialized_user = PopulatedPublicUserSerializer(user_to_find)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
+
 
 class ProfileFollowView(ProfileDetailView):
     permission_classes = (IsAuthenticated, )
