@@ -70,3 +70,12 @@ class PhotoLikeView(PhotoDetailView):
             {'Message': f'Like added to photo: {pk}'},
             status=status.HTTP_202_ACCEPTED
         )
+
+    def delete(self, request, pk):
+        photo_to_like = self.get_photo(pk=pk)
+        photo_to_like.liked_by.remove(request.user.id)
+        photo_to_like.save()
+        return Response(
+            {'Message': f'Removed like on photo: {pk}'},
+            status=status.HTTP_202_ACCEPTED
+        )
