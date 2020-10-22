@@ -9,5 +9,6 @@ class User(AbstractUser):
     followed_by = models.ManyToManyField(
         'self',
         related_name='followers',
-        symmetrical=False
+        symmetrical=False,
+        blank=True
     )

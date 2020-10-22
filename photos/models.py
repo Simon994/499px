@@ -20,7 +20,8 @@ class Photo(models.Model):
     )
     liked_by = models.ManyToManyField(
         'jwt_auth.User',
-        related_name='liked_photos'
+        related_name='liked_photos',
+        blank=True
     )
 
 
