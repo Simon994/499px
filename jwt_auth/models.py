@@ -8,7 +8,7 @@ class User(AbstractUser):
     profile_image = models.CharField(max_length=400)
     followed_by = models.ManyToManyField(
         'self',
-        related_name='followers',
+        related_name='following',
         symmetrical=False,
         blank=True
     )
