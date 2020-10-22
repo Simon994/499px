@@ -1,14 +1,14 @@
-
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+
+const Join = () => {
 
   return (
-    <Button as={Link} to='/join'>Sign up</Button>
+    <Button as={Link} to='/signup'>Continue with email</Button>
   )
 
 }
 
-export default Home
+export default Join
