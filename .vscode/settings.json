@@ -1,3 +1,12 @@
 {
-  "python.pythonPath": "/Users/simonneil/.local/share/virtualenvs/RAWShot-tn1fvqmd/bin/python"
+  "python.pythonPath": "/Users/simonneil/.local/share/virtualenvs/RAWShot-tn1fvqmd/bin/python",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#495b82",
+    "titleBar.activeBackground": "#495b82",
+    "titleBar.inactiveBackground": "#495b82",
+    "statusBar.foreground": "#dcdada",
+    "titleBar.inactiveForeground": "#dcdada",
+    "titleBar.activeForeground": "#dcdada",
+  },
+  "window.title": "BACKEND-RAWShot"
 }
