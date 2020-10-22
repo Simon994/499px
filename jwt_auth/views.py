@@ -11,7 +11,8 @@ from rest_framework.permissions import IsAuthenticated
 
 import jwt
 from .serializers.common import UserSerializer
-from .serializers.populated import PopulatedUserSerializer
+from .serializers.populated import PopulatedUserSerializer, PopulatedPublicUserSerializer
+from .serializers.nested import NestedPublicUserSerializer
 
 User = get_user_model()
 class RegisterView(APIView):
@@ -60,6 +61,7 @@ class ProfileView(APIView):
 
 
 class ProfileDetailView(APIView):
+    permission_classes = (IsAuthenticated, )
 
     def get_user(self, pk):
         try:
@@ -69,7 +71,7 @@ class ProfileDetailView(APIView):
 
     def get(self, _request, pk):
         user_to_find = self.get_user(pk=pk)
-        serialized_user = PopulatedUserSerializer(user_to_find)
+        serialized_user = PopulatedPublicUserSerializer(user_to_find)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
 class ProfileFollowView(ProfileDetailView):
