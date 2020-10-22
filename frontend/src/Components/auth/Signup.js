@@ -25,7 +25,6 @@ class Signup extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('HANDLING 💩')
     const { password } = this.state.formData
     const formData = {
       ...this.state.formData,
