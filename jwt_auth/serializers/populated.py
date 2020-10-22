@@ -1,11 +1,12 @@
 # pylint: disable=no-name-in-module, import-error
+from rest_framework import serializers
+from django.contrib.auth import get_user_model
+
 from photos.serializers.populated import PopulatedPhotoSerializer
 from comments.serializers.common import CommentSerializer
 from ..serializers.common import UserSerializer
 from ..serializers.nested import NestedUserSerializer
 
-from rest_framework import serializers
-from django.contrib.auth import get_user_model
 
 class PopulatedUserSerializer(UserSerializer):
 

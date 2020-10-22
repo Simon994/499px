@@ -12,7 +12,7 @@ from rest_framework.permissions import IsAuthenticated
 import jwt
 from .serializers.common import UserSerializer
 from .serializers.populated import PopulatedUserSerializer, PopulatedPublicUserSerializer
-from .serializers.nested import NestedPublicUserSerializer
+
 
 User = get_user_model()
 class RegisterView(APIView):
