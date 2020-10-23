@@ -16,7 +16,6 @@ class AvatarImageUpload extends React.Component {
     data.append('upload_preset', uploadPreset)
     console.log(data)
     const res = await axios.post(uploadUrl, data)
-    console.log('RES FROM CLOUD 🐑', res)
     this.setState({
       image: res.data.url
     }, () => {

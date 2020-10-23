@@ -6,6 +6,8 @@ import Home from './Components/common/Home'
 import Join from './Components/auth/Join'
 import Signup from './Components/auth/Signup'
 import GetToKnow from './Components/auth/GetToKnow'
+import Login from './Components/auth/Login'
+import PhotosHome from './Components/photos/PhotosHome'
 
 const App = () => {
 
@@ -17,6 +19,8 @@ const App = () => {
           <Route exact path='/join' component={Join} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/gettoknow' component={GetToKnow} />
+          <Route exact path='/login' component={Login} />
+          <Route path = '/photoshome' component={PhotosHome} />
 
         </Switch>
       </BrowserRouter>
