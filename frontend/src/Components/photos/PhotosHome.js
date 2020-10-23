@@ -3,13 +3,15 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import ProfileCard from './photosSubComponents/ProfileCard'
+import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
 import { getProfileIndex, getUserProfile } from '../../lib/api'
 
 class PhotosHome extends React.Component {
 
   state = {
-    profilesSuggestedToFollow: []
+    profilesSuggestedToFollow: [],
+    photosByFollowees: []
   }
 
   updateOwner = (followee) => {
@@ -24,12 +26,12 @@ class PhotosHome extends React.Component {
 
     const userProfile = await getUserProfile()
     const following = userProfile.data.following
-    
-    following.map(followee => {
 
-      const updatedFollowees = this.updateOwner(followee)
-      console.log('UPDATED', updatedFollowees)
-    })
+    const photosByFollowees = following
+      .map(followee => {
+        return this.updateOwner(followee)
+      })
+      .flat()
     
     const profilesWithPhotos = response.data.filter(profile => {
       return profile.created_photo.length >= 3
@@ -47,13 +49,14 @@ class PhotosHome extends React.Component {
     }
 
     this.setState({
-      profilesSuggestedToFollow
+      profilesSuggestedToFollow,
+      photosByFollowees
     })
 
   }
 
   render() {
-    const { profilesSuggestedToFollow } = this.state
+    const { profilesSuggestedToFollow, photosByFollowees } = this.state
     console.log(profilesSuggestedToFollow.length)
     return (
       <>
@@ -89,6 +92,8 @@ class PhotosHome extends React.Component {
             </div>
           </CarouselProvider>
         </div>
+        
+        <PhotosGalleryContainer photos={photosByFollowees} />
 
       </>
     )
