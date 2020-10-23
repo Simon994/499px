@@ -37,7 +37,7 @@ class PhotosHome extends React.Component {
 
   render() {
     const { profilesSuggestedToFollow } = this.state
-
+    console.log(profilesSuggestedToFollow.length)
     return (
       <>
         <h1>Photos Home</h1>
@@ -45,42 +45,32 @@ class PhotosHome extends React.Component {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={125}
-            totalSlides={2}
-            visibleSlides={2}
+            totalSlides={profilesSuggestedToFollow.length}
+            visibleSlides={3}
           >
-            <Slider>
-              {
-                profilesSuggestedToFollow.map((profile, index) => {
-                  return (
-                    <Slide key={index} index={index}>
-                      <ProfileCard
-                        key={profile.id}
-                        created_photo={profile.created_photo}
-                        username={profile.username}
-                      />
-                    </Slide>
-                  )
-                })
-              }
+            <div className='container'>
+              <Slider>
+                {
+                  profilesSuggestedToFollow.map((profile, index) => {
+                    return (
+                      <Slide key={index} index={index} className='slide'>
+                        <ProfileCard
+                          key={profile.id}
+                          created_photo={profile.created_photo}
+                          username={profile.username}
+                        />
+                      </Slide>
+                    )
+                  })
+                }
 
-
-            </Slider>
+                <ButtonBack className='buttonBack'>Back</ButtonBack>
+                <ButtonNext className='buttonNext'>Next</ButtonNext>
+              </Slider>
+            </div>
           </CarouselProvider>
         </div>
-        <CarouselProvider
-          naturalSlideWidth={100}
-          naturalSlideHeight={125}
-          totalSlides={3}
-          visibleSlides={2}
-        >
-          <Slider>
-            <Slide index={0}>I am the first Slide.</Slide>
-            <Slide index={1}>I am the second Slide.</Slide>
-            <Slide index={2}>I am the third Slide.</Slide>
-          </Slider>
-          <ButtonBack>Back</ButtonBack>
-          <ButtonNext>Next</ButtonNext>
-        </CarouselProvider>
+
       </>
     )
   }
