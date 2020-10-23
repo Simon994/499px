@@ -22,6 +22,10 @@ export const followProfile = (userId, formData) => {
   return axios.post(`/api/auth/profile/${userId}/follows/`, formData, withHeaders())
 }
 
+export const unfollowProfile = (userId) => {
+  return axios.delete(`/api/auth/profile/${userId}/follows/`, withHeaders())
+}
+
 export const registerUser = (formData) => {
   return axios.post(`${baseUrl}/auth/register/`, formData)
 }

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Image, Button } from 'semantic-ui-react'
 
-import { followProfile } from '../../../lib/api'
+import { followProfile, unfollowProfile } from '../../../lib/api'
 
 class ProfileCard extends React.Component {
 
@@ -10,11 +10,32 @@ class ProfileCard extends React.Component {
     following: false
   }
 
-  handleClick = async () =>{
-    
+  handleFollowClick = async () =>{
     try {
       const response = await followProfile(this.props.id)
-      console.log(response)
+      
+      if (response.status === 202){
+        this.setState({
+          following: true
+        })
+      } else {
+        throw new Error()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  handleUnfollowClick = async () => {
+    try {
+      const response = await unfollowProfile(this.props.id)
+      if (response.status === 202){
+        this.setState({
+          following: false
+        })
+      } else {
+        throw new Error()
+      }
     } catch (err) {
       console.log(err)
     }
@@ -23,6 +44,7 @@ class ProfileCard extends React.Component {
 
   render() {
     const { profileImage, created_photo, first_name, last_name } = this.props
+    const { following } = this.state
     const photosToDisplay = created_photo.slice(0, 3)
 
     return (
@@ -37,12 +59,22 @@ class ProfileCard extends React.Component {
         <div>
           <Image avatar src={profileImage}/>
           <span>{first_name} {last_name}</span>
-          <Button
-            primary
-            floated='right'
-            onClick={this.handleClick}
-          >Follow
-          </Button>
+          {!following &&
+            <Button
+              primary
+              floated='right'
+              onClick={this.handleFollowClick}
+            >Follow
+            </Button>
+          }
+          {following &&
+            <Button
+              basic color='blue'
+              floated='right'
+              onClick={this.handleUnfollowClick}
+            >Unfollow
+            </Button>
+          }
         </div>
       </div>
     )
