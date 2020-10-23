@@ -20,3 +20,26 @@
 .inputfile + label:hover {
   text-decoration: underline;
 }
+
+
+// PhotosHome Section
+
+// Profile Card section
+
+.profiles-to-follow{
+  border: 1px solid red;
+  width: 100%;
+  height: 500px;
+}
+
+.profile-card-outer{
+  max-width: 400px;
+  max-height: 250px;
+  background-color: blue;
+  border: 1px solid red;
+
+  img{
+    max-width: 100px;
+    height: auto;
+  }
+}

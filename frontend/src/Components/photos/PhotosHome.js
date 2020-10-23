@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ProfileCard from './photosSubComponents/ProfileCard'
+
 import { getProfileIndex } from '../../lib/api'
 
 class PhotosHome extends React.Component {
@@ -8,7 +10,7 @@ class PhotosHome extends React.Component {
     profilesSuggestedToFollow: []
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
 
     const response = await getProfileIndex()
 
@@ -16,14 +18,14 @@ class PhotosHome extends React.Component {
       return profile.created_photo.length >= 3
     })
     const profilesSuggestedToFollow = []
-    
-    if (profilesWithPhotos.length >= 10){
-      for (let i = 0; i < 10; i++){
+
+    if (profilesWithPhotos.length >= 10) {
+      for (let i = 0; i < 10; i++) {
         profilesSuggestedToFollow.push(profilesWithPhotos[i])
       }
     } else {
       profilesWithPhotos.forEach(profile => profilesSuggestedToFollow.push(profile))
-    } 
+    }
 
     this.setState({
       profilesSuggestedToFollow
@@ -31,9 +33,24 @@ class PhotosHome extends React.Component {
 
   }
 
-  render(){
+  render() {
+    const { profilesSuggestedToFollow } = this.state
+    
     return (
-      <h1>Photos Home</h1>
+      <>
+        <h1>Photos Home</h1>
+        <div className='profiles-to-follow'>
+          {
+            profilesSuggestedToFollow.map(profile => {
+              return <ProfileCard
+                key={profile.id}
+                created_photo={profile.created_photo}
+                username = {profile.username}
+              />
+            })
+          }
+        </div>
+      </>
     )
   }
 }
