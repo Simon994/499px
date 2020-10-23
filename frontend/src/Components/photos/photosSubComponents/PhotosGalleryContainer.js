@@ -10,9 +10,14 @@ class PhotosGalleryContainer extends React.Component {
     return (
       <>
         <h1>Photos by people you follow:</h1>
-        <div>
+        <div className='photos-by-followees tiles'>
           {photos.map(photo => {
-            return <img key={photo.id} src={photo.image} />
+            return (
+              <div key={photo.id} className='tile'>
+                <img className='photo-by-followee' src={photo.image} />
+                <div className='details'><span className='title'>{photo.id}</span></div>
+              </div>
+            )
           })}
         </div>
       </>
