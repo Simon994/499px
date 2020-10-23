@@ -4,7 +4,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import ProfileCard from './photosSubComponents/ProfileCard'
 
-import { getProfileIndex } from '../../lib/api'
+import { getProfileIndex, getUserProfile } from '../../lib/api'
 
 class PhotosHome extends React.Component {
 
@@ -12,16 +12,31 @@ class PhotosHome extends React.Component {
     profilesSuggestedToFollow: []
   }
 
+  updateOwner = (followee) => {
+    return followee.created_photo.map(photo => {
+      return { ...photo, owner: followee.username }
+    })
+  }
+
   async componentDidMount() {
 
     const response = await getProfileIndex()
 
+    const userProfile = await getUserProfile()
+    const following = userProfile.data.following
+    
+    following.map(followee => {
+
+      const updatedFollowees = this.updateOwner(followee)
+      console.log('UPDATED', updatedFollowees)
+    })
+    
     const profilesWithPhotos = response.data.filter(profile => {
       return profile.created_photo.length >= 3
     })
     const profilesSuggestedToFollow = []
 
-    
+
     //limit profile-to-follow suggestions to 10 max. 
     if (profilesWithPhotos.length >= 10) {
       for (let i = 0; i < 10; i++) {
