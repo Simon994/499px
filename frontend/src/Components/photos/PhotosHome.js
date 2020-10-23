@@ -58,6 +58,8 @@ class PhotosHome extends React.Component {
                           key={profile.id}
                           created_photo={profile.created_photo}
                           username={profile.username}
+                          profileImage={profile.profile_image}
+                          {...profile}
                         />
                       </Slide>
                     )
