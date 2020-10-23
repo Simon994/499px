@@ -10,6 +10,10 @@ function withHeaders(){
   }
 }
 
+export const getProfileIndex = () => {
+  return axios.get('/api/auth/profilelist/', withHeaders())
+}
+
 export function getUserProfile(){
   return axios.get('/api/auth/profile', withHeaders())
 }

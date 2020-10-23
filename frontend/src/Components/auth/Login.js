@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Divider, Message } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
 import { loginUser, getUserProfile } from '../../lib/api'
@@ -84,7 +84,7 @@ class Login extends React.Component {
                       name='password'
                     />
                   </Form.Field>
-                  <Button type='submit'>Submit</Button>
+                  <Button type='submit'>Log in</Button>
                 </Form>
               </div>
             </Grid.Column>
