@@ -18,6 +18,9 @@ export function getUserProfile(){
   return axios.get('/api/auth/profile', withHeaders())
 }
 
+export const followProfile = (userId, formData) => {
+  return axios.post(`/api/auth/profile/${userId}/follows/`, formData, withHeaders())
+}
 
 export const registerUser = (formData) => {
   return axios.post(`${baseUrl}/auth/register/`, formData)

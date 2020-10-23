@@ -26,7 +26,7 @@ class PopulatedPublicUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'created_photo', 'first_name', 'last_name', 'followed_by', 'following')
+        fields = ('id', 'username', 'created_photo', 'first_name', 'last_name', 'followed_by', 'following', "profile_image")
 
 
 # class PopulatedPublicUserSerializer(PrePublicUserSerializer):

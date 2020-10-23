@@ -21,6 +21,8 @@ class PhotosHome extends React.Component {
     })
     const profilesSuggestedToFollow = []
 
+    
+    //limit profile-to-follow suggestions to 10 max. 
     if (profilesWithPhotos.length >= 10) {
       for (let i = 0; i < 10; i++) {
         profilesSuggestedToFollow.push(profilesWithPhotos[i])
