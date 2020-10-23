@@ -4,6 +4,7 @@ import React from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
+import AvatarImageUpload from './AvatarImageUpload'
 import { registerUser } from '../../lib/api'
 
 
@@ -14,7 +15,7 @@ class GetToKnow extends React.Component {
     redirect: false
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     // console.log('FORM DATA:')
     const { formData } = this.props.location.state
     const extendedFormData = {
@@ -22,7 +23,7 @@ class GetToKnow extends React.Component {
       first_name: '',
       last_name: '',
       username: '',
-      profile_image: 'test.jpg'
+      profile_image: ''
     }
 
     this.setState({
@@ -38,29 +39,34 @@ class GetToKnow extends React.Component {
     this.setState({ formData })
   }
 
+  handleImageChange = url => {
+    const formData = { ...this.state.formData, profile_image: url }
+    this.setState({ formData })
+  }
+
   handleSubmit = async (e) => {
     e.preventDefault()
     const dataToSend = ({ ...this.state.formData })
-    
+
     try {
       const response = await registerUser(dataToSend)
       if (response.status === 201) {
-        console.log('GOT THAT RESPONSE 💩🔥', response)
+        console.log('GOT THAT RESPONSE 🌴', response)
         this.setState({
           redirect: '/login'
         })
       }
     } catch (err) {
-      console.log('GOT THAT ERR 💩💕', err)
+      console.log('GOT THAT ERR', err)
       this.setState({ formUsernameError: true })
     }
   }
 
 
-  render(){
-    
+  render() {
+
     if (!this.state.formData) return null
-    
+
     const { first_name, last_name, username } = this.state.formData
 
     if (this.state.redirect) {
@@ -70,6 +76,10 @@ class GetToKnow extends React.Component {
     return (
       <>
         <Form onSubmit={this.handleSubmit}>
+          <AvatarImageUpload
+            labelText="Profile Image"
+            onChange={this.handleImageChange}
+          />
           <Form.Field>
             <label className='form-label'>First name</label>
             <input placeholder=''
