@@ -19,6 +19,11 @@ export const gottenToKnow = () => {
   localStorage.removeItem('isGettingToKnow')
 }
 
+export const logout = () => {
+  localStorage.removeItem('token')
+  localStorage.removeItem('avatar')
+}
+
 const getPayload = () => {
   const token = getToken()
   if (!token) return false
