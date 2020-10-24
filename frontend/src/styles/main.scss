@@ -6,6 +6,9 @@ $anim-speed: 0.3s;
 $hero-height: 500px;
 $brand-font: 'Nunito Sans', sans-serif;
 $primary-blue: #1890ff;
+$primary-darkblue: #0871D1;
+$fb-blue: #3C5A96;
+$form-surrounding-background: #F7F8FA;
 
 //Common elements
 
@@ -19,6 +22,79 @@ $primary-blue: #1890ff;
 
 .button.lozenge:hover {
   background-color: #ddd;
+}
+
+//forms -login register
+
+.auth-form-container{
+  background-color: $form-surrounding-background;
+  height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .auth-container{
+    max-width: 350px;
+    box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+    background-color: white;
+    padding: 20px;
+
+    h2{
+      font-weight: 400;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    label.form-label{
+      color: #888;
+      font-weight: 300;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .button.lozenge{
+      width: 100%;
+
+      
+      .icon{
+        float: left;
+      }
+
+      .icon.red.warning{
+        float: none;
+      }
+
+      &.login-email-btn{
+        background-color: $primary-darkblue;
+        color: white;
+        margin-bottom: 40px;
+      }
+
+      &.login-email-btn:hover{
+        background-color: $primary-blue;
+      }
+
+      &.login-fb-btn{
+        color: white;
+        background-color: $fb-blue;
+        margin-bottom: 20px;
+      }
+
+      &.login-google-btn{
+        background-color: white;
+        border: 1px solid #ccc;
+      }
+
+    }
+
+    p{
+      text-align: center;
+      color: #888;
+      margin-top: 30px;
+    }
+  }
+
 }
 
 
@@ -154,6 +230,12 @@ body{
     color: $primary-blue;
   }
 }
+
+
+//Login
+
+
+
 
 
 
