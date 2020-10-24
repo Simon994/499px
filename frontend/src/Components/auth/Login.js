@@ -103,7 +103,7 @@ class Login extends React.Component {
                   Coming soon</Button.Content>
               </Button>
             </Form>
-            <p>Don't have an account? <Link to='/signup'>Sign up</Link></p>
+            <p className='no-account'>Don't have an account? <Link to='/signup'>Sign up</Link></p>
           </div>
         </div>
 

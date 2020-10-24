@@ -35,7 +35,7 @@ $form-surrounding-background: #F7F8FA;
   align-items: center;
 
   .auth-container{
-    max-width: 350px;
+    width: 350px;
     box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
     background-color: white;
     padding: 20px;
@@ -44,6 +44,16 @@ $form-surrounding-background: #F7F8FA;
       font-weight: 400;
       font-size: 22px;
       text-align: center;
+    }
+
+    .signup{
+      text-align: center;
+      color: #888;
+    }
+
+    .header{
+      color: #888;
+      font-weight: 400;
     }
 
     label.form-label{
@@ -65,13 +75,18 @@ $form-surrounding-background: #F7F8FA;
         float: none;
       }
 
-      &.login-email-btn{
+      &.login-email-btn,
+      &.signup-email-btn{
         background-color: $primary-darkblue;
         color: white;
-        margin-bottom: 40px;
       }
 
-      &.login-email-btn:hover{
+      &.login-email-btn{
+        margin: 5px 0 40px;
+      }
+
+      &.login-email-btn:hover,
+      &.signup-email-btn:hover{
         background-color: $primary-blue;
       }
 
@@ -88,10 +103,19 @@ $form-surrounding-background: #F7F8FA;
 
     }
 
-    p{
+    p.no-account,
+    p.have-account{
       text-align: center;
       color: #888;
+
+    }
+
+    p.no-account{
       margin-top: 30px;
+    }
+
+    p.have-account{
+      margin-top: 10px;
     }
   }
 
