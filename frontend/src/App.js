@@ -9,6 +9,8 @@ import Signup from './Components/auth/Signup'
 import GetToKnow from './Components/auth/GetToKnow'
 import Login from './Components/auth/Login'
 import PhotosHome from './Components/photos/PhotosHome'
+import PhotosUpload from './Components/photos/PhotosUpload'
+import PhotosSubmit from './Components/photos/PhotoSubmit'
 
 const App = () => {
 
@@ -24,7 +26,9 @@ const App = () => {
           <Route exact path='/gettoknow' component={GetToKnow} />
           <Route exact path='/login' component={Login} />
           <Route path = '/photoshome' component={PhotosHome} />
-
+          <Route path = '/upload/submit' component={PhotosSubmit} />
+          <Route path = '/upload' component={PhotosUpload} />
+          
         </Switch>
       </BrowserRouter>
     </>

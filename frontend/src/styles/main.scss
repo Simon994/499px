@@ -60,12 +60,12 @@ $anim-speed: 0.3s;
   // transform: translateY(-50%);
 }
 
-.buttonNext {
-  // position: absolute;
-  // top: 50%;
-  // right: 0;
-  // transform: translateY(-50%);
-}
+// .buttonNext {
+//   // position: absolute;
+//   // top: 50%;
+//   // right: 0;
+//   // transform: translateY(-50%);
+// }
 
 .dotGroup {
   text-align: center;
@@ -85,10 +85,6 @@ $anim-speed: 0.3s;
       flex-grow: 1;
       max-height: 400px;
     }
-
-
-  
-
 
 }
 
@@ -188,3 +184,11 @@ $anim-speed: 0.3s;
 }
 
 
+// Upload Photos section
+
+  label.upload-label{
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    padding: 30px;
+  }

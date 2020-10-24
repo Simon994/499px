@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Button, Image } from 'semantic-ui-react'
+import { Menu, Button } from 'semantic-ui-react'
 import { Link, withRouter } from 'react-router-dom'
 
 import DropdownAvatar from './commonSubComponents/DropdownAvatar'
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
         {isAuthenticated() && 
         <Menu.Item>
           <DropdownAvatar sourceImage={avatar ? avatar : ''}></DropdownAvatar>
-          <Button>Upload</Button>
+          <Button as={Link} to={'/upload'}>Upload</Button>
         </Menu.Item>
 
         }
