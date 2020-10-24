@@ -6,6 +6,7 @@ import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
 import { getProfileIndex, getUserProfile } from '../../lib/api'
+import { setAvatar } from '../../lib/assets'
 
 class PhotosHome extends React.Component {
 
@@ -24,20 +25,27 @@ class PhotosHome extends React.Component {
 
     const response = await getProfileIndex()
 
+    // get user's personal profile
     const userProfile = await getUserProfile()
-    const following = userProfile.data.following
+    console.log('PROFILE', userProfile.data.profile_image)
+    //Set avatar image in local storage, for use on Navbar
+    setAvatar(userProfile.data.profile_image)
 
+    // get photos by people that the user follows
+    //(owner information needs to be added into the individual photos)
+    const following = userProfile.data.following
     const photosByFollowees = following
       .map(followee => {
         return this.updateOwner(followee)
       })
       .flat()
-    
+
+    //We will make some suggestions for photographers for the user to follow\
+    //Filter for profiles having 3 or more photos
     const profilesWithPhotos = response.data.filter(profile => {
       return profile.created_photo.length >= 3
     })
     const profilesSuggestedToFollow = []
-
 
     //limit profile-to-follow suggestions to 10 max. 
     if (profilesWithPhotos.length >= 10) {

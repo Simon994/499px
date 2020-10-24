@@ -1,19 +1,29 @@
 import React from 'react'
-import { Menu, Button } from 'semantic-ui-react'
+import { Menu, Button, Image } from 'semantic-ui-react'
 import { Link, withRouter } from 'react-router-dom'
 
 import { isAuthenticated, getIsGettingToKnow } from '../../lib/auth'
+import { getAvatar } from '../../lib/assets'
 
 class Navbar extends React.Component {
 
   state = {
+    avatar: ''
+  }
 
+  componentDidMount(){
+    const avatar = getAvatar()
+
+    this.setState({
+      avatar 
+    })
   }
 
 
-
   render() {
+    if (!this.state.avatar) return <h1>Getting that</h1>
 
+    const { avatar } = this.state
     return (
       <Menu>
         {(!getIsGettingToKnow() && !isAuthenticated()) &&
@@ -25,6 +35,12 @@ class Navbar extends React.Component {
               Sign up
             </Button>
           </Menu.Item>
+        }
+        {isAuthenticated() && 
+        <Menu.Item>
+          <Image avatar src={avatar}></Image>
+          <Button>Upload</Button>
+        </Menu.Item>
 
         }
 

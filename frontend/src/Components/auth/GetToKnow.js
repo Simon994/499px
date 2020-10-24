@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom'
 import AvatarImageUpload from './AvatarImageUpload'
 import { registerUser } from '../../lib/api'
 import { gottenToKnow } from '../../lib/auth'
+import { setAvatar } from '../../lib/assets'
 
 class GetToKnow extends React.Component {
 
