@@ -3,15 +3,18 @@ import React from 'react'
 class PhotosGalleryContainer extends React.Component {
 
   render() {
-    const { photos } = this.props
+    const { followeePhotos, ownerPhotos } = this.props
+    const allPhotos = ownerPhotos.concat(followeePhotos)
 
-    if (!photos.length) return null
+    console.log(allPhotos)
+
+    if (!allPhotos.length) return null
 
     return (
       <>
         <h1>Photos by people you follow:</h1>
-        <div className='photos-by-followees tiles'>
-          {photos.map(photo => {
+        <div className='photos-by-followees tiles'>          
+          {allPhotos.map(photo => {
             return (
               <div key={photo.id} className='tile'>
                 <img className='photo-by-followee' src={photo.image} />

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Button } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom'
 
 import { createPhoto } from '../../lib/api'
 
@@ -13,7 +14,8 @@ class PhotoSubmit extends React.Component {
       camera: '',
       location: '',
       categories: [5]
-    }
+    },
+    redirect: false
   }
 
   componentDidMount() {
@@ -39,18 +41,33 @@ class PhotoSubmit extends React.Component {
     e.preventDefault()
     console.log(this.state.formData)
     try {
-      const response = await createPhoto(this.state.formData)
-      console.log('POSTED PHOTO! 🍤', response)
+      await createPhoto(this.state.formData)
+
+      this.setState({
+        formData: {
+          image: '',
+          title: '',
+          description: '',
+          camera: '',
+          location: '',
+          categories: [5]
+        },
+        redirect: '/photoshome'
+      })
     } catch (err){
-      console.log('ERRR 💩', err.response.data)
+      console.error('ERR in photo upload', err.response.data)
     }
   }
 
   render() {
 
+    if (this.state.redirect){
+      return <Redirect to={this.state.redirect}/>
+    }
+
     if (!this.state.formData.image) return <h1>Just getting that for you</h1>
 
-    const { image, title, description, camera, location } = this.state.formData
+    const { image, title, description, location } = this.state.formData
 
     return (
       <div className='photo-submit-outer'>

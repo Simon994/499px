@@ -5,12 +5,13 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
-import { getProfileIndex, getUserProfile } from '../../lib/api'
+import { createPhoto, getProfileIndex, getUserProfile } from '../../lib/api'
 import { setAvatar } from '../../lib/assets'
 
 class PhotosHome extends React.Component {
 
   state = {
+    createdPhotos: [],
     profilesSuggestedToFollow: [],
     photosByFollowees: []
   }
@@ -27,7 +28,7 @@ class PhotosHome extends React.Component {
 
     // get user's personal profile
     const userProfile = await getUserProfile()
-    console.log('PROFILE', userProfile.data.profile_image)
+    console.log('PROFILE', userProfile.data)
     //Set avatar image in local storage, for use on Navbar
     setAvatar(userProfile.data.profile_image)
 
@@ -57,6 +58,7 @@ class PhotosHome extends React.Component {
     }
 
     this.setState({
+      createdPhotos: userProfile.data.created_photo,
       profilesSuggestedToFollow,
       photosByFollowees
     })
@@ -64,7 +66,7 @@ class PhotosHome extends React.Component {
   }
 
   render() {
-    const { profilesSuggestedToFollow, photosByFollowees } = this.state
+    const { createdPhotos ,profilesSuggestedToFollow, photosByFollowees } = this.state
     console.log(profilesSuggestedToFollow.length)
     return (
       <>
@@ -101,7 +103,10 @@ class PhotosHome extends React.Component {
           </CarouselProvider>
         </div>
         
-        <PhotosGalleryContainer photos={photosByFollowees} />
+        <PhotosGalleryContainer
+          followeePhotos={photosByFollowees}
+          ownerPhotos={createdPhotos}
+        />
 
       </>
     )
