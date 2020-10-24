@@ -3,6 +3,7 @@ import React from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
+import { setIsGettingToKnow } from '../../lib/auth'
 
 class Signup extends React.Component {
 
@@ -25,6 +26,9 @@ class Signup extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    
+    setIsGettingToKnow()
+
     const { password } = this.state.formData
     const formData = {
       ...this.state.formData,

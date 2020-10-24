@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom'
 
 import AvatarImageUpload from './AvatarImageUpload'
 import { registerUser } from '../../lib/api'
-
+import { gottenToKnow } from '../../lib/auth'
 
 class GetToKnow extends React.Component {
 
@@ -52,6 +52,8 @@ class GetToKnow extends React.Component {
       const response = await registerUser(dataToSend)
       if (response.status === 201) {
         console.log('GOT THAT RESPONSE 🌴', response)
+        gottenToKnow()
+        
         this.setState({
           redirect: '/login'
         })
