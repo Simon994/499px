@@ -1,9 +1,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 $anim-speed: 0.3s;
 $hero-height: 500px;
 $brand-font: 'Nunito Sans', sans-serif;
+$primary-blue: #1890ff;
+
+//Common elements
+
+//Buttons
+.button.lozenge{
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.button.lozenge:hover {
+  background-color: #ddd;
+}
+
 
 //Home
 
@@ -39,21 +56,16 @@ body{
       font-weight: 300;
     }
     
-    .button{
+    .button.lozenge{
       background-color: #f1f1f1;
       border: none;
       color: black;
       padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
       margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 16px;
       width: 120px;
     }
-
-    .button:hover {
+    
+    .button.lozenge:hover {
       background-color: #ddd;
     }
 
@@ -99,12 +111,49 @@ body{
   }
 }
 
+// Navbar section
 
+.logo{
+  font-family: 'Poiret One', cursive;
+  font-size: 25px;
+  padding-top: 5px;
+}
 
+.navbar{
+  padding: 20px 35px;
+  display: flex;
 
+  .nav-btns{
+    width: 100%;
 
+    display: flex;
+    justify-content: flex-end;
+  
+    a {
+      color: black;
+      font-size: 16px;
+      margin-right: 20px;
+    }
 
+    a:hover {
+      color: $primary-blue;
+    }
 
+    .button.lozenge{
+      font-size: 16px;
+      background-color: white;
+      border: 2px solid black;
+      color: black;
+      padding: 5px 15px;
+      margin: 4px 2px;
+      border-radius: 16px;
+    }
+  }
+  
+  .button.lozenge:hover {
+    color: $primary-blue;
+  }
+}
 
 
 

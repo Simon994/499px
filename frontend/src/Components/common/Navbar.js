@@ -26,26 +26,31 @@ class Navbar extends React.Component {
     const { avatar } = this.state
 
     return (
-      <Menu>
-        {(!getIsGettingToKnow() && !isAuthenticated()) &&
-          <Menu.Item>
-            <Button as={Link} to={'/login'}>
-              login
-            </Button>
-            <Button as={Link} to={'/join'}>
+      <nav className='navbar'>
+        <div className='logo'>
+          <p>499<sup>px</sup></p>
+        </div>
+        <div className='nav-btns'>
+          {(!getIsGettingToKnow() && !isAuthenticated()) &&
+            <div>
+              <Link to={'/login'}>
+              Log in
+              </Link>
+              <Button className='lozenge' as={Link} to={'/join'}>
               Sign up
-            </Button>
-          </Menu.Item>
-        }
-        {isAuthenticated() && 
+              </Button>
+            </div>
+          }
+          {isAuthenticated() && 
         <Menu.Item>
           <DropdownAvatar sourceImage={avatar ? avatar : ''}></DropdownAvatar>
           <Button as={Link} to={'/upload'}>Upload</Button>
         </Menu.Item>
 
-        }
+          }
+        </div>
 
-      </Menu>
+      </nav>
 
     )
 

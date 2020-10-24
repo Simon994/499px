@@ -10,9 +10,9 @@ const Home = () => {
       <div className='home-hero'>
         
         <div className='hero-text-container'>
-          <h1 className='hero-title'>Discover and share photos:<br /> a 500px clone</h1>
+          <h1 className='hero-title'>Discover and share photos:<br />With 499<sup>px</sup>, a 500<sup>px</sup> clone</h1>
           <p className='hero-sub'>This is a clone of the website 500px.</p>
-          <Button as={Link} to='/join'>Sign up</Button>
+          <Button className='lozenge' as={Link} to='/join'>Sign up</Button>
         </div>
         
         <svg id="layer-1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1416.99 174.01">
