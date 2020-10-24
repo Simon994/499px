@@ -1,4 +1,23 @@
 $anim-speed: 0.3s;
+$hero-height: 500px;
+
+//Home
+
+.home-hero{
+  width: 100%;
+  height: $hero-height;
+  background-color: bisque;
+  background-image: url('./assets/home_hero_Patrick_Fore.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+
+  #layer-1{
+    position: absolute;
+    bottom: 0px;
+  }
+}
 
 .inputfile {
 	width: 0.1px;
