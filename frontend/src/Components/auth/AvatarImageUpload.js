@@ -1,12 +1,15 @@
 import React from 'react'
 import axios from 'axios'
+import defaultAvatar from '../../styles/assets/empty-profile-picture.png'
+
+import { Image } from 'semantic-ui-react'
 
 const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
 const uploadPreset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
 
 class AvatarImageUpload extends React.Component {
   state = {
-    image: 'https://www.pngitem.com/pimgs/m/73-734701_customer-icon-person-head-and-shoulders-silhouette-hd.png'
+    image: defaultAvatar
   }
 
   handleUpload = async event => {
@@ -29,10 +32,13 @@ class AvatarImageUpload extends React.Component {
     return (
       <>
         <div style={{ width: '300px' }}>
-          <img
+          <Image
             src={image}
             alt="selected"
-            style={{ width: '140px', height: '120px', borderRadius: '50%', borderWidth: '1px', borderStyle: 'solid', borderColor: 'black' }}
+            size='small'
+            circular
+            className='avatar-preview'
+            // style={{ width: '140px', height: '120px', borderRadius: '50%', borderWidth: '1px', borderStyle: 'solid', borderColor: 'black' }}
           />
         </div>
         <>

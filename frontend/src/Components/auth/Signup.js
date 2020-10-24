@@ -78,7 +78,6 @@ class Signup extends React.Component {
                 />
               </Form.Field>
               <Button className='lozenge signup-email-btn' type='submit'>Sign up</Button>
-              {/* <Form.Field control={Button}>Submit</Form.Field> */}
             </Form>
             <p className='have-account'>Already have an account? <Link to='/login'>Log in</Link></p>
           </div>

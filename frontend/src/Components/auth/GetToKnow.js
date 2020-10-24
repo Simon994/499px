@@ -54,7 +54,7 @@ class GetToKnow extends React.Component {
       if (response.status === 201) {
         console.log('GOT THAT RESPONSE 🌴', response)
         gottenToKnow()
-        
+
         this.setState({
           redirect: '/login'
         })
@@ -78,37 +78,46 @@ class GetToKnow extends React.Component {
 
     return (
       <>
-        <Form onSubmit={this.handleSubmit}>
-          <AvatarImageUpload
-            labelText="Profile Image"
-            onChange={this.handleImageChange}
-          />
-          <Form.Field>
-            <label className='form-label'>First name</label>
-            <input placeholder=''
-              onChange={this.handleChange}
-              value={first_name}
-              name='first_name'
-            />
-          </Form.Field>
-          <Form.Field>
-            <label className='form-label'>Last name</label>
-            <input placeholder=''
-              onChange={this.handleChange}
-              value={last_name}
-              name='last_name'
-            />
-          </Form.Field>
-          <Form.Field>
-            <label className='form-label'>Username</label>
-            <input placeholder=''
-              onChange={this.handleChange}
-              value={username}
-              name='username'
-            />
-          </Form.Field>
-          <Form.Field control={Button}>Submit</Form.Field>
-        </Form>
+        <div className='auth-form-container' >
+          <div className='auth-container'>
+            <h2>Welcome to 499px.<br />
+              Let's get to know you a little.
+            </h2>
+            <Form onSubmit={this.handleSubmit}>
+              <div className='avatar-img-upload'>
+                <AvatarImageUpload
+                  labelText="Profile Image"
+                  onChange={this.handleImageChange}
+                />
+              </div>
+              <Form.Field>
+                <label className='form-label'>First name</label>
+                <input placeholder=''
+                  onChange={this.handleChange}
+                  value={first_name}
+                  name='first_name'
+                />
+              </Form.Field>
+              <Form.Field>
+                <label className='form-label'>Last name</label>
+                <input placeholder=''
+                  onChange={this.handleChange}
+                  value={last_name}
+                  name='last_name'
+                />
+              </Form.Field>
+              <Form.Field>
+                <label className='form-label'>Username</label>
+                <input placeholder=''
+                  onChange={this.handleChange}
+                  value={username}
+                  name='username'
+                />
+              </Form.Field>
+              <Button className='lozenge signup-email-btn' type='submit'>Next</Button>
+            </Form>
+          </div>
+        </div>
       </>
     )
   }
