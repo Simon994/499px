@@ -30,7 +30,7 @@ class PhotosUpload extends React.Component {
 
     if (this.state.image){
       return <Redirect to={{
-        pathname: '/upload/submit',
+        pathname: '/submitphoto',
         state: this.state
       }} />
     }

@@ -26,8 +26,8 @@ const App = () => {
           <Route exact path='/gettoknow' component={GetToKnow} />
           <Route exact path='/login' component={Login} />
           <Route path = '/photoshome' component={PhotosHome} />
-          <Route path = '/upload/submit' component={PhotosSubmit} />
           <Route path = '/upload' component={PhotosUpload} />
+          <Route path = '/submitphoto' component={PhotosSubmit} />
           
         </Switch>
       </BrowserRouter>

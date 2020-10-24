@@ -26,6 +26,13 @@ export const unfollowProfile = (userId) => {
   return axios.delete(`/api/auth/profile/${userId}/follows/`, withHeaders())
 }
 
+export const createPhoto = (formData) => {
+  return axios.post('/api/photos/', formData, withHeaders())
+}
+
+
+//Registration and Login requests
+
 export const registerUser = (formData) => {
   return axios.post(`${baseUrl}/auth/register/`, formData)
 }
