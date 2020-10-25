@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Icon } from 'semantic-ui-react'
+
+import PhotoTile from './PhotoTile'
 
 class PhotosGalleryContainer extends React.Component {
 
@@ -17,7 +18,7 @@ class PhotosGalleryContainer extends React.Component {
 
   render() {
     const { followeePhotos, ownerPhotos } = this.props
-    const { heartColor } = this.state
+    // const { heartColor } = this.state
     const allPhotos = ownerPhotos.concat(followeePhotos)
 
     console.log(allPhotos)
@@ -30,26 +31,7 @@ class PhotosGalleryContainer extends React.Component {
           <div className='image-grid tiles' style={{ marginTop: '30px' }}>
             {allPhotos.map((photo, index) => {
               return (
-                <>
-                  <div className="image-item tile" key={index} >
-                    <img src={photo.image} />
-                    <div className='details'>
-                      <span className='title'>
-                        {photo.owner}
-                      </span>
-                      <div className='heart-btn-container'>
-                        {/* <Button className='heart-btn'> */}
-                        <Icon
-                          name='heart'
-                          size='big'
-                          color={heartColor}
-                          onClick={this.handleLike} />
-                        {/* </Button> */}
-                      </div>
-                    </div>
-                  </div>
-                  {/* <PhotoTile {...photo} key={index}/> */}
-                </>
+                <PhotoTile {...photo} key={index} />
               )
             })}
           </div>

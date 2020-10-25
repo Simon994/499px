@@ -5,7 +5,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
-import { createPhoto, getProfileIndex, getUserProfile } from '../../lib/api'
+import { getProfileIndex, getUserProfile } from '../../lib/api'
 import { Icon } from 'semantic-ui-react'
 // import { setAvatar } from '../../lib/assets'
 
