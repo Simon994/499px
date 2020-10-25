@@ -35,8 +35,8 @@ class AvatarImageUpload extends React.Component {
           <Image
             src={image}
             alt="selected"
-            size='small'
-            circular
+            // size='small'
+            avatar
             className='avatar-preview'
             // style={{ width: '140px', height: '120px', borderRadius: '50%', borderWidth: '1px', borderStyle: 'solid', borderColor: 'black' }}
           />

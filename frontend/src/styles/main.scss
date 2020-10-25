@@ -101,6 +101,8 @@ $form-surrounding-background: #F7F8FA;
         border: 1px solid #ccc;
       }
 
+
+
     }
 
     p.no-account,
@@ -125,6 +127,12 @@ $form-surrounding-background: #F7F8FA;
 
     .image.avatar-preview{
       margin: 0 auto;
+      width: 7em;
+      height: 7.5em;
+    }
+
+    label{
+      color: $primary-blue;
     }
   }
 
@@ -265,7 +273,10 @@ body{
 }
 
 
-//Login
+
+
+
+
 
 
 

@@ -90,12 +90,15 @@ class GetToKnow extends React.Component {
                   onChange={this.handleImageChange}
                 />
               </div>
+              <br/>
+              <br/>
               <Form.Field>
                 <label className='form-label'>First name</label>
                 <input placeholder=''
                   onChange={this.handleChange}
                   value={first_name}
                   name='first_name'
+                  className='first-input-gtk'
                 />
               </Form.Field>
               <Form.Field>
