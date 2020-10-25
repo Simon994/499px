@@ -17,7 +17,7 @@ class PhotosGalleryContainer extends React.Component {
   }
 
   render() {
-    const { followeePhotos, ownerPhotos } = this.props
+    const { followeePhotos, ownerPhotos, userProfile } = this.props
     // const { heartColor } = this.state
     const allPhotos = ownerPhotos.concat(followeePhotos)
 
@@ -31,7 +31,7 @@ class PhotosGalleryContainer extends React.Component {
           <div className='image-grid tiles' style={{ marginTop: '30px' }}>
             {allPhotos.map((photo, index) => {
               return (
-                <PhotoTile {...photo} key={index} />
+                <PhotoTile {...photo} userProfile={userProfile} key={index} />
               )
             })}
           </div>

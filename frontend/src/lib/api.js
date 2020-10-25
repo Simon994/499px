@@ -30,6 +30,13 @@ export const createPhoto = (formData) => {
   return axios.post('/api/photos/', formData, withHeaders())
 }
 
+export const likePhoto = (photoId, formData) => {
+  return axios.post(`/api/photos/${photoId}/likes/`, formData, withHeaders())
+}
+
+export const unlikePhoto = (photoId) => {
+  return axios.delete(`/api/photos/${photoId}/likes/`, withHeaders())
+}
 
 //Registration and Login requests
 

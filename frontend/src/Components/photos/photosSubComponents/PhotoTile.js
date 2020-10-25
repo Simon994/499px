@@ -1,23 +1,55 @@
 import React from 'react'
 import { Icon } from 'semantic-ui-react'
 
+import { likePhoto, unlikePhoto } from '../../../lib/api'
+
 class PhotoTile extends React.Component {
 
   state = {
-    heartColor: 'grey'
+    heartColor: 'grey',
+    liked: false
   }
 
-  handleLike = () => {
-
-
+  componentDidMount(){
+    const liked = this.props.liked_by.includes(this.props.userProfile.id)
+    const heartColor = liked ? 'pink' : 'grey'
 
     this.setState({
-      heartColor: 'pink'
+      heartColor,
+      liked
     })
   }
 
+  handleClick = async () => {
+
+    const { id } = this.props
+    const { liked } = this.state
+    if (!liked){
+      try {
+        await likePhoto(id)
+        console.log('LIKED! 💕')
+        this.setState({
+          heartColor: 'pink',
+          liked: true
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    } else {
+      try {
+        await unlikePhoto(id)
+        console.log('UNLIKED! 💕')
+        this.setState({
+          heartColor: 'grey',
+          liked: false
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+
   render() {
-    console.log(this.props)
     
     const { image, owner } = this.props
     const { heartColor } = this.state
@@ -33,7 +65,7 @@ class PhotoTile extends React.Component {
               name='heart'
               size='big'
               color={heartColor}
-              onClick={this.handleLike} />
+              onClick={this.handleClick} />
           </div>
         </div>
       </div >

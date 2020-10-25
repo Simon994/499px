@@ -14,7 +14,8 @@ class PhotosHome extends React.Component {
   state = {
     createdPhotos: [],
     profilesSuggestedToFollow: [],
-    photosByFollowees: []
+    photosByFollowees: [],
+    userProfile: {}
   }
 
   updateOwner = (followee) => {
@@ -69,13 +70,18 @@ class PhotosHome extends React.Component {
     this.setState({
       createdPhotos: userProfile.data.created_photo,
       profilesSuggestedToFollow,
-      photosByFollowees
+      photosByFollowees,
+      userProfile: userProfile.data
     })
 
   }
 
   render() {
-    const { createdPhotos, profilesSuggestedToFollow, photosByFollowees } = this.state
+    const {
+      createdPhotos,
+      profilesSuggestedToFollow,
+      photosByFollowees,
+      userProfile } = this.state
 
     return (
       <>
@@ -131,6 +137,7 @@ class PhotosHome extends React.Component {
         <PhotosGalleryContainer
           followeePhotos={photosByFollowees}
           ownerPhotos={createdPhotos}
+          userProfile={userProfile}
         />
 
       </>
