@@ -12,11 +12,8 @@ const DropdownAvatar = (props) => {
     </span>
   )
 
-  // const handleLogout = () => (
-    
-  // )
-
   const options = [
+    { key: 'Profile', text: 'Profile', as: Link, to: '/profile', onClick: logout },
     { key: 'Log-out', text: 'Log out', as: Link, to: '/', onClick: logout }
   ]
 

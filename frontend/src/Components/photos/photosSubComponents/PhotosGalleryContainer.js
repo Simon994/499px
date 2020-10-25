@@ -6,7 +6,6 @@ class PhotosGalleryContainer extends React.Component {
 
   render() {
     const { followeePhotos, ownerPhotos, userProfile } = this.props
-    // const { heartColor } = this.state
     const allPhotos = ownerPhotos.concat(followeePhotos)
 
     if (!allPhotos.length) return null

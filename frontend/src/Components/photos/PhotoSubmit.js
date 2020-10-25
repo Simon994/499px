@@ -16,7 +16,7 @@ class PhotoSubmit extends React.Component {
       description: '',
       camera: '',
       location: '',
-      categories: [5]
+      categories: []
     },
     redirect: false
   }
@@ -37,6 +37,29 @@ class PhotoSubmit extends React.Component {
       ...this.state.formData,
       [e.target.name]: e.target.value
     }
+    this.setState({ formData })
+  }
+
+  handleMultiSelectChange = (selected) => {
+    const selectedCategories = selected ? selected.map(item => item.value) : []
+    const selectedCategoriesPks = []
+    // Backend currently only accepts pks for category. Quick fix here to look through available
+    //categories (stored in PhotoCategories.js) and convert category name selected to pk.
+    if (selectedCategories){
+      selectedCategories.forEach(selectedCategory => {
+        const foundCategory = photoCategories.filter(photoCategory => {
+          console.log('FOUND MATCH?', photoCategory.fields.name === selectedCategory)
+          return photoCategory.fields.name === selectedCategory
+        })
+        selectedCategoriesPks.push(foundCategory[0].pk)
+      })
+    }
+
+    const formData = {
+      ...this.state.formData,
+      categories: selectedCategoriesPks
+    }
+
     this.setState({ formData })
   }
 
@@ -76,12 +99,6 @@ class PhotoSubmit extends React.Component {
       return { value: category.fields.name, label: category.fields.name }
     })
 
-    console.log(options)
-    // [
-    //   { value: 'Abstract', label: 'Chocolate' },
-    //   { value: 'Aerial', label: 'Strawberry' },
-    //   { value: 'vanilla', label: 'Vanilla' }
-    // ]
 
     return (
       <>
@@ -117,7 +134,11 @@ class PhotoSubmit extends React.Component {
                     name='location'
                   />
                 </Form.Field>
-                <Select options={options} isMulti />
+                <Select
+                  options={options}
+                  isMulti
+                  onChange={this.handleMultiSelectChange}  
+                />
               </div>
               <div className='upload-btns-container'>
                 <Button className='lozenge'>Upload</Button>

@@ -63,9 +63,9 @@ class PhotosHome extends React.Component {
     } else {
       profilesWithPhotos.forEach(profile => profilesSuggestedToFollow.push(profile))
     }
-
+    
     this.setState({
-      createdPhotos: userProfile.data.created_photo,
+      // createdPhotos: userProfile.data,
       profilesSuggestedToFollow,
       photosByFollowees,
       userProfile: userProfile.data
@@ -74,11 +74,13 @@ class PhotosHome extends React.Component {
   }
 
   render() {
+    
     const {
       createdPhotos,
       profilesSuggestedToFollow,
       photosByFollowees,
       userProfile } = this.state
+
 
     return (
       <>
