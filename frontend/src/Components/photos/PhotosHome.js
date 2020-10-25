@@ -6,7 +6,7 @@ import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
 import { createPhoto, getProfileIndex, getUserProfile } from '../../lib/api'
-import { setAvatar } from '../../lib/assets'
+// import { setAvatar } from '../../lib/assets'
 
 class PhotosHome extends React.Component {
 
@@ -30,7 +30,6 @@ class PhotosHome extends React.Component {
     const userProfile = await getUserProfile()
     console.log('PROFILE', userProfile.data)
     //Set avatar image in local storage, for use on Navbar
-    setAvatar(userProfile.data.profile_image)
 
     // get photos by people that the user follows
     //(owner information needs to be added into the individual photos)

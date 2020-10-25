@@ -4,6 +4,7 @@ import { Redirect, Link } from 'react-router-dom'
 
 import { loginUser, getUserProfile } from '../../lib/api'
 import { setToken } from '../../lib/auth'
+import { setAvatar } from '../../lib/assets'
 
 class Login extends React.Component {
 
@@ -36,6 +37,7 @@ class Login extends React.Component {
 
       const userProfile = await getUserProfile()
       console.log('GOT USER PROFILE 🦑', userProfile.data)
+      setAvatar(userProfile.data.profile_image)
 
       this.setState({
         redirect: '/photoshome'

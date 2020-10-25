@@ -54,6 +54,7 @@ class GetToKnow extends React.Component {
       if (response.status === 201) {
         console.log('GOT THAT RESPONSE 🌴', response)
         gottenToKnow()
+        setAvatar(this.state.formData.profile_image)
 
         this.setState({
           redirect: '/login'

@@ -13,7 +13,7 @@ class Navbar extends React.Component {
     avatar: ''
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     const avatar = getAvatar()
 
     this.setState({
