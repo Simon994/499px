@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Button } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
 const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
@@ -27,7 +27,7 @@ class PhotosUpload extends React.Component {
 
   render() {
 
-    if (this.state.image){
+    if (this.state.image) {
       return <Redirect to={{
         pathname: '/submitphoto',
         state: this.state
@@ -36,16 +36,21 @@ class PhotosUpload extends React.Component {
 
     return (
       <>
-        <input
-          type="file"
-          name='file'
-          id='file'
-          className="inputfile"
-          onChange={this.handleUpload}
-        />
-        <Button primary className='upload-btn'>
-          <label htmlFor="file" className='upload-label'>Upload photo</label>
-        </Button>
+        <h3 className='upload-header'>Upload</h3>
+        <div className='upload-btn-container'>
+          <input
+            type="file"
+            name='file'
+            id='file'
+            className="inputfile"
+            onChange={this.handleUpload}
+          />
+          <Icon name='arrow up' size='big' />
+          <h3>Upload photos</h3>
+          <Button primary className='upload-btn lozenge'>
+            <label htmlFor="file" className='upload-label'>Select photo</label>
+          </Button>
+        </div>
       </>
     )
   }
