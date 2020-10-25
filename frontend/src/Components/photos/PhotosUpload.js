@@ -16,9 +16,8 @@ class PhotosUpload extends React.Component {
   handleUpload = async event => {
     const data = new FormData()
     data.append('file', event.target.files[0])
-    console.log('FILE', event.target.files[0])
     data.append('upload_preset', uploadPreset)
-    console.log(data)
+
     const res = await axios.post(uploadUrl, data)
     this.setState({
       image: res.data.url

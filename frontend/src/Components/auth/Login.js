@@ -36,7 +36,6 @@ class Login extends React.Component {
       setToken(res.data.token)
 
       const userProfile = await getUserProfile()
-      console.log('GOT USER PROFILE 🦑', userProfile.data)
       setAvatar(userProfile.data.profile_image)
 
       this.setState({

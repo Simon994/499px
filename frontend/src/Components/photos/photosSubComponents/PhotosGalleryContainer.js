@@ -4,24 +4,10 @@ import PhotoTile from './PhotoTile'
 
 class PhotosGalleryContainer extends React.Component {
 
-  state = {
-    heartColor: 'grey'
-  }
-
-  handleLike = () => {
-    console.log('LIKED')
-
-    this.setState({
-      heartColor: 'pink'
-    })
-  }
-
   render() {
     const { followeePhotos, ownerPhotos, userProfile } = this.props
     // const { heartColor } = this.state
     const allPhotos = ownerPhotos.concat(followeePhotos)
-
-    console.log(allPhotos)
 
     if (!allPhotos.length) return null
 

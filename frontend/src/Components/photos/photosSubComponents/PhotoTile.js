@@ -27,7 +27,6 @@ class PhotoTile extends React.Component {
     if (!liked){
       try {
         await likePhoto(id)
-        console.log('LIKED! 💕')
         this.setState({
           heartColor: 'pink',
           liked: true
@@ -38,7 +37,6 @@ class PhotoTile extends React.Component {
     } else {
       try {
         await unlikePhoto(id)
-        console.log('UNLIKED! 💕')
         this.setState({
           heartColor: 'grey',
           liked: false

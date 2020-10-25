@@ -46,11 +46,8 @@ class PhotosHome extends React.Component {
     const allProfilesNotFollowing = [...response.data]
     following.forEach(followee => {
       const removeIndex = allProfilesNotFollowing.map(item => item.id).indexOf(followee.id)
-      console.log(removeIndex)
       removeIndex && allProfilesNotFollowing.splice(removeIndex, 1)
     })
-
-    console.log(allProfilesNotFollowing)
 
     //Filter for profiles having 3 or more photos
     const profilesWithPhotos = allProfilesNotFollowing.filter(profile => {

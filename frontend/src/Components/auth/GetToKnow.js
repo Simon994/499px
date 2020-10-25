@@ -17,7 +17,6 @@ class GetToKnow extends React.Component {
   }
 
   async componentDidMount() {
-    // console.log('FORM DATA:')
     const { formData } = this.props.location.state
     const extendedFormData = {
       ...formData,
@@ -52,7 +51,6 @@ class GetToKnow extends React.Component {
     try {
       const response = await registerUser(dataToSend)
       if (response.status === 201) {
-        console.log('GOT THAT RESPONSE 🌴', response)
         gottenToKnow()
         setAvatar(this.state.formData.profile_image)
 
@@ -61,7 +59,7 @@ class GetToKnow extends React.Component {
         })
       }
     } catch (err) {
-      console.log('GOT THAT ERR', err)
+      console.log(err)
       this.setState({ formUsernameError: true })
     }
   }
