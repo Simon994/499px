@@ -6,6 +6,7 @@ import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
 import { createPhoto, getProfileIndex, getUserProfile } from '../../lib/api'
+import { Icon } from 'semantic-ui-react'
 // import { setAvatar } from '../../lib/assets'
 
 class PhotosHome extends React.Component {
@@ -81,9 +82,9 @@ class PhotosHome extends React.Component {
         <div className='profiles-to-follow'>
           <CarouselProvider
             naturalSlideWidth={100}
-            naturalSlideHeight={125}
+            naturalSlideHeight={60}
             totalSlides={profilesSuggestedToFollow.length}
-            visibleSlides={3}
+            visibleSlides={3.5}
           >
             <div className='container'>
               <Slider>
@@ -103,9 +104,11 @@ class PhotosHome extends React.Component {
                   })
                 }
 
-                <ButtonBack className='buttonBack'>Back</ButtonBack>
-                <ButtonNext className='buttonNext'>Next</ButtonNext>
               </Slider>
+              <div className='slider-btn-container'>
+                <ButtonBack className='buttonBack'><Icon name='chevron circle left' size='big'/></ButtonBack>
+                <ButtonNext className='buttonNext'><Icon name='chevron circle right' size='big'/></ButtonNext>
+              </div>
             </div>
           </CarouselProvider>
         </div>
@@ -116,11 +119,6 @@ class PhotosHome extends React.Component {
           ownerPhotos={createdPhotos}
         />
 
-        <div className='examples'>
-          <img src={'https://images.unsplash.com/photo-1574619151098-b0cc6becf073?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'} />
-          <img src={'https://images.unsplash.com/photo-1563416544963-b508a73064cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'} />
-          <img src={'https://images.unsplash.com/photo-1553689895-6e1cd3957b63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80'} />     
-        </div>
       </>
     )
   }

@@ -372,18 +372,17 @@ body{
 .profiles-to-follow{
   border: 1px solid red;
   width: 100%;
-  height: 500px;
+  height: 300px;
+
+  padding-top: 40px;
 }
 
 .profile-card-outer{
   width: 400px;
   max-height: 250px;
-  background-color:orange;
-  border: 1px solid red;
+  border: 1px solid #ccc;
 
-  .profile-card-imgcontainer{
-    border: 1px solid red;
-  
+  .profile-card-imgcontainer{  
     width: 100%;
     height: 200px;
   
@@ -413,30 +412,33 @@ body{
   }
 }
 
-
+li.carousel__slide{
+  padding-bottom: 10%;
+}
 
 .container {
   position: relative;
-  max-height: 500px;
-  width: 100%;
   margin: auto;
-  background-color: blue;
+}
+
+.slider-btn-container{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 50%;
 }
 
 .buttonBack {
   position: absolute;
-  top: 50%;
   left: 0;
-  border-radius: 50%;
-  // transform: translateY(-50%);
 }
 
-// .buttonNext {
-//   // position: absolute;
-//   // top: 50%;
-//   // right: 0;
-//   // transform: translateY(-50%);
-// }
+.buttonNext {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: none;
+}
 
 .dotGroup {
   text-align: center;
@@ -589,16 +591,3 @@ label.upload-label{
 
 }
 
-.examples{
-  border: 2px solid red;
-  width: 350px;
-  height: 200px;
-
-  display: flex;
-
-  img{
-    height: 15.625rem;
-    width: 100%;
-    object-fit: cover;
-  }
-}
