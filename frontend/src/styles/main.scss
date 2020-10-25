@@ -369,12 +369,15 @@ body{
 
 // Profile Card section
 
+.featured-follow-explainer{
+  margin: 35px 0 0 35px;
+}
+
 .profiles-to-follow{
-  border: 1px solid red;
   width: 100%;
   height: 300px;
 
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .profile-card-outer{
@@ -499,9 +502,11 @@ li.carousel__slide{
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			z-index: 3;
+      z-index: 3;
+      width: 100%;
 			
-			span {
+      span,
+      .heart-btn-container {
 				display: block;
 				opacity: 0;
 				position: relative;
@@ -514,21 +519,34 @@ li.carousel__slide{
 			.title {
 				line-height: 1;
 				font-weight: 600;
-				font-size: 18px;
+        font-size: 18px;
+        display: inline;
 			}
 			
 			.info {
 				line-height: 1.2;
 				margin-top: 5px;
 				font-size: 12px;
-			}
+      }
+
+      .heart-btn-container{
+        display: inline;
+        float: right;
+
+        .icon:hover{
+          cursor: pointer;
+        }
+      }
+
+      
 		}
 		
 		&:focus,
 		&:hover {
 			
 			&:before,
-			span {
+      span,
+      .heart-btn-container {
 				opacity: 1;
 			}
 			
@@ -536,14 +554,17 @@ li.carousel__slide{
 				top: 80%;
 			}
 			
-			span {
+      span,
+      .heart-btn-container {
 				top: 0;
 			}
 			
 			.title {
 				transition-delay: 0.15s;
 			}
-			
+      
+
+
 			.info {
 				transition-delay: 0.25s;
 			}
@@ -571,8 +592,6 @@ li.carousel__slide{
     grid-column-end: span 2;
   }
 
-
-
   img{
     display: flex;
     width: 100%;
@@ -580,6 +599,8 @@ li.carousel__slide{
     object-fit: cover;
   }
 }
+
+
 
 
 

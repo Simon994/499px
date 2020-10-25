@@ -89,6 +89,10 @@ class PhotosHome extends React.Component {
             </div>
           </div>
         </div>
+        <div className='featured-follow-explainer'>
+          <h4>Featured photographers</h4>
+          <p>Follow to explore new work</p>
+        </div>
         <div className='profiles-to-follow'>
           <CarouselProvider
             naturalSlideWidth={100}
@@ -116,8 +120,8 @@ class PhotosHome extends React.Component {
 
               </Slider>
               <div className='slider-btn-container'>
-                <ButtonBack className='buttonBack'><Icon name='chevron circle left' size='big'/></ButtonBack>
-                <ButtonNext className='buttonNext'><Icon name='chevron circle right' size='big'/></ButtonNext>
+                <ButtonBack className='buttonBack'><Icon name='chevron circle left' size='big' /></ButtonBack>
+                <ButtonNext className='buttonNext'><Icon name='chevron circle right' size='big' /></ButtonNext>
               </div>
             </div>
           </CarouselProvider>
