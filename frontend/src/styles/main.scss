@@ -24,6 +24,8 @@ $form-surrounding-background: #F7F8FA;
   background-color: #ddd;
 }
 
+
+
 //forms -login register
 
 .auth-form-container{
@@ -270,6 +272,13 @@ body{
   .button.lozenge:hover {
     color: $primary-blue;
   }
+
+  .button.lozenge.upload{
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+    margin-left: 50px;
+  }
 }
 
 
@@ -306,6 +315,57 @@ body{
 
 
 // PhotosHome Section
+
+.homefeed-title,
+.homefeed-intro{
+  margin-left: 35px;
+}
+
+.homefeed-title{
+  font-size: 25px;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.homefeed-intro{
+  color: #888;
+  font-size: 12px;
+}
+
+.members-ad-container{
+  width: 100%;
+}
+
+.members-ad{
+  width: 85%;
+  height: 225px;
+  margin: 0 auto;
+  border-radius: 5px;
+  // background-color: black;
+  background-image: url('./assets/viktor-talashuk-jin5rmq-OeE-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+
+  .members-ad-text{
+    color: white;
+    width: 45%;
+    max-width: 325px;
+    padding-top: 30px;
+    padding-left: 15px;
+
+    .members-ad-title{
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    p{
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}
+
 
 // Profile Card section
 

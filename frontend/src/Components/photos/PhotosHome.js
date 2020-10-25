@@ -29,7 +29,6 @@ class PhotosHome extends React.Component {
     // get user's personal profile
     const userProfile = await getUserProfile()
     console.log('PROFILE', userProfile.data)
-    //Set avatar image in local storage, for use on Navbar
 
     // get photos by people that the user follows
     //(owner information needs to be added into the individual photos)
@@ -66,10 +65,19 @@ class PhotosHome extends React.Component {
 
   render() {
     const { createdPhotos ,profilesSuggestedToFollow, photosByFollowees } = this.state
-    console.log(profilesSuggestedToFollow.length)
+
     return (
       <>
-        <h1>Photos Home</h1>
+        <h1 className='homefeed-title'>Home Feed</h1>
+        <p className='homefeed-intro'>See photos and published Galleries from people you follow.</p>
+        <div className='members-ad-container'>
+          <div className='members-ad'>
+            <div className='members-ad-text'>
+              <h1 className='members-ad-title'>Members get more.</h1>
+              <p>Membership is not available on this clone, but if it were, it would start at $2.99/month</p>
+            </div>
+          </div>
+        </div>
         <div className='profiles-to-follow'>
           <CarouselProvider
             naturalSlideWidth={100}
