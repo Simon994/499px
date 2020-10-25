@@ -11,6 +11,7 @@ import Login from './Components/auth/Login'
 import PhotosHome from './Components/photos/PhotosHome'
 import PhotosUpload from './Components/photos/PhotosUpload'
 import PhotosSubmit from './Components/photos/PhotoSubmit'
+import PhotosProfile from './Components/photos/PhotosProfile'
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path = '/photoshome' component={PhotosHome} />
           <Route path = '/upload' component={PhotosUpload} />
           <Route path = '/submitphoto' component={PhotosSubmit} />
+          <Route path = '/profile' component={PhotosProfile} />
           
         </Switch>
       </BrowserRouter>
