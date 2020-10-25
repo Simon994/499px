@@ -449,10 +449,7 @@ li.carousel__slide{
 .photos-by-followees{
   display: flex;
   flex-wrap: wrap;
-
-
-
-  
+  justify-content: space-evenly;
 
     .photo-by-followee{
       flex-grow: 1;
@@ -469,8 +466,6 @@ li.carousel__slide{
 		opacity: .99;
 		overflow: hidden;
 		position: relative;
-		// border-radius: 3px;
-		// box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
 		
 		&:before {
 			content: '';
@@ -555,6 +550,42 @@ li.carousel__slide{
 		}
 	}
 }
+
+//Image grid
+
+.image-grid-outer{
+  margin: 0 35px;
+}
+
+.image-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+
+  .image-item{
+    margin: 15px;
+  }
+
+  .image-item:nth-child(5n){
+    grid-column-end: span 2;
+  }
+
+
+
+  img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+
 
 
 // Upload Photos section
