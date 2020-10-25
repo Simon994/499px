@@ -11,7 +11,7 @@ class PhotoTile extends React.Component {
   }
 
   componentDidMount(){
-    const liked = this.props.liked_by.includes(this.props.userProfile.id)
+    const liked = this.props.photo.liked_by.includes(this.props.userProfile.id)
     const heartColor = liked ? 'pink' : 'grey'
 
     this.setState({
@@ -22,8 +22,8 @@ class PhotoTile extends React.Component {
 
   handleClick = async () => {
 
-    const { id } = this.props
-    const { liked } = this.state
+    const { id } = this.props.photo
+    const { liked } = this.state.photo
     if (!liked){
       try {
         await likePhoto(id)
@@ -49,7 +49,7 @@ class PhotoTile extends React.Component {
 
   render() {
     
-    const { image, owner } = this.props
+    const { image, owner } = this.props.photo
     const { heartColor } = this.state
     return (
       <div className="image-item tile" >

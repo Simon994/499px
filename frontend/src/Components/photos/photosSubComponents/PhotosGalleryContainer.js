@@ -16,7 +16,7 @@ class PhotosGalleryContainer extends React.Component {
           <div className='image-grid tiles' style={{ marginTop: '30px' }}>
             {allPhotos.map((photo, index) => {
               return (
-                <PhotoTile {...photo} userProfile={userProfile} key={index} />
+                <PhotoTile photo={photo} userProfile={userProfile} key={index} />
               )
             })}
           </div>
