@@ -10,11 +10,11 @@ class ProfileCard extends React.Component {
     following: false
   }
 
-  handleFollowClick = async () =>{
+  handleFollowClick = async () => {
     try {
       const response = await followProfile(this.props.id)
-      
-      if (response.status === 202){
+
+      if (response.status === 202) {
         this.setState({
           following: true
         })
@@ -29,7 +29,7 @@ class ProfileCard extends React.Component {
   handleUnfollowClick = async () => {
     try {
       const response = await unfollowProfile(this.props.id)
-      if (response.status === 202){
+      if (response.status === 202) {
         this.setState({
           following: false
         })
@@ -49,19 +49,23 @@ class ProfileCard extends React.Component {
 
     return (
       <div className='profile-card-outer'>
-        {photosToDisplay.map(photo => {
-          return <img
-            key={photo.id}
-            src={photo.image}
-            alt='from user profile'
-          />
-        })}
-        <div>
-          <Image avatar src={profileImage}/>
+        <div className='profile-card-imgcontainer'>
+          {photosToDisplay.map(photo => {
+            return <img
+              key={photo.id}
+              src={photo.image}
+              alt='from user profile'
+              className='profile-card-img'
+            />
+          })}
+
+        </div>
+        <div className='profile-card-text'>
+          <Image avatar src={profileImage} />
           <span>{first_name} {last_name}</span>
           {!following &&
             <Button
-              primary
+              className='lozenge follow'  
               floated='right'
               onClick={this.handleFollowClick}
             >Follow

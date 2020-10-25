@@ -64,7 +64,7 @@ class PhotosHome extends React.Component {
   }
 
   render() {
-    const { createdPhotos ,profilesSuggestedToFollow, photosByFollowees } = this.state
+    const { createdPhotos, profilesSuggestedToFollow, photosByFollowees } = this.state
 
     return (
       <>
@@ -109,12 +109,18 @@ class PhotosHome extends React.Component {
             </div>
           </CarouselProvider>
         </div>
-        
+
+
         <PhotosGalleryContainer
           followeePhotos={photosByFollowees}
           ownerPhotos={createdPhotos}
         />
 
+        <div className='examples'>
+          <img src={'https://images.unsplash.com/photo-1574619151098-b0cc6becf073?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'} />
+          <img src={'https://images.unsplash.com/photo-1563416544963-b508a73064cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'} />
+          <img src={'https://images.unsplash.com/photo-1553689895-6e1cd3957b63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80'} />     
+        </div>
       </>
     )
   }

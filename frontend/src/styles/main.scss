@@ -376,16 +376,44 @@ body{
 }
 
 .profile-card-outer{
-  max-width: 400px;
+  width: 400px;
   max-height: 250px;
-  background-color: blue;
+  background-color:orange;
   border: 1px solid red;
 
-  img{
-    max-width: 100px;
-    height: auto;
+  .profile-card-imgcontainer{
+    border: 1px solid red;
+  
+    width: 100%;
+    height: 200px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    img{
+      flex-grow: 1;
+      max-width: 30%;
+      height: 80%;
+      object-fit: cover;
+      margin: 0 2px;
+    }
+  }
+
+
+  .profile-card-text{
+    padding: 0 10px;
+    height: 50px;
+
+  }
+  .button.lozenge.follow{
+    background-color: $primary-darkblue;
+    color: white;
+    width: 110px;
   }
 }
+
+
 
 .container {
   position: relative;
@@ -559,4 +587,18 @@ label.upload-label{
     flex-grow: 2;
   }
 
+}
+
+.examples{
+  border: 2px solid red;
+  width: 350px;
+  height: 200px;
+
+  display: flex;
+
+  img{
+    height: 15.625rem;
+    width: 100%;
+    object-fit: cover;
+  }
 }
