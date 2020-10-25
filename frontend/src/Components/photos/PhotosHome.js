@@ -26,7 +26,7 @@ class PhotosHome extends React.Component {
   async componentDidMount() {
 
     const response = await getProfileIndex()
-
+    console.log('RESPONSE ON HOMEPAGE', response)
     // get user's personal profile
     const userProfile = await getUserProfile()
     console.log('PROFILE', userProfile.data)
@@ -41,8 +41,18 @@ class PhotosHome extends React.Component {
       .flat()
 
     //We will make some suggestions for photographers for the user to follow\
+    //Splice for profiles that the user does not already follow
+    const allProfilesNotFollowing = [...response.data]
+    following.forEach(followee => {
+      const removeIndex = allProfilesNotFollowing.map(item => item.id).indexOf(followee.id)
+      console.log(removeIndex)
+      removeIndex && allProfilesNotFollowing.splice(removeIndex, 1)
+    })
+
+    console.log(allProfilesNotFollowing)
+
     //Filter for profiles having 3 or more photos
-    const profilesWithPhotos = response.data.filter(profile => {
+    const profilesWithPhotos = allProfilesNotFollowing.filter(profile => {
       return profile.created_photo.length >= 3
     })
     const profilesSuggestedToFollow = []
