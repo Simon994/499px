@@ -10,16 +10,18 @@ class PhotoTile extends React.Component {
   handleLike = () => {
 
 
+
     this.setState({
       heartColor: 'pink'
     })
   }
 
   render() {
+    console.log(this.props)
+    
     const { image, owner } = this.props
     const { heartColor } = this.state
     return (
-
       <div className="image-item tile" >
         <img src={ image} />
         <div className='details'>
@@ -35,7 +37,6 @@ class PhotoTile extends React.Component {
           </div>
         </div>
       </div >
-
     )
   }
 
