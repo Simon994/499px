@@ -648,11 +648,48 @@ label.upload-label{
     flex-grow: 2;
     padding: 20px;
 
+    display: flex;
+    justify-content: flex-end;
+
     .form{
       background-color: white;
+      width: 400px;
+      height: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .css-2b097c-container{
+        width: 390px;
+      }
+
+      .css-12jo7m5,
+      .css-xb97g8{
+        padding: 5px;
+      }
+
+      .css-12jo7m5{
+        color: $primary-blue;
+        border: 2px solid $primary-blue;
+        border-right: none;
+        background-color: white;
+      }
+
+      .css-xb97g8{
+        color: $primary-blue;
+        border: 2px solid $primary-blue;
+        // border-left: none;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .css-xb97g8:hover{
+        background-color: rgb(169, 76, 76);
+      }
 
       .upload-btns-container{
         width: 100%;
+
         display: flex;
         justify-content: flex-end;
       }
