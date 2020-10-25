@@ -28,7 +28,9 @@ class Navbar extends React.Component {
     return (
       <nav className='navbar'>
         <div className='logo'>
-          <p>499<sup>px</sup></p>
+          <Link to='/photoshome' style={{textDecoration: 'none', color: 'black'}}>
+            <p>499<sup>px</sup></p>
+          </Link>
         </div>
         <div className='nav-btns'>
           {(!getIsGettingToKnow() && !isAuthenticated()) &&
