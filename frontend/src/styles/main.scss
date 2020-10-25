@@ -631,12 +631,12 @@ label.upload-label{
 .photo-submit-outer{
   width: 100%;
   display: flex;
+  background-color: $form-surrounding-background;
   
   .image-upload-container{
-    border: 1px solid red;
     height: 100vh;
   
-    flex-grow: 3;
+    flex-grow: 4;
 
     img{
       width: 300px;
@@ -644,8 +644,25 @@ label.upload-label{
     }
   }
 
-  .form{
+  .photo-form-container{
     flex-grow: 2;
+    padding: 20px;
+
+    .form{
+      background-color: white;
+
+      .upload-btns-container{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .button.lozenge{
+        background-color: $primary-darkblue;
+        color: white;
+        
+      }
+
+    }
   }
 
 }
