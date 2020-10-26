@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react'
 import { Icon } from 'semantic-ui-react'
 
@@ -61,7 +62,7 @@ class PhotoShow extends React.Component {
     if (!this.state.singlePhotoData) return <h1>Just getting that for you</h1>
     
     const { image, title } = this.state.singlePhotoData
-    const { username } = this.state.singlePhotoData.owner
+    const { username, profile_image } = this.state.singlePhotoData.owner
     const { heartColor } = this.state
 
     return (
@@ -70,7 +71,9 @@ class PhotoShow extends React.Component {
           <img src={image}/>
         </div>
         <div className='singlephoto-info-outer'>
-
+          <div className='singlephoto-owner-avatar'>
+            <img src={profile_image} style={{ borderRadius: '50%', width: '50px' }}/>
+          </div>
           <div className='heart-btn-container'>
             <Icon
               name='heart'
