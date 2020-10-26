@@ -1,12 +1,17 @@
 /* eslint-disable camelcase */
 import React from 'react'
+import { Icon } from 'semantic-ui-react'
 
+import ProfilePhotoTile from './photosSubComponents/ProfilePhotoTile'
 import { getPublicUserProfile } from '../../lib/api'
+
 
 class PhotosProfile extends React.Component {
 
   state = {
-    userProfile: null
+    userProfile: null,
+    heartColor: 'grey',
+    liked: false
   }
 
   async componentDidMount() {
@@ -18,8 +23,10 @@ class PhotosProfile extends React.Component {
     })
   }
 
-  render() {
+  
 
+  render() {
+    console.log('RENDERING PHOTOSPROF')
     if (!this.state.userProfile) return <h1>Just getting that for you</h1>
 
     const { profile_image, first_name, last_name, following, created_photo } = this.state.userProfile
@@ -45,14 +52,34 @@ class PhotosProfile extends React.Component {
             {created_photo.map((photo, index) => {
               console.log('ADDING IMG TO PROFILE PHOTS')
               return (
-                <div key={index}>
+                <div className='image-item tile' key={index}>
                   <img src={photo.image} />
+                  <div className='details'>
+                    <span className='title'>{photo.title}</span>
+                    <div className='heart-btn-container'>
+                      <Icon
+                        name='heart'
+                        size='big'
+                        color='grey'
+                        onClick={this.handleClick} />
+                    </div>
+                  </div>
                 </div>
               )
             })}
           </div>
         </div>
 
+        <div className='image-grid-outer'>
+          <div className='image-grid tiles' style={{ marginTop: '30px' }}>
+            {created_photo.map((photo, index) => {
+              console.log('ADDING IMG TO PROFILE PHOTS')
+              return (
+                <ProfilePhotoTile photo={photo} key={index}/>
+              )
+            })}
+          </div>
+        </div>
 
       </>
     )
