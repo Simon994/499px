@@ -770,24 +770,29 @@ label.upload-label{
 }
 
 .singlephoto-info-outer{
-  border: 1px solid blue;
   background-color: white;
   flex-grow: 3;
   margin: 5px 10px 5px 35px;
+  padding: 10px;
 
   .title-owner-container{
-    margin-top: 10px;
+    margin: 10px 0;
     
     display: flex;
 
     .singlephoto-owner-avatar{
-      margin: 0 10px;
+      margin: 0 10px 0 0;
     }
 
     h2{
       margin-bottom: 5px;
     }
+
   }
+      .location-time{
+
+        display: flex;
+      }
 }
 
 .comments-outer-container{

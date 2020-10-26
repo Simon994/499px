@@ -109,10 +109,11 @@ class PhotoShow extends React.Component {
 
     if (!this.state.singlePhotoData || !this.state.currentUserPhoto) return <h1>Just getting that for you</h1>
 
-    const { image, title, comments } = this.state.singlePhotoData
+    const { image, title, comments, location } = this.state.singlePhotoData
     const { username, profile_image } = this.state.singlePhotoData.owner
     const { heartColor, formText, postBtnHidden, currentUserPhoto } = this.state
 
+    const uploadedAt = (this.state.singlePhotoData.uploaded_at).slice(0, 10)
 
     return (
       <>
@@ -141,6 +142,12 @@ class PhotoShow extends React.Component {
                 <h2>{title}</h2>
                 <p>by {username}</p>
               </div>
+            </div>
+
+            <div className='location-time'>
+              <Icon name='map marker alternate'/>
+              <p style={{ marginRight: '15px', textDecorationLine: 'underline', textDecorationStyle: 'dashed' }}>{location}</p>
+              <p><strong>Uploaded:</strong> {uploadedAt}</p>
             </div>
 
           </div>
