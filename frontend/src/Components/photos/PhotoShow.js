@@ -121,19 +121,27 @@ class PhotoShow extends React.Component {
         </div>
         <section className='singlephoto-lower-container'>
           <div className='singlephoto-info-outer'>
-            <div className='singlephoto-owner-avatar'>
-              <img src={profile_image} style={{ borderRadius: '50%', width: '50px' }} />
-            </div>
+
             <div className='heart-btn-container'>
               <Icon
                 name='heart'
                 size='big'
                 color={heartColor}
-                onClick={this.handleClick} />
+                onClick={this.handleClick}
+                style={{ margin: '10px' }}
+              />
             </div>
 
-            <h2>{title}</h2>
-            <p>by {username}</p>
+            <div className='title-owner-container'>
+              <div className='singlephoto-owner-avatar'>
+                <img src={profile_image} style={{ borderRadius: '50%', width: '50px' }} />
+              </div>
+
+              <div>
+                <h2>{title}</h2>
+                <p>by {username}</p>
+              </div>
+            </div>
 
           </div>
 
