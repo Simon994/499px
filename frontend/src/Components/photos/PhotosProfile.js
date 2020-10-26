@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Icon } from 'semantic-ui-react'
+import { Icon, Button } from 'semantic-ui-react'
 
 import ProfilePhotoTile from './photosSubComponents/ProfilePhotoTile'
 import { getPublicUserProfile, getUserProfile } from '../../lib/api'
@@ -12,7 +12,9 @@ class PhotosProfile extends React.Component {
     userProfile: null,
     heartColor: 'grey',
     liked: false,
-    currentUserId: null
+    currentUserId: null,
+    isCurrentUser: null,
+    isFollowedByCurrentUser: null
   }
 
   async componentDidMount() {
@@ -20,9 +22,18 @@ class PhotosProfile extends React.Component {
     const userProfile = await getPublicUserProfile(userId)
     const currentUserProfile = await getUserProfile()
 
+    const currentUserId = currentUserProfile.data.id
+    const isCurrentUser = currentUserId === userProfile.data.id
+
+    const isFollowedByCurrentUser = userProfile.data.followed_by.some(followee => {
+      return followee.id === currentUserId
+    })
+
     this.setState({
       userProfile: userProfile.data,
-      currentUserId: currentUserProfile.data.id
+      currentUserId,
+      isCurrentUser,
+      isFollowedByCurrentUser
     })
   }
 
@@ -37,7 +48,7 @@ class PhotosProfile extends React.Component {
       following,
       created_photo } = this.state.userProfile
     
-    const { currentUserId } = this.state
+    const { currentUserId, isCurrentUser, isFollowedByCurrentUser } = this.state
     const bannerBackground = created_photo[0].image
 
     return (
@@ -52,6 +63,11 @@ class PhotosProfile extends React.Component {
             />
           </div>
           <h1>{first_name} {last_name}</h1>
+          {!isCurrentUser &&
+            <Button className={`lozenge ${isFollowedByCurrentUser ? 'is-following' : 'not-following'}`}>
+              {isFollowedByCurrentUser ? 'Following' : 'Follow'}
+            </Button>
+          }
           <div>
             <p>{following.length} following</p>
           </div>
