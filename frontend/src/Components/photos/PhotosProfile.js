@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react'
 
-import { getUserProfile } from '../../lib/api'
+import { getPublicUserProfile } from '../../lib/api'
 
 class PhotosProfile extends React.Component {
 
@@ -10,7 +10,8 @@ class PhotosProfile extends React.Component {
   }
 
   async componentDidMount() {
-    const userProfile = await getUserProfile()
+    const userId = this.props.match.params.id
+    const userProfile = await getPublicUserProfile(userId)
 
     this.setState({
       userProfile: userProfile.data
