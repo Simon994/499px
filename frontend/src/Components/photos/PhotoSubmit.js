@@ -48,7 +48,6 @@ class PhotoSubmit extends React.Component {
     if (selectedCategories){
       selectedCategories.forEach(selectedCategory => {
         const foundCategory = photoCategories.filter(photoCategory => {
-          console.log('FOUND MATCH?', photoCategory.fields.name === selectedCategory)
           return photoCategory.fields.name === selectedCategory
         })
         selectedCategoriesPks.push(foundCategory[0].pk)

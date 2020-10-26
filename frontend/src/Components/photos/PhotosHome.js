@@ -20,7 +20,10 @@ class PhotosHome extends React.Component {
 
   updateOwner = (followee) => {
     return followee.created_photo.map(photo => {
-      return { ...photo, owner: followee.username }
+      return { ...photo,
+        owner: followee.username,
+        ownerId: followee.id,
+        ownerProfileImage: followee.profile_image }
     })
   }
 
@@ -40,6 +43,8 @@ class PhotosHome extends React.Component {
         return this.updateOwner(followee)
       })
       .flat()
+    
+    console.log('HERE ARE PHOTS BY FOLLOWEES', photosByFollowees)
 
     //We will make some suggestions for photographers for the user to follow\
     //Splice for profiles that the user does not already follow

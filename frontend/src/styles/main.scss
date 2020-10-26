@@ -496,7 +496,8 @@ li.carousel__slide{
       width: 100%;
 			
       span,
-      .heart-btn-container {
+      .heart-btn-container,
+      .image.tile-avatar {
 				display: block;
 				opacity: 0;
 				position: relative;
@@ -536,7 +537,8 @@ li.carousel__slide{
 			
 			&:before,
       span,
-      .heart-btn-container {
+      .heart-btn-container,
+      .image.tile-avatar  {
 				opacity: 1;
 			}
 			
@@ -545,7 +547,8 @@ li.carousel__slide{
 			}
 			
       span,
-      .heart-btn-container {
+      .heart-btn-container,
+      .image.tile-avatar  {
 				top: 0;
 			}
 			

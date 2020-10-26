@@ -1,9 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Image, Icon } from 'semantic-ui-react'
 
 import { getUserProfile } from '../../lib/api'
-import PhotoTile from './photosSubComponents/PhotoTile'
 
 class PhotosProfile extends React.Component {
 

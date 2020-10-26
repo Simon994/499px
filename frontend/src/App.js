@@ -29,7 +29,7 @@ const App = () => {
           <Route path = '/photoshome' component={PhotosHome} />
           <Route path = '/upload' component={PhotosUpload} />
           <Route path = '/submitphoto' component={PhotosSubmit} />
-          <Route path = '/profile' component={PhotosProfile} />
+          <Route path = '/profile/:id' component={PhotosProfile} />
           
         </Switch>
       </BrowserRouter>

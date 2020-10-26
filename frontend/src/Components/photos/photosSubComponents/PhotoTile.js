@@ -1,5 +1,6 @@
 import React from 'react'
-import { Icon } from 'semantic-ui-react'
+import { Link, withRouter } from 'react-router-dom'
+import { Icon, Image } from 'semantic-ui-react'
 
 import { likePhoto, unlikePhoto } from '../../../lib/api'
 
@@ -49,14 +50,26 @@ class PhotoTile extends React.Component {
 
   render() {
     
-    const { image, owner } = this.props.photo
+    const { image, owner, ownerId, ownerProfileImage } = this.props.photo
     const { heartColor } = this.state
     return (
       <div className="image-item tile" >
-        <img src={ image} />
+        <img src={ image } />
         <div className='details'>
           <span className='title'>
-            {owner}
+
+            <Image 
+              className='tile-avatar'
+              src={ownerProfileImage}
+              avatar
+            />
+            <Link 
+              to={`/profile/${ownerId}`}
+              style={{ color: 'white' }}
+            >
+              {owner}
+            </Link>
+
           </span>
           <div className='heart-btn-container'>
             <Icon
@@ -72,4 +85,4 @@ class PhotoTile extends React.Component {
 
 }
 
-export default PhotoTile
+export default withRouter(PhotoTile)

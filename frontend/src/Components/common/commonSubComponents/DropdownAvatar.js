@@ -13,7 +13,7 @@ const DropdownAvatar = (props) => {
   )
 
   const options = [
-    { key: 'Profile', text: 'Profile', as: Link, to: '/profile' },
+    { key: 'Profile', text: 'Profile', as: Link, to: `/profile/${props.userId}` },
     { key: 'Log-out', text: 'Log out', as: Link, to: '/', onClick: logout }
   ]
 
