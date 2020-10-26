@@ -762,3 +762,16 @@ label.upload-label{
     margin: 20px;
   }
 }
+
+
+.comment-btns-container{
+
+  &.hidden-btns{
+    display: none;
+  }
+
+  &.show-btns{
+    display: block;
+    display: initial;
+  }
+}
