@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$teTfFzCGw7a3$IHfO2JzVBFD57+WGDlB+lEWDIQ4dEqf7/t163HrPoW4=",
-    "last_login": "2020-10-26T18:25:07.382Z",
+    "last_login": "2020-10-26T19:34:33.499Z",
     "is_superuser": true,
     "username": "admin",
     "is_staff": true,
@@ -187,10 +187,11 @@
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      3,
       11,
+      2,
       10,
-      2
+      3,
+      21
     ]
   }
 },
@@ -235,8 +236,8 @@
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      3,
-      9
+      9,
+      3
     ]
   }
 },
@@ -395,6 +396,68 @@
     "first_name": "15",
     "last_name": "15",
     "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603611488/upload_test/kv2w4kidlijqiwxs6u7o.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$bZI0NJ87OyQf$7BfDsgC2G+qnEbidJ7bYPSXbvvOt5wjdBbq4dc3LjHQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Hennie_S",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-26T20:04:57.641Z",
+    "email": "Hennie@email.com",
+    "first_name": "Hennie",
+    "last_name": "S",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603742687/upload_test/oyy9hezmyy96enmmi0cr.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      21
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$vAqbXAtRKNLm$cKVO3IOj6IWqn3JB64zUA1QB7wtxShYbV2e0bDCVBfI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Michiel_A",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-26T20:34:31.149Z",
+    "email": "Michiel_A@email.com",
+    "first_name": "Michiel",
+    "last_name": "A.",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603744441/upload_test/qcnl1kew58eqgb7u0hj7.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$BzmaRURfQLpv$mMyQP47ToMD76qaUW8Q8GDgfNFVAdrkXT34XF0+R4fo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Sami_T",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-26T21:29:40.246Z",
+    "email": "sami@email.com",
+    "first_name": "Sami",
+    "last_name": "T",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603747737/upload_test/znbb0jwmph8tpvpmrujd.jpg",
     "groups": [],
     "user_permissions": [],
     "followed_by": []
