@@ -38,11 +38,13 @@ class PhotosProfile extends React.Component {
       created_photo } = this.state.userProfile
     
     const { currentUserId } = this.state
+    const bannerBackground = created_photo[0].image
 
     return (
       <>
+        <div className='profile-banner-img' style={{ backgroundImage: `url(${bannerBackground})` }}></div>
         <div className='profile-summary-info'>
-          <div style={{ width: '300px' }}>
+          <div className='profile-avatar-container'>
             <img
               src={profile_image}
               alt="selected"

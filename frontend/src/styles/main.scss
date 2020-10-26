@@ -707,3 +707,28 @@ label.upload-label{
 
 }
 
+
+//PhotosProfile section
+
+.profile-banner-img{
+  width: 100%;
+  min-height: 250px;
+  background-position: center;
+  background-size: cover
+}
+
+.profile-summary-info{
+  min-height: 150px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  
+  .profile-avatar-container{
+    position: absolute;
+    top: -50px;
+  }
+}
+
