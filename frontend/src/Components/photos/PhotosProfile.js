@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Icon, Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 import ProfilePhotoTile from './photosSubComponents/ProfilePhotoTile'
-import { getPublicUserProfile, getUserProfile } from '../../lib/api'
+import { getPublicUserProfile, getUserProfile, followProfile, unfollowProfile } from '../../lib/api'
 
 
 class PhotosProfile extends React.Component {
@@ -37,6 +37,54 @@ class PhotosProfile extends React.Component {
     })
   }
 
+  handleClick = () => {
+
+    if (this.state.isFollowedByCurrentUser){
+      this.handleUnfollowClick()
+    } else {
+      console.log('FOLLOWING NOW')
+      this.handleFollowClick()
+    }
+
+  }
+
+
+  handleFollowClick = async () => {
+    try {
+      const response = await followProfile(this.state.userProfile.id)
+
+      if (response.status === 202) {
+        console.log('FOLLOWED!', response)
+        this.setState({
+          isFollowedByCurrentUser: true
+        })
+      } else {
+        throw new Error()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  handleUnfollowClick = async () => {
+    try {
+      const response = await unfollowProfile(this.state.userProfile.id)
+      if (response.status === 202) {
+        console.log('UNFOLLOWED!', response)
+        this.setState({
+          isFollowedByCurrentUser: false
+        })
+      } else {
+        throw new Error()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
+
+
 
   render() {
 
@@ -64,7 +112,10 @@ class PhotosProfile extends React.Component {
           </div>
           <h1>{first_name} {last_name}</h1>
           {!isCurrentUser &&
-            <Button className={`lozenge ${isFollowedByCurrentUser ? 'is-following' : 'not-following'}`}>
+            <Button 
+              className={`lozenge ${isFollowedByCurrentUser ? 'is-following' : 'not-following'}`}
+              onClick={this.handleClick}
+            >
               {isFollowedByCurrentUser ? 'Following' : 'Follow'}
             </Button>
           }
