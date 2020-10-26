@@ -774,4 +774,9 @@ label.upload-label{
     display: block;
     display: initial;
   }
+
+  .button.cancel-btn{
+    background-color: white;
+    color: $primary-blue;
+  }
 }

@@ -46,6 +46,10 @@ export const unlikePhoto = (photoId) => {
   return axios.delete(`/api/photos/${photoId}/likes/`, withHeaders())
 }
 
+export const createComment = (formData) => {
+  return axios.post('/api/comments/', formData, withHeaders())
+}
+
 //Registration and Login requests
 
 export const registerUser = (formData) => {

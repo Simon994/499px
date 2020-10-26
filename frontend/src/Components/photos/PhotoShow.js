@@ -2,7 +2,7 @@
 import React from 'react'
 import { Icon, Comment, Form, Button } from 'semantic-ui-react'
 
-import { getSinglePhoto, getUserProfile, likePhoto, unlikePhoto } from '../../lib/api'
+import { getSinglePhoto, getUserProfile, likePhoto, unlikePhoto, createComment } from '../../lib/api'
 import { isAuthenticated } from '../../lib/auth'
 
 class PhotoShow extends React.Component {
@@ -62,17 +62,44 @@ class PhotoShow extends React.Component {
 
   handleTextChange = (e) => {
     const formText = e.target.value
-
     this.setState({
       formText
     })
   }
 
   handleTextBoxClick = () => {
-
     this.setState({
       postBtnHidden: false
     })
+  }
+
+  handleCancelClick = () => {
+    this.setState({
+      postBtnHidden: true
+    })
+  }
+
+  handleCommentSubmit = async () => {
+    const formData = {
+      text: this.state.formText,
+      photo: this.state.singlePhotoData.id
+    }
+
+    try {
+      const resCreateComment = await createComment(formData)
+
+      if (resCreateComment.status === 201 ){
+        const photoId = this.props.match.params.id
+        const response = await getSinglePhoto(photoId)
+
+        this.setState({
+          singlePhotoData: response.data,
+          formText: ''
+        })
+      } 
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   render() {
@@ -109,15 +136,25 @@ class PhotoShow extends React.Component {
         <Comment.Group>
 
           {isAuthenticated() &&
-            <Form onSubmit={this.handleSubmit} reply>
+            <Form >
               <Form.Input
                 onClick={this.handleTextBoxClick}
                 onChange={this.handleTextChange}
                 value={formText}
                 placeholder={'💬   Add a comment'} />
               <div className={`comment-btns-container ${postBtnHidden ? 'hidden-btns' : 'show-btns'}`}>
-                <Button primary className='lozenge'>Post</Button>
-
+                <Button 
+                  className='cancel-btn'
+                  onClick={this.handleCancelClick}
+                >
+                  Cancel
+                </Button>
+                <Button primary
+                  className='lozenge'
+                  onClick={this.handleCommentSubmit}
+                >
+                  Post
+                </Button>
               </div>
             </Form>
           }
