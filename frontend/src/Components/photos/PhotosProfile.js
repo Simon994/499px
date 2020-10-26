@@ -19,7 +19,6 @@ class PhotosProfile extends React.Component {
     const userId = this.props.match.params.id
     const userProfile = await getPublicUserProfile(userId)
     const currentUserProfile = await getUserProfile()
-    console.log("THIS IS CURRENT USER", currentUserProfile)
 
     this.setState({
       userProfile: userProfile.data,
@@ -29,7 +28,7 @@ class PhotosProfile extends React.Component {
 
 
   render() {
-    console.log('RENDERING PHOTOSPROF')
+
     if (!this.state.userProfile) return <h1>Just getting that for you</h1>
 
     const { profile_image,
@@ -59,30 +58,6 @@ class PhotosProfile extends React.Component {
         <div className='image-grid-outer'>
           <div className='image-grid tiles' style={{ marginTop: '30px' }}>
             {created_photo.map((photo, index) => {
-              console.log('ADDING IMG TO PROFILE PHOTS')
-              return (
-                <div className='image-item tile' key={index}>
-                  <img src={photo.image} />
-                  <div className='details'>
-                    <span className='title'>{photo.title}</span>
-                    <div className='heart-btn-container'>
-                      <Icon
-                        name='heart'
-                        size='big'
-                        color='grey'
-                        onClick={this.handleClick} />
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        <div className='image-grid-outer'>
-          <div className='image-grid tiles' style={{ marginTop: '30px' }}>
-            {created_photo.map((photo, index) => {
-              console.log('ADDING IMG TO PROFILE PHOTS')
               return (
                 <ProfilePhotoTile 
                   photo={photo}

@@ -64,7 +64,7 @@ class PhotoSubmit extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(this.state.formData)
+
     try {
       await createPhoto(this.state.formData)
 

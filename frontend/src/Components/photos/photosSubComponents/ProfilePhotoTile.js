@@ -15,8 +15,6 @@ class ProfilePhotoTile extends React.Component {
     const likedByArrayIds = this.props.photo.liked_by.map(likedBy => likedBy.id )
     const isLikedByCurrentUser = likedByArrayIds.includes(this.props.currentUserId)
 
-    console.log('PHOTO LIKED BY: ', isLikedByCurrentUser)
-    console.log('CURR USR ID: ', this.props.currentUserId)
     const heartColor = isLikedByCurrentUser ? 'pink' : 'grey'
 
     this.setState({
@@ -32,8 +30,7 @@ class ProfilePhotoTile extends React.Component {
 
     if (!liked){
       try {
-        const res = await likePhoto(id)
-        console.log('LIKED!', res)
+        await likePhoto(id)
         this.setState({
           heartColor: 'pink',
           liked: true
@@ -43,8 +40,7 @@ class ProfilePhotoTile extends React.Component {
       }
     } else {
       try {
-        const res = await unlikePhoto(id)
-        console.log('UNLIKED!', res)
+        await unlikePhoto(id)
         this.setState({
           heartColor: 'grey',
           liked: false

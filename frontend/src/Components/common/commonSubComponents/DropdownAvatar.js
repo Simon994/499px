@@ -19,7 +19,6 @@ class DropdownAvatar extends React.Component {
   }
 
   switchProfile = () => {
-    console.log('SWITCH!')
 
     this.setState({
       redirect: `/profile/${this.props.userId}`
