@@ -97,19 +97,21 @@
     "categories": [
       5
     ],
-    "liked_by": []
+    "liked_by": [
+      18
+    ]
   }
 },
 {
   "model": "photos.photo",
   "pk": 12,
   "fields": {
-    "title": "ANOTHER Bob's day out",
+    "title": "Into the wild",
     "description": "I'm just this guy, you know",
     "uploaded_at": "2020-10-22T10:43:57.563Z",
     "taken_at": null,
-    "camera": "Home-built bobcam",
-    "lens": "",
+    "camera": "Cannon",
+    "lens": "35mm",
     "image": "https://images.unsplash.com/photo-1603392439468-0e0cc5790778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     "location": "Unknown",
     "owner": 2,
@@ -117,7 +119,7 @@
       5
     ],
     "liked_by": [
-      5
+      11
     ]
   }
 },
@@ -166,18 +168,22 @@
   "pk": 15,
   "fields": {
     "title": "Night City",
-    "description": "",
+    "description": "Original photo: Matt Barringer on Unsplash",
     "uploaded_at": "2020-10-23T12:51:44.248Z",
     "taken_at": null,
-    "camera": "",
-    "lens": "",
+    "camera": "Nikon D6",
+    "lens": "85mm - 135mm",
     "image": "https://images.unsplash.com/photo-1603422501805-113f8b84b308?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     "location": "Unknown",
     "owner": 9,
     "categories": [
+      18,
+      23,
       6
     ],
-    "liked_by": []
+    "liked_by": [
+      10
+    ]
   }
 },
 {
@@ -194,6 +200,8 @@
     "location": "Unknown",
     "owner": 9,
     "categories": [
+      18,
+      23,
       6
     ],
     "liked_by": []
@@ -203,8 +211,8 @@
   "model": "photos.photo",
   "pk": 17,
   "fields": {
-    "title": "Bar",
-    "description": "",
+    "title": "At the bar",
+    "description": "Original photo: Matt Barringer on Unsplash",
     "uploaded_at": "2020-10-23T12:54:42.879Z",
     "taken_at": null,
     "camera": "",
@@ -225,7 +233,7 @@
   "pk": 18,
   "fields": {
     "title": "Into the distance",
-    "description": "A view along the Whananaki Foot Bridge",
+    "description": "Original photo by David T on Unsplash",
     "uploaded_at": "2020-10-23T12:58:00.975Z",
     "taken_at": "2020-07-08T12:00:04Z",
     "camera": "Cannon 4000D",
@@ -234,11 +242,12 @@
     "location": "Whananaki, New Zealand",
     "owner": 10,
     "categories": [
-      4
+      15
     ],
     "liked_by": [
       2,
-      18
+      3,
+      11
     ]
   }
 },
@@ -246,19 +255,24 @@
   "model": "photos.photo",
   "pk": 19,
   "fields": {
-    "title": "Santorini, Ia, Greece",
-    "description": "",
+    "title": "Sunset in NZ",
+    "description": "Original photo by David T on Unsplash",
     "uploaded_at": "2020-10-23T12:58:48.811Z",
     "taken_at": null,
-    "camera": "",
-    "lens": "",
-    "image": "https://images.unsplash.com/photo-1583611191427-0c13a5a78e13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
-    "location": "Santorini, Ia, Greece",
+    "camera": "Fuji",
+    "lens": "50mm",
+    "image": "https://images.unsplash.com/photo-1584181832422-fd8b98c71b07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+    "location": "Wenderholm Regional Park, New Zealand",
     "owner": 10,
     "categories": [
-      6
+      17,
+      15
     ],
-    "liked_by": []
+    "liked_by": [
+      2,
+      3,
+      11
+    ]
   }
 },
 {
@@ -266,7 +280,7 @@
   "pk": 20,
   "fields": {
     "title": "Toronto, ON, Canada",
-    "description": "",
+    "description": "Original Photo: David T on Unsplash",
     "uploaded_at": "2020-10-23T13:00:11.911Z",
     "taken_at": null,
     "camera": "",
@@ -285,7 +299,7 @@
   "pk": 21,
   "fields": {
     "title": "Hamburg townhall",
-    "description": "",
+    "description": "Original photo: Anton Trusch on Unsplash",
     "uploaded_at": "2020-10-23T13:03:31.851Z",
     "taken_at": null,
     "camera": "",
@@ -304,7 +318,7 @@
   "pk": 22,
   "fields": {
     "title": "Speicherstadt",
-    "description": "",
+    "description": "Original photo by Anton Trusch on Unsplash",
     "uploaded_at": "2020-10-23T13:04:21.408Z",
     "taken_at": null,
     "camera": "",
@@ -323,7 +337,7 @@
   "pk": 23,
   "fields": {
     "title": "Haihe River",
-    "description": "",
+    "description": "Original photo by Anton Trusch on Unsplash",
     "uploaded_at": "2020-10-23T13:05:17.424Z",
     "taken_at": null,
     "camera": "",
@@ -333,63 +347,6 @@
     "owner": 11,
     "categories": [
       6
-    ],
-    "liked_by": []
-  }
-},
-{
-  "model": "photos.photo",
-  "pk": 27,
-  "fields": {
-    "title": "scsac",
-    "description": "sacscs",
-    "uploaded_at": "2020-10-24T11:51:52.460Z",
-    "taken_at": null,
-    "camera": "",
-    "lens": "",
-    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603539863/upload_test/uepjoc9d6t85rct02whp.jpg",
-    "location": "ascsc",
-    "owner": 15,
-    "categories": [
-      3
-    ],
-    "liked_by": []
-  }
-},
-{
-  "model": "photos.photo",
-  "pk": 28,
-  "fields": {
-    "title": "Terrebon again",
-    "description": "csaacsca",
-    "uploaded_at": "2020-10-24T13:10:28.251Z",
-    "taken_at": null,
-    "camera": "",
-    "lens": "",
-    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603539863/upload_test/uepjoc9d6t85rct02whp.jpg",
-    "location": "ascsaccsa",
-    "owner": 15,
-    "categories": [
-      5
-    ],
-    "liked_by": []
-  }
-},
-{
-  "model": "photos.photo",
-  "pk": 29,
-  "fields": {
-    "title": "Nightlife",
-    "description": "Nightlight in Montreal",
-    "uploaded_at": "2020-10-24T13:11:26.316Z",
-    "taken_at": null,
-    "camera": "",
-    "lens": "",
-    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603545040/upload_test/c9kx2rplzcgqwekl4zpm.jpg",
-    "location": "Montreal",
-    "owner": 15,
-    "categories": [
-      5
     ],
     "liked_by": []
   }
@@ -416,19 +373,21 @@
 },
 {
   "model": "photos.photo",
-  "pk": 34,
+  "pk": 35,
   "fields": {
-    "title": "Montreal bar",
-    "description": "a bar in montreal",
-    "uploaded_at": "2020-10-26T05:35:58.162Z",
+    "title": "Lens ball",
+    "description": "Original photo by Matt Barringer on Unsplash",
+    "uploaded_at": "2020-10-26T19:10:44.310Z",
     "taken_at": null,
     "camera": "",
     "lens": "",
-    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603690537/upload_test/el7dnyuurtbbqpvzpum8.jpg",
-    "location": "Unknown",
-    "owner": 18,
+    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603739301/upload_test/hfmpcg6wod9rmardf8kh.jpg",
+    "location": "Forest in wilderness",
+    "owner": 9,
     "categories": [
-      6
+      16,
+      17,
+      22
     ],
     "liked_by": []
   }

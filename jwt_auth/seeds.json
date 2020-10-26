@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$teTfFzCGw7a3$IHfO2JzVBFD57+WGDlB+lEWDIQ4dEqf7/t163HrPoW4=",
-    "last_login": "2020-10-21T11:55:59.781Z",
+    "last_login": "2020-10-26T18:25:07.382Z",
     "is_superuser": true,
     "username": "admin",
     "is_staff": true,
@@ -26,7 +26,7 @@
     "password": "pbkdf2_sha256$216000$uW6DeYvSY1is$Nx74b08SkhEoET9HzEd8pcp+6pRfflI+YHZOGcTIjKE=",
     "last_login": null,
     "is_superuser": false,
-    "username": "simon",
+    "username": "Simon",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2020-10-21T13:50:33Z",
@@ -37,10 +37,7 @@
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      2,
-      5,
-      7,
-      18
+      9
     ]
   }
 },
@@ -51,19 +48,18 @@
     "password": "pass",
     "last_login": null,
     "is_superuser": false,
-    "username": "simon2",
+    "username": "Kayle_K",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2020-10-22T08:06:51Z",
-    "email": "simon2@email.com",
-    "first_name": "simon2",
-    "last_name": "simon2",
-    "profile_image": "simon2.jpg",
+    "email": "kayle@email.com",
+    "first_name": "Kayle",
+    "last_name": "K.",
+    "profile_image": "https://images.unsplash.com/photo-1597003666762-30fe6b282772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80",
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      1,
-      5
+      9
     ]
   }
 },
@@ -177,23 +173,24 @@
   "model": "jwt_auth.user",
   "pk": 9,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$uW6DeYvSY1is$Nx74b08SkhEoET9HzEd8pcp+6pRfflI+YHZOGcTIjKE=",
     "last_login": null,
     "is_superuser": false,
-    "username": "Matt_Barringer",
+    "username": "Matt_B",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2020-10-23T12:48:43Z",
     "email": "matt@email.com",
     "first_name": "Matt",
-    "last_name": "Barringer",
+    "last_name": "B.",
     "profile_image": "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png",
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      7,
-      12,
-      15
+      3,
+      11,
+      10,
+      2
     ]
   }
 },
@@ -215,8 +212,8 @@
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      12,
-      18
+      18,
+      12
     ]
   }
 },
@@ -227,18 +224,19 @@
     "password": "pass",
     "last_login": null,
     "is_superuser": false,
-    "username": "Anton_Trusch",
+    "username": "Anton_T",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2020-10-23T13:00:51Z",
     "email": "Anton_Trusch@email.com",
     "first_name": "Anton",
-    "last_name": "Trusch",
+    "last_name": "T.",
     "profile_image": "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png",
     "groups": [],
     "user_permissions": [],
     "followed_by": [
-      12
+      3,
+      9
     ]
   }
 },
