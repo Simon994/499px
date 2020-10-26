@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter, Redirect } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Dropdown, Image } from 'semantic-ui-react'
 
 import { logout } from '../../../lib/auth'
@@ -28,11 +28,6 @@ class DropdownAvatar extends React.Component {
 
 
   render() {
-
-    // if (this.state.redirect) {
-    //   console.log('REDIRECTING!')
-    //   return <Redirect to={this.state.redirect}/>
-    // }
 
     const options = [
       { key: 'Profile', text: 'Profile', as: Link, to: `/profile/${this.props.userId}`, onClick: this.switchProfile },

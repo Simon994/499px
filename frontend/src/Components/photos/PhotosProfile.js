@@ -3,7 +3,7 @@ import React from 'react'
 import { Icon } from 'semantic-ui-react'
 
 import ProfilePhotoTile from './photosSubComponents/ProfilePhotoTile'
-import { getPublicUserProfile } from '../../lib/api'
+import { getPublicUserProfile, getUserProfile } from '../../lib/api'
 
 
 class PhotosProfile extends React.Component {
@@ -11,25 +11,34 @@ class PhotosProfile extends React.Component {
   state = {
     userProfile: null,
     heartColor: 'grey',
-    liked: false
+    liked: false,
+    currentUserId: null
   }
 
   async componentDidMount() {
     const userId = this.props.match.params.id
     const userProfile = await getPublicUserProfile(userId)
+    const currentUserProfile = await getUserProfile()
+    console.log("THIS IS CURRENT USER", currentUserProfile)
 
     this.setState({
-      userProfile: userProfile.data
+      userProfile: userProfile.data,
+      currentUserId: currentUserProfile.data.id
     })
   }
 
-  
 
   render() {
     console.log('RENDERING PHOTOSPROF')
     if (!this.state.userProfile) return <h1>Just getting that for you</h1>
 
-    const { profile_image, first_name, last_name, following, created_photo } = this.state.userProfile
+    const { profile_image,
+      first_name,
+      last_name,
+      following,
+      created_photo } = this.state.userProfile
+    
+    const { currentUserId } = this.state
 
     return (
       <>
@@ -75,7 +84,10 @@ class PhotosProfile extends React.Component {
             {created_photo.map((photo, index) => {
               console.log('ADDING IMG TO PROFILE PHOTS')
               return (
-                <ProfilePhotoTile photo={photo} key={index}/>
+                <ProfilePhotoTile 
+                  photo={photo}
+                  key={index}
+                  currentUserId={currentUserId}/>
               )
             })}
           </div>
