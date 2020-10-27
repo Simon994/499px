@@ -83,6 +83,7 @@ class PhotosHome extends React.Component {
       userProfile } = this.state
 
 
+
     return (
       <>
         <h1 className='homefeed-title'>Home Feed</h1>
@@ -133,15 +134,6 @@ class PhotosHome extends React.Component {
               </div>
             </CarouselProvider>
           </div>
-
-
-
-
-
-
-
-
-
 
           <PhotosGalleryContainer
             followeePhotos={photosByFollowees}
