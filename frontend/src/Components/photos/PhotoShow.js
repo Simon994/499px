@@ -109,7 +109,7 @@ class PhotoShow extends React.Component {
 
     if (!this.state.singlePhotoData || !this.state.currentUserPhoto) return <h1>Just getting that for you</h1>
 
-    const { image, title, comments, location, description } = this.state.singlePhotoData
+    const { image, title, comments, location, description, camera } = this.state.singlePhotoData
     const { username, profile_image } = this.state.singlePhotoData.owner
     const { heartColor, formText, postBtnHidden, currentUserPhoto } = this.state
 
@@ -155,6 +155,9 @@ class PhotoShow extends React.Component {
               <p>{description}</p>
               <br/>
               <p>{numberOfLikes} {numberOfLikes === 1 ? 'person' : 'people'} liked this photo</p>
+              <br/>
+              <Icon name='camera' size='large' color='grey'/><span style={{ fontSize: '16px', color: '#888'}}>{camera}</span>
+
             </div>
 
           </div>
@@ -211,8 +214,6 @@ class PhotoShow extends React.Component {
                 )
               })
               }
-
-
             </Comment.Group>
           </div>
         </section>
