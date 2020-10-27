@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Icon, Comment, Form, Button } from 'semantic-ui-react'
+import { Icon, Comment, Form, Button, Loader } from 'semantic-ui-react'
 
 import { getSinglePhoto, getUserProfile, likePhoto, unlikePhoto, createComment } from '../../lib/api'
 import { isAuthenticated } from '../../lib/auth'
@@ -107,7 +107,9 @@ class PhotoShow extends React.Component {
 
   render() {
 
-    if (!this.state.singlePhotoData || !this.state.currentUserPhoto) return <h1>Just getting that for you</h1>
+    if (!this.state.singlePhotoData || !this.state.currentUserPhoto){
+      return <Loader active inline='centered' />
+    }
 
     const { image, title, comments, location, description, camera, categories } = this.state.singlePhotoData
     const { username, profile_image } = this.state.singlePhotoData.owner
@@ -130,7 +132,7 @@ class PhotoShow extends React.Component {
                 size='big'
                 color={heartColor}
                 onClick={this.handleClick}
-                style={{ margin: '10px' }}
+                style={{ margin: '10px', cursor: 'pointer' }}
               />
             </div>
 

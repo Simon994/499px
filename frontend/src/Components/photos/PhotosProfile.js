@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Loader } from 'semantic-ui-react'
 
 import ProfilePhotoTile from './photosSubComponents/ProfilePhotoTile'
 import { getPublicUserProfile, getUserProfile, followProfile, unfollowProfile } from '../../lib/api'
@@ -67,7 +67,7 @@ class PhotosProfile extends React.Component {
       const response = await followProfile(this.state.userProfile.id)
 
       if (response.status === 202) {
-        console.log('FOLLOWED!', response)
+
         this.setState({
           isFollowedByCurrentUser: true
         })
@@ -98,7 +98,7 @@ class PhotosProfile extends React.Component {
 
   render() {
 
-    if (!this.state.userProfile) return <h1>Just getting that for you</h1>
+    if (!this.state.userProfile) return <Loader active inline='centered' />
 
     const { profile_image,
       first_name,
