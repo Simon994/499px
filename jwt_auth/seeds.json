@@ -191,7 +191,8 @@
       2,
       10,
       3,
-      21
+      21,
+      24
     ]
   }
 },
@@ -237,7 +238,8 @@
     "user_permissions": [],
     "followed_by": [
       9,
-      3
+      3,
+      22
     ]
   }
 },
@@ -458,6 +460,46 @@
     "first_name": "Sami",
     "last_name": "T",
     "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603747737/upload_test/znbb0jwmph8tpvpmrujd.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$zH4GpzxxFKaw$vXCes17DL5J+EY7eIX6SNacO2kZJsLqbJ+PhpJ3AZUA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Kat_vW",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-27T15:36:21.836Z",
+    "email": "kat@email.com",
+    "first_name": "Kat",
+    "last_name": "vW",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603812969/upload_test/jzkorroo9vz3maxubkqj.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 24,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$CrZRNfwr9VIK$86vl3AnPkYHJwGAE7s5KROij7Ac2ZlZmu3lfpjiJ6OI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Olayinka_B",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-27T15:53:38.566Z",
+    "email": "olayinka@email.com",
+    "first_name": "Olayinka",
+    "last_name": "B",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603814011/upload_test/rooejfadnt9jw14z9cut.jpg",
     "groups": [],
     "user_permissions": [],
     "followed_by": []

@@ -36,7 +36,9 @@
     "categories": [
       5
     ],
-    "liked_by": []
+    "liked_by": [
+      9
+    ]
   }
 },
 {
@@ -85,17 +87,19 @@
   "model": "photos.photo",
   "pk": 9,
   "fields": {
-    "title": "Just updating!",
-    "description": "https://unsplash.com/photos/xLwb3KbPOwM",
+    "title": "Happy Halloween",
+    "description": "Original Photo By Anton Trusch on Unsplash",
     "uploaded_at": "2020-10-21T18:02:57.530Z",
     "taken_at": null,
-    "camera": "Sony",
-    "lens": "",
+    "camera": "Sony alpha99",
+    "lens": "Canon RF 35mm",
     "image": "https://images.unsplash.com/photo-1602418022815-cb977ffb2c1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
-    "location": "South pole",
+    "location": "Tianjin, China",
     "owner": 2,
     "categories": [
-      5
+      18,
+      19,
+      23
     ],
     "liked_by": [
       18
@@ -245,9 +249,9 @@
       15
     ],
     "liked_by": [
+      11,
       2,
-      3,
-      11
+      3
     ]
   }
 },
@@ -269,9 +273,9 @@
       17
     ],
     "liked_by": [
+      11,
       2,
-      3,
-      11
+      3
     ]
   }
 },
@@ -389,7 +393,9 @@
       17,
       22
     ],
-    "liked_by": []
+    "liked_by": [
+      24
+    ]
   }
 },
 {
@@ -752,6 +758,93 @@
     "categories": [
       17,
       15
+    ],
+    "liked_by": []
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 65,
+  "fields": {
+    "title": "Autumn objects",
+    "description": "Original Photo by Kat von Wood on Unsplash",
+    "uploaded_at": "2020-10-27T15:38:53.821Z",
+    "taken_at": null,
+    "camera": "",
+    "lens": "",
+    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603813034/upload_test/zvub8h48ngxpexdvx3ww.jpg",
+    "location": "Croatia",
+    "owner": 23,
+    "categories": [
+      2,
+      13,
+      22
+    ],
+    "liked_by": []
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 66,
+  "fields": {
+    "title": "Protests",
+    "description": "Original Photo by Olayinka Babalola on Unsplash",
+    "uploaded_at": "2020-10-27T16:00:25.929Z",
+    "taken_at": null,
+    "camera": "",
+    "lens": "",
+    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603814325/upload_test/puptrryv1lrax5ajk6ps.jpg",
+    "location": "Nigeria",
+    "owner": 24,
+    "categories": [
+      19,
+      23,
+      14,
+      7
+    ],
+    "liked_by": []
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 67,
+  "fields": {
+    "title": "Protests more",
+    "description": "Original Photo by Olayinka Babalola on Unsplash",
+    "uploaded_at": "2020-10-27T17:21:38.327Z",
+    "taken_at": null,
+    "camera": "",
+    "lens": "",
+    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603819210/upload_test/vzue9lj43kgbwlirbhiv.jpg",
+    "location": "Lekki-Toll gate",
+    "owner": 24,
+    "categories": [
+      19,
+      23,
+      14,
+      7
+    ],
+    "liked_by": []
+  }
+},
+{
+  "model": "photos.photo",
+  "pk": 68,
+  "fields": {
+    "title": "Nigeria protests",
+    "description": "Original Photo by Olayinka Babalola on Unsplash",
+    "uploaded_at": "2020-10-27T17:25:41.799Z",
+    "taken_at": null,
+    "camera": "",
+    "lens": "",
+    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603819474/upload_test/sb6stdoho8cnzl1jpikc.jpg",
+    "location": "Nigeria",
+    "owner": 24,
+    "categories": [
+      19,
+      23,
+      14,
+      7
     ],
     "liked_by": []
   }

@@ -62,7 +62,7 @@ class ProfileCard extends React.Component {
 
         </div>
         <div className='profile-card-text'>
-          <Image avatar src={profileImage} />
+          <Image avatar src={profileImage} bordered/>
           <Link to={`/profile/${id}`} className='profile-card-link'>
             <span><strong>{first_name} {last_name}</strong></span>
           </Link>

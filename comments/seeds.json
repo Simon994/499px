@@ -108,5 +108,15 @@
     "photo": 20,
     "owner": 3
   }
+},
+{
+  "model": "comments.comment",
+  "pk": 22,
+  "fields": {
+    "text": "Great shot. How did you get this!?",
+    "created_at": "2020-10-27T17:29:49.476Z",
+    "photo": 35,
+    "owner": 24
+  }
 }
 ]

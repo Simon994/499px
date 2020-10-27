@@ -39,7 +39,7 @@ class DropdownAvatar extends React.Component {
         <Dropdown
           trigger={
             <span>
-              <Image avatar src={this.props.sourceImage} />
+              <Image avatar src={this.props.sourceImage} bordered size='mini'/>
             </span>
           }
           options={options}
