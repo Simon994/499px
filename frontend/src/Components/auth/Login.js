@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import { Button, Form, Icon, Message } from 'semantic-ui-react'
+import { Button, Form, Icon } from 'semantic-ui-react'
 import { Redirect, Link } from 'react-router-dom'
 
 import { loginUser, getUserProfile } from '../../lib/api'
 import { setToken } from '../../lib/auth'
 import { setAvatar, getAvatar, setUserId } from '../../lib/assets'
+import { popupNotification } from '../../lib/notifications'
 
 class Login extends React.Component {
 
@@ -23,6 +24,7 @@ class Login extends React.Component {
       ...this.state.formData,
       [e.target.name]: e.target.value
     }
+
     this.setState({
       formData,
       formUsernameError: false
@@ -46,6 +48,8 @@ class Login extends React.Component {
       })
 
     } catch (err) {
+      popupNotification('Please provide the correct details')
+
       this.setState({ formUsernameError: true })
     }
   }
@@ -68,9 +72,6 @@ class Login extends React.Component {
         <div className='auth-form-container' >
           <div className='auth-container'>
             <Form onSubmit={this.handleSubmit} error={this.state.formUsernameError}>
-              {this.state.formUsernameError ? (
-                <Message error header='Fail' content='Please enter your email and password' />
-              ) : null}
               <h2>Log in to 499px</h2>
               <Form.Field>
                 <label className='form-label'>Email</label>

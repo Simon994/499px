@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Notifications from 'react-notify-toast'
 
 import Navbar from './Components/common/Navbar'
 import Home from './Components/common/Home'
@@ -20,8 +21,9 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Notifications />
         <Navbar />
-        
+
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/join' component={Join} />
@@ -34,7 +36,7 @@ const App = () => {
           <Route path='/submitphoto' component={PhotosSubmit} />
           <Route path='/profile/:id' component={PhotosProfile} />
           <Route path='/photos/:id' component={PhotoShow} />
-          
+
         </Switch>
       </BrowserRouter>
     </>
