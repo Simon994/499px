@@ -54,7 +54,7 @@ class ProfileCard extends React.Component {
             return <div
               key={photo.id}
               // src={photo.image}
-              style={{ backgroundImage: `url(${photo.image})`, width: '75px', height: '90px', backgroundSize: 'cover' }}
+              style={{ backgroundImage: `url(${photo.image})`, width: '110px', height: '125px', backgroundSize: 'cover' }}
               alt='from user profile'
               className='profile-card-img'
             />

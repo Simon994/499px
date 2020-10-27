@@ -101,13 +101,13 @@ class PhotosHome extends React.Component {
         </div>
         <div className='profiles-to-follow'>
           <CarouselProvider
-            naturalSlideWidth={100}
+            naturalSlideWidth={600}
             naturalSlideHeight={60}
             totalSlides={profilesSuggestedToFollow.length}
             visibleSlides={3.5}
           >
             <div className='container'>
-              <Slider style={{backgroundColor: 'red'}}>
+              <Slider >
                 {
                   profilesSuggestedToFollow.map((profile, index) => {
                     return (
