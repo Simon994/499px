@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable camelcase */
 import React from 'react'
 
@@ -8,6 +9,7 @@ import AvatarImageUpload from './AvatarImageUpload'
 import { registerUser } from '../../lib/api'
 import { gottenToKnow } from '../../lib/auth'
 import { setAvatar } from '../../lib/assets'
+import { popupNotification } from '../../lib/notifications'
 
 class GetToKnow extends React.Component {
 
@@ -59,7 +61,8 @@ class GetToKnow extends React.Component {
         })
       }
     } catch (err) {
-      console.log(err)
+      console.error(err)
+      popupNotification('Please fill in all fields (username cannot contain spaces)')
       this.setState({ formUsernameError: true })
     }
   }

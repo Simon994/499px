@@ -35,14 +35,11 @@ class AvatarImageUpload extends React.Component {
           <Image
             src={image}
             alt="selected"
-            // size='small'
             avatar
             className='avatar-preview'
-            // style={{ width: '140px', height: '120px', borderRadius: '50%', borderWidth: '1px', borderStyle: 'solid', borderColor: 'black' }}
           />
         </div>
         <>
-          {/* <label className="label">{this.props.labelText || 'Upload Image'}</label> */}
           <input
             type="file"
             name='file'
@@ -50,7 +47,7 @@ class AvatarImageUpload extends React.Component {
             className="inputfile"
             onChange={this.handleUpload}
           />
-          <label htmlFor="file">Add avatar</label>
+          <label htmlFor="file" style={{ cursor: 'pointer' }}>Add avatar</label>
         </>
       </>
     )

@@ -4,6 +4,8 @@ import axios from 'axios'
 import { Button, Icon } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
+import { popupNotification } from '../../lib/notifications'
+
 const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
 const uploadPreset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
 
@@ -18,10 +20,15 @@ class PhotosUpload extends React.Component {
     data.append('file', event.target.files[0])
     data.append('upload_preset', uploadPreset)
 
-    const res = await axios.post(uploadUrl, data)
-    this.setState({
-      image: res.data.url
-    })
+    try {
+      const res = await axios.post(uploadUrl, data)
+      this.setState({
+        image: res.data.url
+      })
+    } catch (err) {
+      console.error(err)
+      popupNotification('Something went wrong. Please try again or use a different photo')
+    }
   }
 
 

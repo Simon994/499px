@@ -84,6 +84,7 @@ class Signup extends React.Component {
                 <label className='form-label'>Password</label>
                 <input placeholder='(minimum 8 characters)'
                   onChange={this.handleChange}
+                  type='password'
                   value={password}
                   name='password'
                 />
