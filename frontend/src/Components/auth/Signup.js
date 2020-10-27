@@ -4,6 +4,7 @@ import { Form, Button, Divider, Header } from 'semantic-ui-react'
 import { Redirect, Link } from 'react-router-dom'
 
 import { setIsGettingToKnow } from '../../lib/auth'
+import { popupNotification } from '../../lib/notifications'
 
 class Signup extends React.Component {
 
@@ -26,19 +27,29 @@ class Signup extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const { password, email } = this.state.formData
 
-    setIsGettingToKnow()
+    try {
+      if (!password || !email) throw new Error('missing emai/password')
+      if (password.length < 8) throw new Error('password length to short')
+      setIsGettingToKnow()
 
-    const { password } = this.state.formData
-    const formData = {
-      ...this.state.formData,
-      password_confirmation: password
+      const formData = {
+        ...this.state.formData,
+        password_confirmation: password
+      }
+
+      this.setState({
+        formData,
+        redirect: '/gettoknow'
+      })
+    } catch (err) {
+      console.log(err.message)
+      err.message === 'password length to short' ?
+        popupNotification('Password length too short')
+        :
+        popupNotification('Please provide both email and password')
     }
-
-    this.setState({
-      formData,
-      redirect: '/gettoknow'
-    })
   }
 
   render() {
