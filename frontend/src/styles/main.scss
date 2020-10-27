@@ -403,6 +403,15 @@ section.homefeed-content{
     height: 50px;
 
   }
+
+  .profile-card-link{
+    color: black
+  }
+
+  .profile-card-link:hover{
+    color: $primary-blue;
+  }
+
   .button.lozenge.follow{
     background-color: $primary-darkblue;
     color: white;

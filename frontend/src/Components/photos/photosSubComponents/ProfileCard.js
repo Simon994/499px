@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import { Image, Button } from 'semantic-ui-react'
 
 import { followProfile, unfollowProfile } from '../../../lib/api'
@@ -43,7 +44,7 @@ class ProfileCard extends React.Component {
 
 
   render() {
-    const { profileImage, created_photo, first_name, last_name } = this.props
+    const { profileImage, created_photo, first_name, last_name, id } = this.props
     const { following } = this.state
     const photosToDisplay = created_photo.slice(0, 3)
 
@@ -62,7 +63,9 @@ class ProfileCard extends React.Component {
         </div>
         <div className='profile-card-text'>
           <Image avatar src={profileImage} />
-          <span><strong>{first_name} {last_name}</strong></span>
+          <Link to={`/profile/${id}`} className='profile-card-link'>
+            <span><strong>{first_name} {last_name}</strong></span>
+          </Link>
           {!following &&
             <Button
               className='lozenge follow'  
@@ -86,4 +89,4 @@ class ProfileCard extends React.Component {
 
 }
 
-export default ProfileCard
+export default withRouter(ProfileCard)
