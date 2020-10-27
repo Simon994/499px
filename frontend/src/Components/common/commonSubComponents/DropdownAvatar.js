@@ -30,6 +30,7 @@ class DropdownAvatar extends React.Component {
 
     const options = [
       { key: 'Profile', text: 'Profile', as: Link, to: `/profile/${this.props.userId}`, onClick: this.switchProfile },
+      { key: 'Liked', text: 'Liked Photos', as: Link, to: '/liked' },
       { key: 'Log-out', text: 'Log out', as: Link, to: '/', onClick: logout }
     ]
 
