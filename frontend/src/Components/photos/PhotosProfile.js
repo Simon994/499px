@@ -17,7 +17,7 @@ class PhotosProfile extends React.Component {
     isFollowedByCurrentUser: null
   }
 
-  async componentDidMount() {
+  setProfileInfo = async () => {
     const userId = this.props.match.params.id
     const userProfile = await getPublicUserProfile(userId)
     const currentUserProfile = await getUserProfile()
@@ -36,6 +36,20 @@ class PhotosProfile extends React.Component {
       isFollowedByCurrentUser
     })
   }
+
+
+  async componentDidMount() {
+    console.log('GOING TO SET PROFILE INFO ON MOUNT')
+    this.setProfileInfo()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id){
+      console.log('GOING TO SET PROFILE INFO ON UPDATE ⛑')
+      this.setProfileInfo()
+    }
+  }
+
 
   handleClick = () => {
 
