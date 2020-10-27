@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
 
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, Loader } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
 import { createPhoto } from '../../lib/api'
@@ -90,7 +90,7 @@ class PhotoSubmit extends React.Component {
       return <Redirect to={this.state.redirect} />
     }
 
-    if (!this.state.formData.image) return <h1>Just getting that for you</h1>
+    if (!this.state.formData.image) return <Loader active inline='centered' />
 
     const { image, title, description, location } = this.state.formData
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Loader } from 'semantic-ui-react'
 
 import ProfilePhotoTile from './photosSubComponents/ProfilePhotoTile'
 import { getUserProfile } from '../../lib/api'
@@ -27,7 +28,8 @@ class PhotosLiked extends React.Component {
 
   render() {
 
-    if (!this.state.likedPhotos) return <h1>Just getting that for you</h1>
+    if (!this.state.likedPhotos) return <Loader active inline='centered' />
+    
     const { likedPhotos, currentUserId } = this.state
 
     return (
