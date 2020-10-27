@@ -109,7 +109,7 @@ class PhotoShow extends React.Component {
 
     if (!this.state.singlePhotoData || !this.state.currentUserPhoto) return <h1>Just getting that for you</h1>
 
-    const { image, title, comments, location, description, camera } = this.state.singlePhotoData
+    const { image, title, comments, location, description, camera, categories } = this.state.singlePhotoData
     const { username, profile_image } = this.state.singlePhotoData.owner
     const { heartColor, formText, postBtnHidden, currentUserPhoto } = this.state
 
@@ -146,18 +146,29 @@ class PhotoShow extends React.Component {
             </div>
 
             <div className='location-time'>
-              <Icon name='map marker alternate'/>
+              <Icon name='map marker alternate' />
               <p style={{ marginRight: '15px', textDecorationLine: 'underline', textDecorationStyle: 'dashed' }}>{location}</p>
               <p><strong>Uploaded:</strong> {uploadedAt}</p>
             </div>
 
             <div style={{ marginTop: '20px' }}>
               <p>{description}</p>
-              <br/>
+              <br />
               <p>{numberOfLikes} {numberOfLikes === 1 ? 'person' : 'people'} liked this photo</p>
-              <br/>
-              <Icon name='camera' size='large' color='grey'/><span style={{ fontSize: '16px', color: '#888'}}>{camera}</span>
-
+              <br />
+              <Icon name='camera' size='large' color='grey' /><span style={{ fontSize: '16px', color: '#888' }}>{camera}</span>
+              
+              <h4 style={{ marginTop: '40px' }}>Categories:</h4>
+              <div className='photoshow-categories-list'>
+                {categories.map((category, index) => {
+                  return (
+                    <div key={index} className='photoshow-category'>
+                      {category.name}
+                    </div>
+                  )
+                })
+                }
+              </div>
             </div>
 
           </div>
