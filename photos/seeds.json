@@ -24,17 +24,18 @@
   "model": "photos.photo",
   "pk": 2,
   "fields": {
-    "title": "Another photo from Admin",
-    "description": "https://unsplash.com/photos/1PrYbfEyvPc",
+    "title": "Temple",
+    "description": "Original Photo by Anton Trusch on Unsplash",
     "uploaded_at": "2020-10-21T10:40:34.955Z",
     "taken_at": null,
     "camera": "Cannon",
     "lens": "35mm",
     "image": "https://images.unsplash.com/photo-1598314675043-a0e25527d699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-    "location": "Cams",
+    "location": "Dali, Yunnan, China",
     "owner": 2,
     "categories": [
-      5
+      25,
+      6
     ],
     "liked_by": [
       9
@@ -131,31 +132,37 @@
   "model": "photos.photo",
   "pk": 13,
   "fields": {
-    "title": "SIMON",
-    "description": "I'm just this guy, you know",
+    "title": "Aerial",
+    "description": "Original Photo by Polina Kuzovkova on Unsplash",
     "uploaded_at": "2020-10-22T11:07:37.083Z",
     "taken_at": null,
-    "camera": "Home-built bobcam",
-    "lens": "",
-    "image": "https://images.unsplash.com/photo-1603389658124-0288af3e66d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-    "location": "Unknown",
+    "camera": "Canon 250D",
+    "lens": "50mm",
+    "image": "https://images.unsplash.com/photo-1603793510575-a8cf24361baa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    "location": "Kuala Lumpur",
     "owner": 2,
     "categories": [
-      5
+      3,
+      18,
+      25
     ],
-    "liked_by": []
+    "liked_by": [
+      24,
+      21,
+      23
+    ]
   }
 },
 {
   "model": "photos.photo",
   "pk": 14,
   "fields": {
-    "title": "ANOTHER SIMON",
-    "description": "https://unsplash.com/photos/89IRXOfsOL4",
+    "title": "In the wild",
+    "description": "Original Photo by Anton Trusch on Unsplash",
     "uploaded_at": "2020-10-22T11:36:42.405Z",
     "taken_at": null,
-    "camera": "Home-built bobcam",
-    "lens": "",
+    "camera": "Canon 250D",
+    "lens": "35mm",
     "image": "https://images.unsplash.com/photo-1598314715549-e04e5c7e2fe1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     "location": "Unknown",
     "owner": 2,
@@ -249,9 +256,9 @@
       15
     ],
     "liked_by": [
-      11,
+      3,
       2,
-      3
+      11
     ]
   }
 },
@@ -273,9 +280,9 @@
       17
     ],
     "liked_by": [
-      11,
+      3,
       2,
-      3
+      11
     ]
   }
 },
@@ -486,21 +493,26 @@
   "model": "photos.photo",
   "pk": 52,
   "fields": {
-    "title": "Terrebon",
-    "description": "Original Photo by Michiel Annaert on Unsplash",
+    "title": "Qilian Mountain",
+    "description": "Original Photo by Zongnan Bao on Unsplash",
     "uploaded_at": "2020-10-26T21:01:14.316Z",
     "taken_at": null,
     "camera": "",
     "lens": "",
-    "image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603746000/upload_test/tcstnm1kttvupykxcgbd.jpg",
-    "location": "Swiss Alps",
+    "image": "https://res.cloudinary.com/duzftncuf/image/upload/v1603827255/upload_test/zongnan-bao-x-3K73yUqSI-unsplash_sxrxpg.jpg",
+    "location": "Zhangye, China",
     "owner": 21,
     "categories": [
       15,
+      17,
       19,
       25
     ],
-    "liked_by": []
+    "liked_by": [
+      10,
+      3,
+      22
+    ]
   }
 },
 {
@@ -607,10 +619,10 @@
     "location": "Midrand, South Africa",
     "owner": 20,
     "categories": [
-      25,
-      10,
       6,
-      7
+      7,
+      10,
+      25
     ],
     "liked_by": []
   }
@@ -629,10 +641,10 @@
     "location": "Tokyo, Japan",
     "owner": 20,
     "categories": [
-      19,
-      23,
+      7,
       13,
-      7
+      19,
+      23
     ],
     "liked_by": []
   }
@@ -651,9 +663,9 @@
     "location": "Johannesburg, South Africa",
     "owner": 20,
     "categories": [
+      7,
       24,
-      25,
-      7
+      25
     ],
     "liked_by": []
   }
@@ -672,9 +684,9 @@
     "location": "Highlands, Scotland",
     "owner": 22,
     "categories": [
-      25,
+      15,
       17,
-      15
+      25
     ],
     "liked_by": []
   }
@@ -714,8 +726,8 @@
     "location": "Finland",
     "owner": 22,
     "categories": [
-      17,
       4,
+      17,
       25
     ],
     "liked_by": []
@@ -735,9 +747,9 @@
     "location": "Hamnoy, Lofoten",
     "owner": 22,
     "categories": [
+      15,
       17,
-      18,
-      15
+      18
     ],
     "liked_by": []
   }
@@ -756,8 +768,8 @@
     "location": "Norway",
     "owner": 22,
     "categories": [
-      17,
-      15
+      15,
+      17
     ],
     "liked_by": []
   }
@@ -797,10 +809,10 @@
     "location": "Nigeria",
     "owner": 24,
     "categories": [
-      19,
-      23,
+      7,
       14,
-      7
+      19,
+      23
     ],
     "liked_by": []
   }
@@ -819,10 +831,10 @@
     "location": "Lekki-Toll gate",
     "owner": 24,
     "categories": [
-      19,
-      23,
+      7,
       14,
-      7
+      19,
+      23
     ],
     "liked_by": []
   }
@@ -841,10 +853,10 @@
     "location": "Nigeria",
     "owner": 24,
     "categories": [
-      19,
-      23,
+      7,
       14,
-      7
+      19,
+      23
     ],
     "liked_by": []
   }

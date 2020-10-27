@@ -118,5 +118,85 @@
     "photo": 35,
     "owner": 24
   }
+},
+{
+  "model": "comments.comment",
+  "pk": 23,
+  "fields": {
+    "text": "So cute!",
+    "created_at": "2020-10-27T19:26:14.667Z",
+    "photo": 1,
+    "owner": 3
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 24,
+  "fields": {
+    "text": "Wow, seriously good photo",
+    "created_at": "2020-10-27T19:26:44.835Z",
+    "photo": 3,
+    "owner": 22
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 25,
+  "fields": {
+    "text": "Super cool place. Would love to go!",
+    "created_at": "2020-10-27T19:27:18.245Z",
+    "photo": 12,
+    "owner": 10
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 26,
+  "fields": {
+    "text": "Great shot. Captures something special",
+    "created_at": "2020-10-27T19:27:46.649Z",
+    "photo": 15,
+    "owner": 23
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 27,
+  "fields": {
+    "text": "Love this place!",
+    "created_at": "2020-10-27T19:28:09.026Z",
+    "photo": 17,
+    "owner": 23
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 28,
+  "fields": {
+    "text": "Is this in water-color?",
+    "created_at": "2020-10-27T19:28:39.922Z",
+    "photo": 36,
+    "owner": 2
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 29,
+  "fields": {
+    "text": "Captures the moment! Nice shot.",
+    "created_at": "2020-10-27T19:29:18.860Z",
+    "photo": 37,
+    "owner": 21
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 30,
+  "fields": {
+    "text": "Really interesting photo. Love it.",
+    "created_at": "2020-10-27T19:30:15.136Z",
+    "photo": 55,
+    "owner": 18
+  }
 }
 ]
