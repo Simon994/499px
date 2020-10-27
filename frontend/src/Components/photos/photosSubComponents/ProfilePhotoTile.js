@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Icon } from 'semantic-ui-react'
 import { likePhoto, unlikePhoto } from '../../../lib/api'
 
@@ -53,12 +54,12 @@ class ProfilePhotoTile extends React.Component {
 
 
   render() {
-    const { image, title } = this.props.photo
+    const { image, title, id } = this.props.photo
     const { heartColor } = this.state
     
     return (
       <div className='image-item tile'>
-        <img src={image} />
+        <Link to={`/photos/${id}`}><img src={image} /></Link>
         <div className='details'>
           <span className='title'>{title}</span>
           <div className='heart-btn-container'>

@@ -42,7 +42,6 @@ class PhotosProfile extends React.Component {
     if (this.state.isFollowedByCurrentUser){
       this.handleUnfollowClick()
     } else {
-      console.log('FOLLOWING NOW')
       this.handleFollowClick()
     }
 
@@ -70,7 +69,7 @@ class PhotosProfile extends React.Component {
     try {
       const response = await unfollowProfile(this.state.userProfile.id)
       if (response.status === 202) {
-        console.log('UNFOLLOWED!', response)
+
         this.setState({
           isFollowedByCurrentUser: false
         })
@@ -81,9 +80,6 @@ class PhotosProfile extends React.Component {
       console.log(err)
     }
   }
-
-
-
 
 
   render() {
