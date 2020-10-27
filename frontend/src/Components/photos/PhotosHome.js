@@ -20,10 +20,12 @@ class PhotosHome extends React.Component {
 
   updateOwner = (followee) => {
     return followee.created_photo.map(photo => {
-      return { ...photo,
+      return {
+        ...photo,
         owner: followee.username,
         ownerId: followee.id,
-        ownerProfileImage: followee.profile_image }
+        ownerProfileImage: followee.profile_image
+      }
     })
   }
 
@@ -40,8 +42,6 @@ class PhotosHome extends React.Component {
         return this.updateOwner(followee)
       })
       .flat()
-    
-    console.log('HERE ARE PHOTS BY FOLLOWEES', photosByFollowees)
 
     //We will make some suggestions for photographers for the user to follow\
     //Splice for profiles that the user does not already follow
@@ -65,7 +65,7 @@ class PhotosHome extends React.Component {
     } else {
       profilesWithPhotos.forEach(profile => profilesSuggestedToFollow.push(profile))
     }
-    
+
     this.setState({
       profilesSuggestedToFollow,
       photosByFollowees,
@@ -75,7 +75,7 @@ class PhotosHome extends React.Component {
   }
 
   render() {
-    
+
     const {
       createdPhotos,
       profilesSuggestedToFollow,
@@ -87,59 +87,69 @@ class PhotosHome extends React.Component {
       <>
         <h1 className='homefeed-title'>Home Feed</h1>
         <p className='homefeed-intro'>See photos and published Galleries from people you follow.</p>
-        <div className='members-ad-container'>
-          <div className='members-ad'>
-            <div className='members-ad-text'>
-              <h1 className='members-ad-title'>Members get more.</h1>
-              <p>Membership is not available on this clone, but if it were, it would start at $2.99/month</p>
-            </div>
-          </div>
-        </div>
-        <div className='featured-follow-explainer'>
-          <h4>Featured photographers</h4>
-          <p>Follow to explore new work</p>
-        </div>
-        <div className='profiles-to-follow'>
-          <CarouselProvider
-            naturalSlideWidth={600}
-            naturalSlideHeight={60}
-            totalSlides={profilesSuggestedToFollow.length}
-            visibleSlides={3.5}
-          >
-            <div className='container'>
-              <Slider >
-                {
-                  profilesSuggestedToFollow.map((profile, index) => {
-                    return (
-                      <Slide key={index} index={index} className='slide'>
-                        <ProfileCard
-                          key={profile.id}
-                          created_photo={profile.created_photo}
-                          username={profile.username}
-                          profileImage={profile.profile_image}
-                          {...profile}
-                        />
-                      </Slide>
-                    )
-                  })
-                }
-
-              </Slider>
-              <div className='slider-btn-container'>
-                <ButtonBack className='buttonBack'><Icon name='chevron circle left' size='big' /></ButtonBack>
-                <ButtonNext className='buttonNext'><Icon name='chevron circle right' size='big' /></ButtonNext>
+        <section className='homefeed-content'>
+          <div className='members-ad-container'>
+            <div className='members-ad'>
+              <div className='members-ad-text'>
+                <h1 className='members-ad-title'>Members get more.</h1>
+                <p>Membership is not available on this clone, but if it were, it would start at $2.99/month</p>
               </div>
             </div>
-          </CarouselProvider>
-        </div>
+          </div>
+          <div className='featured-follow-explainer'>
+            <h4>Featured photographers</h4>
+            <p>Follow to explore new work</p>
+          </div>
+          <div className='profiles-to-follow'>
+            <CarouselProvider
+              naturalSlideWidth={600}
+              naturalSlideHeight={60}
+              totalSlides={profilesSuggestedToFollow.length}
+              visibleSlides={3.5}
+            >
+              <div className='container'>
+                <Slider >
+                  {
+                    profilesSuggestedToFollow.map((profile, index) => {
+                      return (
+                        <Slide key={index} index={index} className='slide'>
+                          <ProfileCard
+                            key={profile.id}
+                            created_photo={profile.created_photo}
+                            username={profile.username}
+                            profileImage={profile.profile_image}
+                            {...profile}
+                          />
+                        </Slide>
+                      )
+                    })
+                  }
+
+                </Slider>
+                <div className='slider-btn-container'>
+                  <ButtonBack className='buttonBack'><Icon name='chevron circle left' size='big' /></ButtonBack>
+                  <ButtonNext className='buttonNext'><Icon name='chevron circle right' size='big' /></ButtonNext>
+                </div>
+              </div>
+            </CarouselProvider>
+          </div>
 
 
-        <PhotosGalleryContainer
-          followeePhotos={photosByFollowees}
-          ownerPhotos={createdPhotos}
-          userProfile={userProfile}
-        />
 
+
+
+
+
+
+
+
+          <PhotosGalleryContainer
+            followeePhotos={photosByFollowees}
+            ownerPhotos={createdPhotos}
+            userProfile={userProfile}
+          />
+
+        </section>
       </>
     )
   }

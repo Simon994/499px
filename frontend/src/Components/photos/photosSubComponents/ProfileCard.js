@@ -62,7 +62,7 @@ class ProfileCard extends React.Component {
         </div>
         <div className='profile-card-text'>
           <Image avatar src={profileImage} />
-          <span>{first_name} {last_name}</span>
+          <span><strong>{first_name} {last_name}</strong></span>
           {!following &&
             <Button
               className='lozenge follow'  
@@ -73,7 +73,7 @@ class ProfileCard extends React.Component {
           }
           {following &&
             <Button
-              basic color='blue'
+              className='lozenge unfollow'
               floated='right'
               onClick={this.handleUnfollowClick}
             >Unfollow
