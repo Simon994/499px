@@ -22,6 +22,7 @@ export const gottenToKnow = () => {
 export const logout = () => {
   localStorage.removeItem('token')
   localStorage.removeItem('avatar')
+  localStorage.removeItem('userId')
 }
 
 const getPayload = () => {

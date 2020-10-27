@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom'
 import DropdownAvatar from './commonSubComponents/DropdownAvatar'
 import { isAuthenticated, getIsGettingToKnow } from '../../lib/auth'
 import { getUserProfile } from '../../lib/api'
-import { getAvatar } from '../../lib/assets'
+import { getAvatar, getUserId } from '../../lib/assets'
 
 
 class Navbar extends React.Component {
@@ -16,6 +16,7 @@ class Navbar extends React.Component {
   }
 
   async componentDidMount(){
+
     const response = await getUserProfile()
     const { id } = response.data
     
@@ -29,7 +30,9 @@ class Navbar extends React.Component {
 
   
   render() {
-    const { avatar, userId } = this.state
+    const { userId } = this.state
+    const avatar = getAvatar()
+    const localUserId = getUserId()
 
     return (
       <nav className='navbar'>
@@ -52,8 +55,8 @@ class Navbar extends React.Component {
           {isAuthenticated() && 
         <Menu.Item>
           <DropdownAvatar 
-            sourceImage={avatar ? avatar : ''} 
-            userId={userId}>
+            sourceImage={this.props.location.state ? this.props.location.state.avatarImg : avatar} 
+            userId={localUserId}>
           </DropdownAvatar>
           <Button className='lozenge upload' as={Link} to={'/upload'}>
             <Icon name='arrow up'/>

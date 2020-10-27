@@ -1,10 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { Button, Form, Icon, Message } from 'semantic-ui-react'
 import { Redirect, Link } from 'react-router-dom'
 
 import { loginUser, getUserProfile } from '../../lib/api'
 import { setToken } from '../../lib/auth'
-import { setAvatar } from '../../lib/assets'
+import { setAvatar, getAvatar, setUserId } from '../../lib/assets'
 
 class Login extends React.Component {
 
@@ -13,7 +14,8 @@ class Login extends React.Component {
       email: '',
       password: ''
     },
-    formUsernameError: false
+    formUsernameError: false,
+    redirect: false
   }
 
   handleChange = (e) => {
@@ -37,6 +39,7 @@ class Login extends React.Component {
 
       const userProfile = await getUserProfile()
       setAvatar(userProfile.data.profile_image)
+      setUserId(userProfile.data.id)
 
       this.setState({
         redirect: '/photoshome'
@@ -53,7 +56,10 @@ class Login extends React.Component {
     const { email, password } = this.state.formData
 
     if (this.state.redirect) {
-      return <Redirect to={this.state.redirect} />
+      return <Redirect to={{
+        pathname: this.state.redirect,
+        state: { avatarImg: getAvatar() }
+      }} />
     }
 
     return (
