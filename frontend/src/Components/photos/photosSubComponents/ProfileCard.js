@@ -51,9 +51,10 @@ class ProfileCard extends React.Component {
       <div className='profile-card-outer'>
         <div className='profile-card-imgcontainer'>
           {photosToDisplay.map(photo => {
-            return <img
+            return <div
               key={photo.id}
-              src={photo.image}
+              // src={photo.image}
+              style={{ backgroundImage: `url(${photo.image})`, width: '75px', height: '90px', backgroundSize: 'cover' }}
               alt='from user profile'
               className='profile-card-img'
             />

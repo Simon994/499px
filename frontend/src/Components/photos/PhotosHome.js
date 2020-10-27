@@ -30,10 +30,7 @@ class PhotosHome extends React.Component {
   async componentDidMount() {
 
     const response = await getProfileIndex()
-    console.log('RESPONSE ON HOMEPAGE', response)
-    // get user's personal profile
     const userProfile = await getUserProfile()
-    console.log('PROFILE', userProfile.data)
 
     // get photos by people that the user follows
     //(owner information needs to be added into the individual photos)
@@ -70,7 +67,6 @@ class PhotosHome extends React.Component {
     }
     
     this.setState({
-      // createdPhotos: userProfile.data,
       profilesSuggestedToFollow,
       photosByFollowees,
       userProfile: userProfile.data
@@ -111,7 +107,7 @@ class PhotosHome extends React.Component {
             visibleSlides={3.5}
           >
             <div className='container'>
-              <Slider>
+              <Slider style={{backgroundColor: 'red'}}>
                 {
                   profilesSuggestedToFollow.map((profile, index) => {
                     return (
