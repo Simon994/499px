@@ -109,11 +109,12 @@ class PhotoShow extends React.Component {
 
     if (!this.state.singlePhotoData || !this.state.currentUserPhoto) return <h1>Just getting that for you</h1>
 
-    const { image, title, comments, location } = this.state.singlePhotoData
+    const { image, title, comments, location, description } = this.state.singlePhotoData
     const { username, profile_image } = this.state.singlePhotoData.owner
     const { heartColor, formText, postBtnHidden, currentUserPhoto } = this.state
 
     const uploadedAt = (this.state.singlePhotoData.uploaded_at).slice(0, 10)
+    const numberOfLikes = this.state.singlePhotoData.liked_by.length
 
     return (
       <>
@@ -148,6 +149,12 @@ class PhotoShow extends React.Component {
               <Icon name='map marker alternate'/>
               <p style={{ marginRight: '15px', textDecorationLine: 'underline', textDecorationStyle: 'dashed' }}>{location}</p>
               <p><strong>Uploaded:</strong> {uploadedAt}</p>
+            </div>
+
+            <div style={{ marginTop: '20px' }}>
+              <p>{description}</p>
+              <br/>
+              <p>{numberOfLikes} {numberOfLikes === 1 ? 'person' : 'people'} liked this photo</p>
             </div>
 
           </div>
