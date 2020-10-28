@@ -27,7 +27,7 @@ const Home = () => {
         <h1>What makes us the same</h1>
         <div className='home-details-text'>
           <div className='detail-tile'>
-            <Icon name='pencil' size='huge'/>
+            <Icon name='clone outline' size='huge'/>
             <h3>Style and feel</h3>
             <p>I am tring to emulate as much as possible
               to the style and feel. 

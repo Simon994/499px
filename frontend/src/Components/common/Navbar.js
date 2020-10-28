@@ -17,15 +17,21 @@ class Navbar extends React.Component {
 
   async componentDidMount() {
 
-    const response = await getUserProfile()
-    const { id } = response.data
-
-    const avatar = getAvatar()
-
-    this.setState({
-      avatar,
-      userId: id
-    })
+    if (isAuthenticated()){
+      try {
+        const response = await getUserProfile()
+        const { id } = response.data
+    
+        const avatar = getAvatar()
+    
+        this.setState({
+          avatar,
+          userId: id
+        })
+      } catch (err) {
+        console.error(err)
+      }
+    }
   }
 
 
