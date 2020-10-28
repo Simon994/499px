@@ -11,7 +11,6 @@ class ProfilePhotoTile extends React.Component {
   }
 
   componentDidMount(){
-    // const liked = this.props.photo.liked_by.includes(this.props.currentUserId)
 
     const likedByArrayIds = this.props.photo.liked_by.map(likedBy => likedBy.id )
     const isLikedByCurrentUser = likedByArrayIds.includes(this.props.currentUserId)
@@ -59,7 +58,7 @@ class ProfilePhotoTile extends React.Component {
     
     return (
       <div className='image-item tile'>
-        <Link to={`/photos/${id}`}><img src={image} /></Link>
+        <Link to={`/photos/${id}`}><img src={image} alt={title}/></Link>
         <div className='details'>
           <span className='title'>{title}</span>
           <div className='heart-btn-container'>

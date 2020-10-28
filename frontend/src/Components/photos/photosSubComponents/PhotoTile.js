@@ -13,7 +13,6 @@ class PhotoTile extends React.Component {
 
   componentDidMount(){
     const liked = this.props.photo.liked_by.includes(this.props.userProfile.id)
-    console.log('THIS PHOTO IS LIKED?', liked)
     const heartColor = liked ? 'pink' : 'grey'
 
     this.setState({
@@ -44,18 +43,18 @@ class PhotoTile extends React.Component {
           liked: false
         })
       } catch (err) {
-        console.log(err)
+        console.error(err)
       }
     }
   }
 
   render() {
     
-    const { image, owner, ownerId, ownerProfileImage,id } = this.props.photo
+    const { image, owner, ownerId, ownerProfileImage, id, title } = this.props.photo
     const { heartColor } = this.state
     return (
       <div className="image-item tile" >
-        <Link to={`/photos/${id}`}><img src={ image } /></Link>
+        <Link to={`/photos/${id}`}><img src={ image } alt={title}/></Link>
         <div className='details'>
           <span className='title'>
 

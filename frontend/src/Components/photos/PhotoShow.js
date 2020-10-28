@@ -121,7 +121,7 @@ class PhotoShow extends React.Component {
     return (
       <>
         <div className='singlephoto-container'>
-          <img src={image} />
+          <img src={image} alt={title}/>
         </div>
         <section className='singlephoto-lower-container'>
           <div className='singlephoto-info-outer'>
@@ -138,7 +138,7 @@ class PhotoShow extends React.Component {
 
             <div className='title-owner-container'>
               <div className='singlephoto-owner-avatar'>
-                <img src={profile_image} style={{ borderRadius: '50%', width: '50px' }} />
+                <img src={profile_image} alt='profile' style={{ borderRadius: '50%', width: '50px' }} />
               </div>
 
               <div>
@@ -184,7 +184,7 @@ class PhotoShow extends React.Component {
               {isAuthenticated() &&
                 <Form >
                   <div className='form-input-container'>
-                    <img src={currentUserPhoto} style={{ width: '30px', height: '30px', borderRadius: '50%', marginRight: '5px', marginTop: '5px' }} />
+                    <img src={currentUserPhoto} alt='profile' style={{ width: '30px', height: '30px', borderRadius: '50%', marginRight: '5px', marginTop: '5px' }} />
                     <Form.Input
                       onClick={this.handleTextBoxClick}
                       onChange={this.handleTextChange}
@@ -221,7 +221,7 @@ class PhotoShow extends React.Component {
               {comments.map((comment, index) => {
                 return (
                   <Comment key={index}>
-                    <img src={comment.owner.profile_image} style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
+                    <img src={comment.owner.profile_image} alt='profile' style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
                     <div style={{ display: 'inline-block', marginLeft: '10px' }}>
                       <Comment.Author>{comment.owner.username}</Comment.Author>
                       <Comment.Text>{comment.text}</Comment.Text>

@@ -107,7 +107,7 @@ class PhotoSubmit extends React.Component {
         <h3 className='upload-header'>Upload</h3>
         <div className='photo-submit-outer'>
           <div className='image-upload-container'>
-            <img src={image} />
+            <img src={image} alt='uploaded'/>
           </div>
           <div className='photo-form-container'>
             <Form onSubmit={this.handleSubmit}>
