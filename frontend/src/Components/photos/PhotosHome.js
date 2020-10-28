@@ -6,8 +6,8 @@ import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
 
 import { getProfileIndex, getUserProfile } from '../../lib/api'
-import { Icon } from 'semantic-ui-react'
-// import { setAvatar } from '../../lib/assets'
+import { Icon, Loader } from 'semantic-ui-react'
+
 
 class PhotosHome extends React.Component {
 
@@ -82,7 +82,7 @@ class PhotosHome extends React.Component {
       photosByFollowees,
       userProfile } = this.state
 
-
+    if (!profilesSuggestedToFollow.length) return <Loader active inline='centered' />
 
     return (
       <>
