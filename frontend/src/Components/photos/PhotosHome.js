@@ -1,12 +1,12 @@
 import React from 'react'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
+import { Loader } from 'semantic-ui-react'
+import MediaQuery from 'react-responsive'
 
-import ProfileCard from './photosSubComponents/ProfileCard'
 import PhotosGalleryContainer from './photosSubComponents/PhotosGalleryContainer'
+import PhotosCarousel from './photosSubComponents/PhotosCarousel'
 
 import { getProfileIndex, getUserProfile } from '../../lib/api'
-import { Icon, Loader } from 'semantic-ui-react'
 
 
 class PhotosHome extends React.Component {
@@ -84,8 +84,14 @@ class PhotosHome extends React.Component {
 
     if (!profilesSuggestedToFollow.length) return <Loader active inline='centered' />
 
+
     return (
       <>
+
+
+
+
+
         <h1 className='homefeed-title'>Home Feed</h1>
         <p className='homefeed-intro'>See photos and published Galleries from people you follow.</p>
         <section className='homefeed-content'>
@@ -101,12 +107,33 @@ class PhotosHome extends React.Component {
             <h4>Featured photographers</h4>
             <p>Follow to explore new work</p>
           </div>
-          <div className='profiles-to-follow'>
+
+          <MediaQuery minDeviceWidth={1300}>
+            {(matches) => {
+              if (matches) {
+                return <PhotosCarousel
+                  visibleSlides={3.5}
+                  {...this.state}
+                />
+              } else {
+                return <PhotosCarousel
+                  visibleSlides={1}
+                  {...this.state}
+                />
+              }
+            }
+            }
+          </MediaQuery>
+
+
+
+
+          {/* <div className='profiles-to-follow'>
             <CarouselProvider
               naturalSlideWidth={600}
               naturalSlideHeight={60}
               totalSlides={profilesSuggestedToFollow.length}
-              visibleSlides={3.5}
+              visibleSlides={4.5}
             >
               <div className='container'>
                 <Slider >
@@ -133,7 +160,9 @@ class PhotosHome extends React.Component {
                 </div>
               </div>
             </CarouselProvider>
-          </div>
+          </div> */}
+
+
 
           <PhotosGalleryContainer
             followeePhotos={photosByFollowees}
