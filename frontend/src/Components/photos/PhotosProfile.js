@@ -113,8 +113,11 @@ class PhotosProfile extends React.Component {
       followed_by } = this.state.userProfile
     
     const { currentUserId, isCurrentUser, isFollowedByCurrentUser } = this.state
-    const bannerBackground = created_photo[0].image
-
+    let bannerBackground = null
+    if (created_photo.length){
+      bannerBackground = created_photo[0].image
+    }
+    
     return (
       <>
         <div className='profile-banner-img' style={{ backgroundImage: `url(${bannerBackground})` }}></div>
@@ -141,6 +144,10 @@ class PhotosProfile extends React.Component {
             <p>{this.getTotalLikes()} Photo Likes</p>
           </div>
         </div>
+
+        {!bannerBackground &&
+          <h1 style={{textAlign: 'center'}}>Add some photos to get started</h1>
+        }
 
         <div className='image-grid-outer'>
           <div className='image-grid tiles' style={{ marginTop: '30px' }}>
