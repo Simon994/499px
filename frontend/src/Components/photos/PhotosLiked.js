@@ -15,7 +15,6 @@ class PhotosLiked extends React.Component {
 
     try {
       const response = await getUserProfile()
-      console.log('USR PROF ON LIKED', response)
 
       this.setState({
         likedPhotos: response.data.liked_photos,
