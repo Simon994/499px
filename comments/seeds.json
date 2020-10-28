@@ -198,5 +198,15 @@
     "photo": 55,
     "owner": 18
   }
+},
+{
+  "model": "comments.comment",
+  "pk": 31,
+  "fields": {
+    "text": "So cool!",
+    "created_at": "2020-10-28T08:27:05.352Z",
+    "photo": 35,
+    "owner": 2
+  }
 }
 ]
