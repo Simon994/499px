@@ -50,13 +50,11 @@ class PhotosProfile extends React.Component {
 
 
   handleClick = () => {
-
     if (this.state.isFollowedByCurrentUser){
       this.handleUnfollowClick()
     } else {
       this.handleFollowClick()
     }
-
   }
 
 
@@ -93,6 +91,15 @@ class PhotosProfile extends React.Component {
     }
   }
 
+  getTotalLikes = () => {
+    const { userProfile } = this.state
+    let countOfLikes = 0
+    userProfile.created_photo.forEach(photo => {
+      return countOfLikes += photo.liked_by.length
+    })
+    return countOfLikes
+  }
+
 
   render() {
 
@@ -102,7 +109,8 @@ class PhotosProfile extends React.Component {
       first_name,
       last_name,
       following,
-      created_photo } = this.state.userProfile
+      created_photo,
+      followed_by } = this.state.userProfile
     
     const { currentUserId, isCurrentUser, isFollowedByCurrentUser } = this.state
     const bannerBackground = created_photo[0].image
@@ -127,8 +135,10 @@ class PhotosProfile extends React.Component {
               {isFollowedByCurrentUser ? 'Following' : 'Follow'}
             </Button>
           }
-          <div>
-            <p>{following.length} following</p>
+          <div className='photo-stats-container'>
+            <p>{followed_by.length} <strong>Followers</strong></p>
+            <p>{following.length} <strong>Following</strong></p>
+            <p>{this.getTotalLikes()} Photo Likes</p>
           </div>
         </div>
 

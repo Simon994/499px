@@ -771,6 +771,10 @@ label.upload-label{
     position: absolute;
     top: -50px;
   }
+  
+  h1{
+    padding-top: 20px;
+  }
 
   .button.lozenge{
     padding: 7px 15px;
@@ -786,6 +790,14 @@ label.upload-label{
   .button.lozenge.not-following{
     background-color: $primary-blue;
     color: white;
+  }
+
+  .photo-stats-container{
+    display: flex;
+
+    p{
+      margin: 0 10px;
+    }
   }
 }
 
