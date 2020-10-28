@@ -5,6 +5,7 @@ import { Form, Button, Loader } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
 import { createPhoto } from '../../lib/api'
+import { popupNotification } from '../../lib/notifications'
 import { photoCategories } from './photosSubComponents/PhotoCategories'
 
 class PhotoSubmit extends React.Component {
@@ -15,6 +16,7 @@ class PhotoSubmit extends React.Component {
       title: '',
       description: '',
       camera: '',
+      lens: '',
       location: '',
       categories: []
     },
@@ -45,7 +47,7 @@ class PhotoSubmit extends React.Component {
     const selectedCategoriesPks = []
     // Backend currently only accepts pks for category. Quick fix here to look through available
     //categories (stored in PhotoCategories.js) and convert category name selected to pk.
-    if (selectedCategories){
+    if (selectedCategories) {
       selectedCategories.forEach(selectedCategory => {
         const foundCategory = photoCategories.filter(photoCategory => {
           return photoCategory.fields.name === selectedCategory
@@ -75,12 +77,13 @@ class PhotoSubmit extends React.Component {
           description: '',
           camera: '',
           location: '',
-          categories: [5]
+          categories: []
         },
         redirect: '/photoshome'
       })
     } catch (err) {
       console.error('ERR in photo upload', err.response.data)
+      popupNotification('Please provide at least Title, Location and one Category')
     }
   }
 
@@ -92,7 +95,7 @@ class PhotoSubmit extends React.Component {
 
     if (!this.state.formData.image) return <Loader active inline='centered' />
 
-    const { image, title, description, location } = this.state.formData
+    const { image, title, description, location, camera, lens } = this.state.formData
 
     const options = photoCategories.map(category => {
       return { value: category.fields.name, label: category.fields.name }
@@ -133,11 +136,29 @@ class PhotoSubmit extends React.Component {
                     name='location'
                   />
                 </Form.Field>
+                <label className='form-label'>Categories</label>
                 <Select
                   options={options}
                   isMulti
-                  onChange={this.handleMultiSelectChange}  
+                  onChange={this.handleMultiSelectChange}
                 />
+                <br/>
+                <Form.Field>
+                  <label className='form-label'>Camera</label>
+                  <input placeholder='Camera'
+                    onChange={this.handleChange}
+                    value={camera}
+                    name='camera'
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label className='form-label'>Lens</label>
+                  <input placeholder='Lens'
+                    onChange={this.handleChange}
+                    value={lens}
+                    name='lens'
+                  />
+                </Form.Field>
               </div>
               <div className='upload-btns-container'>
                 <Button className='lozenge'>Upload</Button>

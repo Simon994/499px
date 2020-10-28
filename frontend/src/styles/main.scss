@@ -690,6 +690,18 @@ label.upload-label{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 10px;
+
+      label.form-label{
+        color: #888;
+        font-weight: 300;
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+
+      .css-yk16xz-control{
+        margin-right: 10px;
+      }
 
       .css-2b097c-container{
         width: 390px;
@@ -816,14 +828,18 @@ label.upload-label{
     h2{
       margin-bottom: 5px;
     }
+  }
 
+  .gear{
+    font-size: 16px;
+    color: #888;
   }
   
   .location-time{
-
-        display: flex;
+    display: flex;
   }
   
+
 
   .photoshow-categories-list{
     display: flex;

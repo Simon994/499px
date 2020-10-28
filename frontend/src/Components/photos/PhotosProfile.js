@@ -39,13 +39,11 @@ class PhotosProfile extends React.Component {
 
 
   async componentDidMount() {
-    console.log('GOING TO SET PROFILE INFO ON MOUNT')
     this.setProfileInfo()
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.id !== prevProps.match.params.id){
-      console.log('GOING TO SET PROFILE INFO ON UPDATE ⛑')
       this.setProfileInfo()
     }
   }
@@ -75,7 +73,7 @@ class PhotosProfile extends React.Component {
         throw new Error()
       }
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 
@@ -91,7 +89,7 @@ class PhotosProfile extends React.Component {
         throw new Error()
       }
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 

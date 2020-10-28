@@ -111,7 +111,7 @@ class PhotoShow extends React.Component {
       return <Loader active inline='centered' />
     }
 
-    const { image, title, comments, location, description, camera, categories } = this.state.singlePhotoData
+    const { image, title, comments, location, description, camera, categories, lens } = this.state.singlePhotoData
     const { username, profile_image } = this.state.singlePhotoData.owner
     const { heartColor, formText, postBtnHidden, currentUserPhoto } = this.state
 
@@ -158,8 +158,11 @@ class PhotoShow extends React.Component {
               <br />
               <p>{numberOfLikes} {numberOfLikes === 1 ? 'person' : 'people'} liked this photo</p>
               <br />
-              <Icon name='camera' size='large' color='grey' /><span style={{ fontSize: '16px', color: '#888' }}>{camera}</span>
-              
+              <div>
+                <Icon name='camera' size='large' color='grey' /><span className='gear'>{camera}</span>
+              </div>
+              <br/>
+              <Icon name='eye' size='large' color='grey' /><span className='gear'>{lens}</span>
               <h4 style={{ marginTop: '40px' }}>Categories:</h4>
               <div className='photoshow-categories-list'>
                 {categories.map((category, index) => {
