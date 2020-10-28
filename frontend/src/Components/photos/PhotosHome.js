@@ -53,7 +53,7 @@ class PhotosHome extends React.Component {
 
     //Filter for profiles having 3 or more photos
     const profilesWithPhotos = allProfilesNotFollowing.filter(profile => {
-      return profile.created_photo.length >= 3
+      return (profile.created_photo.length >= 3 && profile.id !== userProfile.data.id)
     })
     const profilesSuggestedToFollow = []
 
