@@ -62,7 +62,7 @@ class GetToKnow extends React.Component {
       }
     } catch (err) {
       console.error(err)
-      popupNotification('Please fill in all fields (username cannot contain spaces)')
+      popupNotification('Please fill in all fields. Username may contain only letters, numbers, and @/./+/-/_ characters.')
       this.setState({ formUsernameError: true })
     }
   }

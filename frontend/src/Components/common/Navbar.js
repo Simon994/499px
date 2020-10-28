@@ -15,11 +15,11 @@ class Navbar extends React.Component {
     userId: null
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
 
     const response = await getUserProfile()
     const { id } = response.data
-    
+
     const avatar = getAvatar()
 
     this.setState({
@@ -28,41 +28,46 @@ class Navbar extends React.Component {
     })
   }
 
-  
+
   render() {
-    const { userId } = this.state
+
     const avatar = getAvatar()
     const localUserId = getUserId()
 
     return (
       <nav className='navbar'>
         <div className='logo'>
-          <Link to='/photoshome' style={{ textDecoration: 'none', color: 'black' }}>
+          {isAuthenticated() &&
+            <Link to='/photoshome' style={{ textDecoration: 'none', color: 'black' }}>
+              <p>499<sup>px</sup></p>
+            </Link>
+          }
+          {!isAuthenticated() &&
             <p>499<sup>px</sup></p>
-          </Link>
+          }
         </div>
         <div className='nav-btns'>
           {(!getIsGettingToKnow() && !isAuthenticated()) &&
             <div>
               <Link to={'/login'}>
-              Log in
+                Log in
               </Link>
               <Button className='lozenge' as={Link} to={'/join'}>
-              Sign up
+                Sign up
               </Button>
             </div>
           }
-          {isAuthenticated() && 
-        <Menu.Item>
-          <DropdownAvatar 
-            sourceImage={this.props.location.state ? this.props.location.state.avatarImg : avatar} 
-            userId={localUserId}>
-          </DropdownAvatar>
-          <Button className='lozenge upload' as={Link} to={'/upload'}>
-            <Icon name='arrow up'/>
+          {isAuthenticated() &&
+            <Menu.Item>
+              <DropdownAvatar
+                sourceImage={this.props.location.state ? this.props.location.state.avatarImg : avatar}
+                userId={localUserId}>
+              </DropdownAvatar>
+              <Button className='lozenge upload' as={Link} to={'/upload'}>
+                <Icon name='arrow up' />
             Upload
-          </Button>
-        </Menu.Item>
+              </Button>
+            </Menu.Item>
           }
         </div>
 
