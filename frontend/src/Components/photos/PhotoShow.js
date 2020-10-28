@@ -37,7 +37,6 @@ class PhotoShow extends React.Component {
   handleClick = async () => {
 
     const { id } = this.props.match.params
-    console.log('GET ID', id)
     const { liked } = this.state
 
     if (!liked) {
