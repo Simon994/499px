@@ -146,7 +146,7 @@ class PhotosProfile extends React.Component {
         </div>
 
         {!bannerBackground &&
-          <h1 style={{textAlign: 'center'}}>Add some photos to get started</h1>
+          <h1 style={{ textAlign: 'center' }}>Add some photos to get started</h1>
         }
 
         <div className='image-grid-outer'>

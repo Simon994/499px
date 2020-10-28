@@ -21,7 +21,7 @@ class PhotosLiked extends React.Component {
         currentUserId: response.data.id
       })
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 
