@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import django_on_heroku
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+import dj_database_url
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w151=n4y6xz^)khnc+p0u&pi=h0w0*6=pc#5r49kd@2*zjf32g'
+if str(os.getenv('ENVIRONMENT')) == 'development':
+    SECRET_KEY = 'w151=n4y6xz^)khnc+p0u&pi=h0w0*6=pc#5r49kd@2*zjf32g'
+else:
+    SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -58,7 +66,9 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend')
+                 ]
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,14 +87,16 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+DATABASES = {}
+if str(os.getenv('ENVIRONMENT')) == 'development':
+    DATABASES['default'] =  {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'RAWShot_django',
         'HOST': 'localhost',
         'PORT': 5432
     }
-}
+else:
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
@@ -135,3 +147,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend', "build", "static"),
+)
+
+django_on_heroku.settings(locals())

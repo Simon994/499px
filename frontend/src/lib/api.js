@@ -15,15 +15,15 @@ export const getProfileIndex = () => {
 }
 
 export function getUserProfile(){
-  return axios.get('/api/auth/profile', withHeaders())
+  return axios.get('/api/auth/profile/', withHeaders())
 }
 
 export function getPublicUserProfile(userId){
-  return axios.get(`/api/auth/profile/${userId}`, withHeaders())
+  return axios.get(`/api/auth/profile/${userId}/`, withHeaders())
 }
 
 export const getSinglePhoto = (photoId) => {
-  return axios.get(`/api/photos/${photoId}`)
+  return axios.get(`/api/photos/${photoId}/`)
 }
 
 export const followProfile = (userId, formData) => {
