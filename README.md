@@ -50,5 +50,12 @@ https://rawshot-499px.herokuapp.com/photoshome
 
 499px (aka RAWShot) attempts to clone key features and styles of the photo-sharing website 500px (https://500px.com/). In particular with 499px users can post, comment on and like photos, as well as follow photographers.
 
+### Wireframing and Entity Relationship Diagram
 
+To define the key features to clone from 500px, I developed the following wireframe and entity relationship diagram (ERD)
 
+#### ***Wireframe***:
+![Wireframe Screenshot](./Readme_Screenshots/Wireframe_Readme_Screenshot.png)
+
+#### ***ERD***:
+![ERD Screenshot](./Readme_Screenshots/ERD_Readme_Screenshot.png)
