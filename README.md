@@ -81,7 +81,7 @@ class User(AbstractUser):
         blank=True
     )
 ```
-There is also a many-to-many relationship shown in the ERD between User and Photo, which represents 'likes': a photo can be liked by many users, and many photos can be liked by a user. This relationship is achieved in the Photo model again using a `ManyToManyField`:
+There is also a many-to-many relationship between User and Photo that represents 'likes': a photo can be liked by many users, and many photos can be liked by a user. Another many-to-many relationship exists between Category and Photo. The Photo model is shown below.
 
 ```javascript
 class Photo(models.Model):
