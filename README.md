@@ -60,13 +60,13 @@ To define the key features to clone from 500px, I developed the following wirefr
 #### ***ERD***:
 ![ERD Screenshot](./Readme_Screenshots/ERD_Readme_Screenshot.png)
 
+### Models
 As implied by the ERD, there are several models on the backend:
   * User
   * Photo
   * Photo_category
   * Comment
 
-#### ***Relationships***
 To build a follower system (the many-to-many relationship for followers shown in the ERD), the User model includes a `ManyToManyField`:
 ```javascript
 class User(AbstractUser):
