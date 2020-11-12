@@ -50,12 +50,61 @@ https://rawshot-499px.herokuapp.com/photoshome
 
 499px (aka RAWShot) attempts to clone key features and styles of the photo-sharing website 500px (https://500px.com/). In particular with 499px users can post, comment on and like photos, as well as follow photographers.
 
-### Wireframing and Entity Relationship Diagram
+### Wireframe and Entity Relationship Diagram
 
-To define the key features to clone from 500px, I developed the following wireframe and entity relationship diagram (ERD)
+To define the key features to clone from 500px, I developed the following wireframe and entity relationship diagram (ERD) - note that join table (and the many-to-many relationship) for followers is also shown in the ERD for clarity.
 
 #### ***Wireframe***:
 ![Wireframe Screenshot](./Readme_Screenshots/Wireframe_Readme_Screenshot.png)
 
 #### ***ERD***:
 ![ERD Screenshot](./Readme_Screenshots/ERD_Readme_Screenshot.png)
+
+As implied by the ERD, there are several models on the backend:
+  * User
+  * Photo
+  * Photo_category
+  * Comment
+
+#### ***Relationships***
+To build a follower system (the many-to-many relationship for followers shown in the ERD), the User model includes a `ManyToManyField`:
+```javascript
+class User(AbstractUser):
+    email = models.CharField(max_length=50, unique=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    profile_image = models.CharField(max_length=400)
+    followed_by = models.ManyToManyField(
+        'self',
+        related_name='following',
+        symmetrical=False,
+        blank=True
+    )
+```
+There is also a many-to-many relationship shown in the ERD between User and Photo, which represents 'likes': a photo can be liked by many users, and many photos can be liked by a user. This relationship is achieved in the Photo model again using a `ManyToManyField`:
+
+```javascript
+class Photo(models.Model):
+    title = models.CharField(max_length = 75)
+    description = models.TextField(max_length=300, blank=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    taken_at = models.DateTimeField(null=True, blank=True)
+    camera = models.CharField(max_length = 50, blank=True)
+    lens = models.CharField(max_length = 50, blank=True)
+    image = models.CharField(max_length=400)
+    location = models.CharField(max_length = 75)
+    categories = models.ManyToManyField(
+        'photo_categories.PhotoCategory',
+        related_name='photos'
+    )
+    owner = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='created_photo',
+        on_delete=models.CASCADE
+    )
+    liked_by = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='liked_photos',
+        blank=True
+    )
+```
