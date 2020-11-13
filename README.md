@@ -60,6 +60,8 @@ To define the key features to clone from 500px, I developed the following wirefr
 #### ***ERD***:
 ![ERD Screenshot](./Readme_Screenshots/ERD_Readme_Screenshot.png)
 
+## Backend
+
 ### Models
 As implied by the ERD, there are several models on the backend:
   * User
@@ -108,3 +110,11 @@ class Photo(models.Model):
         blank=True
     )
 ```
+
+## Frontend
+
+Throughout the frontend, I have attempted to reproduce key features of 500px, as well as matching the style and feel of that website.
+As an example of matching styles, a side-by-side comparison of the homepages of 500px and 499px is shown below.
+
+#### ***Reproducing the style and feel of 500px (left) with 499px (right)***
+![Homepage comparison Screenshot](./Readme_Screenshots/Homepages_Readme_Screenshot.png)
