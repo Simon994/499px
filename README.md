@@ -114,7 +114,7 @@ class Photo(models.Model):
 ## Frontend
 
 Throughout the frontend, I have attempted to reproduce key features of 500px, as well as matching the style and feel of that website.
-As an example of matching styles, a side-by-side comparison of the homepages of 500px and 499px is shown below.
+As an example of similarity in styles, a side-by-side comparison of the homepages of 500px and 499px is shown below.
 
-#### ***Reproducing the style and feel of 500px (left) with 499px (right)***
+#### ***Reproducing the feel of 500px (left) with 499px (right)***
 ![Homepage comparison Screenshot](./Readme_Screenshots/Homepages_Readme_Screenshot.png)
