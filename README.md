@@ -164,3 +164,27 @@ The `PhotosHome` component includes a `PhotosCarousel`. To attempt to match the 
     </Slider>
 ...
 ```
+
+Within the carousel, each `ProfileCard` includes selected images from photographers who you can follow, the photographer's name and a button to follow the photographer.
+![Carousel Screenshot](./Readme_Screenshots/Follow_Photographers_Screenshot.png).
+
+Once clicked, the `follow` `Button` is replaced, via conditional rendering, with an `unfollow` `Button`, which can be clicked if the user wants to immediately undo the preceeding follow action.
+
+```JavaScript
+{!following &&
+  <Button
+    className='lozenge follow'  
+    floated='right'
+    onClick={this.handleFollowClick}
+  >Follow
+  </Button>
+}
+{following &&
+  <Button
+    className='lozenge unfollow'
+    floated='right'
+    onClick={this.handleUnfollowClick}
+  >Unfollow
+  </Button>
+}
+```
