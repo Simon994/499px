@@ -118,3 +118,49 @@ As an example of similarity in styles, a side-by-side comparison of the homepage
 
 #### ***Reproducing the feel of 500px (left) with 499px (right)***
 ![Homepage comparison Screenshot](./Readme_Screenshots/Homepages_Readme_Screenshot.png)
+
+The Navbar is faithfully reproduced with both styling and conditional rendering; For example, conditionally rendering a link on the logo, or not, depending on whether the user is authenticated:
+
+```JavaScript
+  <div className='logo'>
+    {isAuthenticated() &&
+      <Link to='/photoshome' style={{ textDecoration: 'none', color: 'black' }}>
+        <p>499<sup>px</sup></p>
+      </Link>
+    }
+    {!isAuthenticated() &&
+      <p>499<sup>px</sup></p>
+    }
+  </div>
+```
+
+The `PhotosHome` component includes a `PhotosCarousel`. To attempt to match the style and features of this carousel, I used pure-react-carousel, which allows easy control over slide width, height and the number of slides visible (which is varied depending on the screen width, using a `MediaQuery` component). The carousel also includes only profiles that the user does not already follow, via a prop on `PhotosCarousel`, `profilesSuggestedToFollow`.
+
+```JavaScript
+<CarouselProvider
+  naturalSlideWidth={600}
+  naturalSlideHeight={60}
+  totalSlides={profilesSuggestedToFollow.length}
+  visibleSlides={visibleSlides}
+>
+  <div className='container'>
+    <Slider >
+      {
+        profilesSuggestedToFollow.map((profile, index) => {
+          return (
+            <Slide key={index} index={index} className='slide'>
+              <ProfileCard
+                key={profile.id}
+                created_photo={profile.created_photo}
+                username={profile.username}
+                profileImage={profile.profile_image}
+                {...profile}
+              />
+            </Slide>
+          )
+        })
+      }
+
+    </Slider>
+...
+```
