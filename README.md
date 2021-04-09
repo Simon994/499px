@@ -30,7 +30,10 @@ Build a full-stack React app using Python, Django and PostgreSQL.
 ### Installation
 
 * Clone or download the repo
-* Install Python packages: `pipenv`
+* Install Python packages: `pipenv install --dev`
+* If you don't already have it, install PostgreSQL. [Here's a good tutorial](https://flaviocopes.com/postgres-how-to-install/) covering this.
+* Add a .env file in the root of the project. In it, add the following: `ENVIRONMENT=development` to ensure Django uses the correct (development) settings for the database, as per the settings.py file.
+* In the project root (main directory), `pipenv shell` to activate the project's virtualenv
 * Load seeds data from the multiple seeds files, using `python manage.py loaddata foldername/seeds.json` and replacing `foldername` with:
   * `photo_categories`
   * `jwt_auth`
@@ -38,8 +41,7 @@ Build a full-stack React app using Python, Django and PostgreSQL.
   * `comments`
 * Move to the frontend: `cd frontend`
 * In frontend, install dependencies: `npm i`
-* Back in the project root (main directory), `pipenv shell` to activate the project's virtualenv
-* Start the app with `python manage.py runserver`
+* `cd ..` to move back to the project root. Start the app with `python manage.py runserver`
 * Navigate in your browser to `localhost:8000/`. You should see the frontend being served to the browser.
 
 ## The App: 499px
