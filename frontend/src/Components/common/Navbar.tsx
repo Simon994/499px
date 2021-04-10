@@ -1,14 +1,19 @@
 import React from 'react'
 import { Menu, Button, Icon } from 'semantic-ui-react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
 import DropdownAvatar from './commonSubComponents/DropdownAvatar'
 import { isAuthenticated, getIsGettingToKnow } from '../../lib/auth'
 import { getUserProfile } from '../../lib/api'
 import { getAvatar, getUserId } from '../../lib/assets'
 
+type StateType = {
+  avatarImg: string
+}
 
-class Navbar extends React.Component {
+interface Props extends RouteComponentProps<{}, {}, StateType>{}
+
+class Navbar extends React.Component<Props> {
 
   state = {
     avatar: '',
