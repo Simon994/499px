@@ -12,8 +12,12 @@ type StateType = {
 }
 
 interface Props extends RouteComponentProps<{}, {}, StateType>{}
+interface State {
+  avatar: string | null,
+  userId: number | null
+}
 
-class Navbar extends React.Component<Props> {
+class Navbar extends React.Component<Props, State> {
 
   state = {
     avatar: '',
@@ -21,12 +25,10 @@ class Navbar extends React.Component<Props> {
   }
 
   async componentDidMount() {
-
     if (isAuthenticated()){
       try {
         const response = await getUserProfile()
-        const { id } = response.data
-    
+        const { id }: {id: number} = response.data
         const avatar = getAvatar()
     
         this.setState({
