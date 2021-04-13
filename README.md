@@ -8,13 +8,24 @@ The to-dos below describe new additions to the app.
 
 ## Additions (to-do / ~~done~~)
 
-| To do       | In Progress | Done          |
-| :---        | :---        | :---          |
-| Add testing       | Migrate to TypeScript       | ~~Update documentation for readability~~   |
-| Migrate SCSS to individual files (possibly modules later)     |         |       |
-| Improve form validation   |         |       |
-| Improve photo loading times   |         |       |
-| Add OAuth   |         |       |
+### To do
+<ul style="color:#be0000">
+  <li>Migrate SCSS to individual files (possibly modules later)</li>
+  <li>Improve form validation</li>
+  <li>Improve photo loading times</li>
+  <li>Add OAuth</li>
+</ul> 
+
+### In Progress
+<ul style="color:hotpink">
+  <li>Migrate to TypeScript</li>
+  <li>Add tests</li>
+</ul>
+
+### Done
+<ul style="color:chartreuse">
+  <li><del>Update documentation for readability</del></li>
+</ul>
 
 ## Goal
 
