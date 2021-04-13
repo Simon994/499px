@@ -1,8 +1,20 @@
-# RAWShot (aka 499px)
+# 499px (aka RAWShot)
 
-A full-stack app, with multiple relationships and CRUD functionality, cloning key parts of the photo-sharing website 500px
+This app extends a previous app, which was originally built solo in 8 days as part of the Software Engineering Imersive and can be [found here](https://github.com/Simon994/RAWShot).
 
-Built solo, this is my fourth and final project during the Software Engineering Immersive at General Assembly.
+This project, like the original described above, is a full-stack app, with multiple relationships and CRUD functionality, cloning key parts of the photo-sharing website 500px.
+
+The to-dos below describe new additions to the app.
+
+## Additions (to-do / ~~done~~)
+
+| To do       | In Progress | Done          |
+| :---        | :---        | :---          |
+| Add testing       | Migrate to TypeScript       | ~~Update documentation for readability~~   |
+| Migrate SCSS to individual files (possibly modules later)     |         |       |
+| Improve form validation   |         |       |
+| Improve photo loading times   |         |       |
+| Add OAuth   |         |       |
 
 ## Goal
 
@@ -10,7 +22,7 @@ Build a full-stack React app using Python, Django and PostgreSQL.
 
 ### Timescale
 
-* 8 days
+* Ongoing ([Original project](https://github.com/Simon994/RAWShot): 8 days)
 
 ### Technologies used
 
