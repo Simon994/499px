@@ -17,7 +17,8 @@ const Join = () => {
             className='lozenge login-email-btn'
             type='submit'
             as={Link}
-            to='/signup'  
+            to='/signup'
+            data-cy='join-email-signup'
           >
             <Icon name='mail' />
             Continue with email

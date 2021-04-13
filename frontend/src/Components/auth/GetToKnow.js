@@ -101,6 +101,7 @@ class GetToKnow extends React.Component {
                   value={first_name}
                   name='first_name'
                   className='first-input-gtk'
+                  data-cy='gtk-first-name'
                 />
               </Form.Field>
               <Form.Field>
@@ -109,6 +110,7 @@ class GetToKnow extends React.Component {
                   onChange={this.handleChange}
                   value={last_name}
                   name='last_name'
+                  data-cy='gtk-last-name'
                 />
               </Form.Field>
               <Form.Field>
@@ -117,6 +119,7 @@ class GetToKnow extends React.Component {
                   onChange={this.handleChange}
                   value={username}
                   name='username'
+                  data-cy='gtk-username'
                 />
               </Form.Field>
               <Button className='lozenge signup-email-btn' type='submit'>Next</Button>

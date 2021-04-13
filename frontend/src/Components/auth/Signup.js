@@ -78,6 +78,7 @@ class Signup extends React.Component {
                   onChange={this.handleChange}
                   value={email}
                   name='email'
+                  data-cy='signup-email'
                 />
               </Form.Field>
               <Form.Field>
@@ -87,6 +88,7 @@ class Signup extends React.Component {
                   type='password'
                   value={password}
                   name='password'
+                  data-cy='signup-password'
                 />
               </Form.Field>
               <Button className='lozenge signup-email-btn' type='submit'>Sign up</Button>
