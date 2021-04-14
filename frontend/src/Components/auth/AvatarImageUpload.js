@@ -57,6 +57,7 @@ class AvatarImageUpload extends React.Component {
             alt="selected"
             avatar
             className='avatar-preview'
+            data-cy={`${image !== defaultAvatar ? 'uploaded-avatar' : 'default' }`}
           />
         </div>
         <>
