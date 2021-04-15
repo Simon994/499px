@@ -62,7 +62,10 @@ class Navbar extends React.Component<Props, State> {
         <div className='nav-btns'>
           {(!getIsGettingToKnow() && !isAuthenticated()) &&
             <div>
-              <Link to={'/login'}>
+              <Link
+                to={'/login'}
+                data-cy='navbar-login'
+              >
                 Log in
               </Link>
               <Button className='lozenge' as={Link} to={'/join'}>

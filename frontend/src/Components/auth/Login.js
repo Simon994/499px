@@ -79,6 +79,7 @@ class Login extends React.Component {
                   onChange={this.handleChange}
                   value={email}
                   name='email'
+                  data-cy='email'
                 />
               </Form.Field>
               <Form.Field>
@@ -88,6 +89,7 @@ class Login extends React.Component {
                   value={password}
                   type='password'
                   name='password'
+                  data-cy='password'
                 />
               </Form.Field>
               <Button className='lozenge login-email-btn' type='submit'>Log in</Button>
