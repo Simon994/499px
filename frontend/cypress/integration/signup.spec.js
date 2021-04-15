@@ -2,24 +2,28 @@
 
 describe('Signup', () => {
   it('signup a new user from homepage hero-link', () => {
-    const email = '5bobbybobbyson@email.com'
+    const email = '6bobbybobbyson@email.com'
     const password = Cypress.env('password')
     const firstName = 'bobby'
     const lastName = 'bobbyson'
-    const username = '5bobbybobbyson'
+    const username = '6bobbybobbyson'
     const fileName = 'test-avatar.jpg'
 
     cy.visit('http://localhost:3000/')
 
     cy.get('[data-cy=home-signup]')
       .click()
-      .get('[data-cy=join-email-signup]')
+    cy.location('pathname').should('equal', '/join')
+
+    cy.get('[data-cy=join-email-signup]')
       .click()
+    cy.location('pathname').should('equal', '/signup')
 
     //Fill in and submit the Signup form
     cy.get('[data-cy=signup-email]').type(email)
     cy.get('[data-cy=signup-password]').type(password)
     cy.get('form').submit()
+    cy.location('pathname').should('equal', '/gettoknow')
 
     //attach a test pic as a fixture and check it is uploaded
     cy.get('input[type="file"]').invoke('removeAttr', 'class')
@@ -33,6 +37,7 @@ describe('Signup', () => {
     
     //Submit the GetToKnow form
     cy.get('form').submit()
+    cy.location('pathname').should('equal', '/login')
 
   })
 })

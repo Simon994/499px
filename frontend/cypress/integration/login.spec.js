@@ -21,6 +21,6 @@ describe('Login', () => {
     cy.get('[data-cy=email').type(email)
     cy.get('[data-cy=password').type(password)
     cy.get('form').submit()
+    cy.location('pathname').should('equal', '/photoshome')
   })
-
 })
