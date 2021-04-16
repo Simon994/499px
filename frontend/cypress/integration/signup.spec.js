@@ -9,6 +9,9 @@ describe('Signup', () => {
     const username = '6bobbybobbyson'
     const fileName = 'test-avatar.jpg'
 
+    cy.exec('npm run flush')
+    cy.exec('npm run seed-all')
+
     cy.visit('http://localhost:3000/')
 
     cy.get('[data-cy=home-signup]')

@@ -28,7 +28,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress-open": "npx cypress open"
+    "cypress-open": "npx cypress open",
+    "flush": "pipenv run python ../manage.py flush --no-input",
+    "seed-photo-categories": "pipenv run python ../manage.py loaddata ../photo_categories/seeds.json",
+    "seed-jwt-auth": "pipenv run python ../manage.py loaddata ../jwt_auth/seeds.json",
+    "seed-photos": "pipenv run python ../manage.py loaddata ../photos/seeds.json",
+    "seed-comments": "pipenv run python ../manage.py loaddata ../comments/seeds.json",
+    "seed-all": "npm run seed-photo-categories && npm run seed-jwt-auth && npm run seed-photos && npm run seed-comments"
   },
   "eslintConfig": {
     "extends": "react-app"
