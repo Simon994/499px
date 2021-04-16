@@ -1,0 +1,266 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$teTfFzCGw7a3$IHfO2JzVBFD57+WGDlB+lEWDIQ4dEqf7/t163HrPoW4=",
+    "last_login": "2020-10-26T19:34:33.499Z",
+    "is_superuser": true,
+    "username": "admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-10-21T11:53:45.224Z",
+    "email": "admin@email.com",
+    "first_name": "",
+    "last_name": "",
+    "profile_image": "",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$uW6DeYvSY1is$Nx74b08SkhEoET9HzEd8pcp+6pRfflI+YHZOGcTIjKE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Simon",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-21T13:50:33Z",
+    "email": "simon@email.com",
+    "first_name": "Simon",
+    "last_name": "RT",
+    "profile_image": "https://res.cloudinary.com/duzftncuf/image/upload/v1603824950/upload_test/blueshirt_awake_a7fvye.png",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      9
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Kayle_K",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-22T08:06:51Z",
+    "email": "kayle@email.com",
+    "first_name": "Kayle",
+    "last_name": "K.",
+    "profile_image": "https://images.unsplash.com/photo-1597003666762-30fe6b282772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      9
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$uW6DeYvSY1is$Nx74b08SkhEoET9HzEd8pcp+6pRfflI+YHZOGcTIjKE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Matt_B",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-23T12:48:43Z",
+    "email": "matt@email.com",
+    "first_name": "Matt",
+    "last_name": "B.",
+    "profile_image": "https://res.cloudinary.com/duzftncuf/image/upload/v1603825516/upload_test/Nightlife-barfly_i7feju.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      3,
+      10,
+      2,
+      11,
+      21,
+      24
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "David_T",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-23T12:56:13Z",
+    "email": "David_T@email.com",
+    "first_name": "David",
+    "last_name": "T",
+    "profile_image": "https://res.cloudinary.com/duzftncuf/image/upload/v1603824780/upload_test/enginerr_normal_chsxdu.png",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      18
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Anton_T",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-23T13:00:51Z",
+    "email": "Anton_Trusch@email.com",
+    "first_name": "Anton",
+    "last_name": "T.",
+    "profile_image": "https://res.cloudinary.com/duzftncuf/image/upload/v1603825192/upload_test/Sherbrooke-Summer-castle-in-old-quebec-city-shutterstock_428039830_bwfxgl.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      3,
+      22,
+      9
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$uNYlgLFO6NmQ$2iB5uiU1ACABonb3ii54fsIQPOz9wfH8XBIIo4c8Dgo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "James_Bobson",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-25T07:27:06Z",
+    "email": "James@email.com",
+    "first_name": "James",
+    "last_name": "Bobson",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603610811/upload_test/jrhxegxouzjnb8j1xglz.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      24,
+      11,
+      21,
+      23
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$bZI0NJ87OyQf$7BfDsgC2G+qnEbidJ7bYPSXbvvOt5wjdBbq4dc3LjHQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Hennie_S",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-26T20:04:57.641Z",
+    "email": "Hennie@email.com",
+    "first_name": "Hennie",
+    "last_name": "S",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603742687/upload_test/oyy9hezmyy96enmmi0cr.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      21
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$vAqbXAtRKNLm$cKVO3IOj6IWqn3JB64zUA1QB7wtxShYbV2e0bDCVBfI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Michiel_A",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-26T20:34:31.149Z",
+    "email": "Michiel_A@email.com",
+    "first_name": "Michiel",
+    "last_name": "A.",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603744441/upload_test/qcnl1kew58eqgb7u0hj7.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$BzmaRURfQLpv$mMyQP47ToMD76qaUW8Q8GDgfNFVAdrkXT34XF0+R4fo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Sami_T",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-26T21:29:40.246Z",
+    "email": "sami@email.com",
+    "first_name": "Sami",
+    "last_name": "T",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603747737/upload_test/znbb0jwmph8tpvpmrujd.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$zH4GpzxxFKaw$vXCes17DL5J+EY7eIX6SNacO2kZJsLqbJ+PhpJ3AZUA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Kat_vW",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-27T15:36:21.836Z",
+    "email": "kat@email.com",
+    "first_name": "Kat",
+    "last_name": "vW",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603812969/upload_test/jzkorroo9vz3maxubkqj.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 24,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$CrZRNfwr9VIK$86vl3AnPkYHJwGAE7s5KROij7Ac2ZlZmu3lfpjiJ6OI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Olayinka_B",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-10-27T15:53:38.566Z",
+    "email": "olayinka@email.com",
+    "first_name": "Olayinka",
+    "last_name": "B",
+    "profile_image": "http://res.cloudinary.com/duzftncuf/image/upload/v1603814011/upload_test/rooejfadnt9jw14z9cut.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+}
+]

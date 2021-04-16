@@ -61,6 +61,14 @@ Build a full-stack React app using Python, Django and PostgreSQL.
 * `cd ..` to move back to the project root. Start the app with `python manage.py runserver`
 * Navigate in your browser to `localhost:8000/`. You should see the frontend being served to the browser.
 
+### Testing
+
+* Rather than using `runserver` to start the backend, from the project root, start a test server instead as follows (this will avoid polluting the default database while running tests): `python manage.py testserver frontend/cypress/fixtures/photo_categories.json frontend/cypress/fixtures/jwt_auth.json frontend/cypress/fixtures/photos.json frontend/cypress/fixtures/comments.json --noinput`
+* The above command creates a test database and populates it with the data from the fixtures folder. 
+* Then, from the frontend directory, start the server with `npm start`
+* Finally, open the Cypress test runner with `npm run cypress-open` which should open a browser window, from where tests can be selected to be run
+
+
 ## The App: 499px
 
 ### Live version

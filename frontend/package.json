@@ -29,7 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress-open": "npx cypress open",
-    "flush": "pipenv run python ../manage.py flush --no-input",
+    "flush-testdb": "pipenv run python ../manage.py flush --database testdb --no-input",
     "seed-photo-categories": "pipenv run python ../manage.py loaddata ../photo_categories/seeds.json",
     "seed-jwt-auth": "pipenv run python ../manage.py loaddata ../jwt_auth/seeds.json",
     "seed-photos": "pipenv run python ../manage.py loaddata ../photos/seeds.json",

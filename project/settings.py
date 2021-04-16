@@ -87,7 +87,14 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'testdb': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'test_RAWShot_django',
+        'HOST': 'localhost',
+        'PORT': 5432
+    }
+}
 if str(os.getenv('ENVIRONMENT')) == 'development':
     DATABASES['default'] =  {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
