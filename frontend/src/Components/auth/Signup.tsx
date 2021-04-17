@@ -6,26 +6,30 @@ import { Redirect, Link } from 'react-router-dom'
 import { setIsGettingToKnow } from '../../lib/auth'
 import { popupNotification } from '../../lib/notifications'
 
-class Signup extends React.Component {
+
+interface State {
+  redirect: string;
+}
+
+class Signup extends React.Component<State> {
 
   state = {
     formData: {
       email: '',
       password: ''
     },
-    redirect: false
+    redirect: ''
   }
 
-  handleChange = (e) => {
+  handleChange = (e: React.FormEvent<HTMLInputElement>): void => {
     const formData = {
       ...this.state.formData,
-      [e.target.name]: e.target.value
+      [(e.target as HTMLInputElement).name]: (e.target as HTMLInputElement).value
     }
     this.setState({ formData })
   }
 
-
-  handleSubmit = (e) => {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     const { password, email } = this.state.formData
 
@@ -36,6 +40,7 @@ class Signup extends React.Component {
 
       const formData = {
         ...this.state.formData,
+        // eslint-disable-next-line @typescript-eslint/camelcase
         password_confirmation: password
       }
 
@@ -52,7 +57,7 @@ class Signup extends React.Component {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     const { email, password } = this.state.formData
 
     if (this.state.redirect) {

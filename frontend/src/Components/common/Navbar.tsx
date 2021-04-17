@@ -8,13 +8,13 @@ import { getUserProfile } from '../../lib/api'
 import { getAvatar, getUserId } from '../../lib/assets'
 
 type StateType = {
-  avatarImg: string
+  avatarImg: string;
 }
 
-interface Props extends RouteComponentProps<{}, {}, StateType>{}
+type Props = RouteComponentProps<{}, {}, StateType>
 interface State {
-  avatar: string | null,
-  userId: number | null
+  avatar: string | null;
+  userId: number | null;
 }
 
 class Navbar extends React.Component<Props, State> {
@@ -24,7 +24,7 @@ class Navbar extends React.Component<Props, State> {
     userId: null
   }
 
-  async componentDidMount() {
+  async componentDidMount(): Promise<void> {
     if (isAuthenticated()){
       try {
         const response = await getUserProfile()
@@ -42,7 +42,7 @@ class Navbar extends React.Component<Props, State> {
   }
 
 
-  render() {
+  render(): JSX.Element {
 
     const avatar = getAvatar()
     const localUserId = getUserId()
