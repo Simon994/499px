@@ -10,7 +10,6 @@ describe('Signup', () => {
     const fileName = 'test-avatar.jpg'
 
     cy.exec('npm run flush-testdb')
-    // cy.exec('npm run seed-all')
 
     cy.visit('http://localhost:3000/')
 
