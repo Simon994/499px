@@ -7,11 +7,17 @@ import { setIsGettingToKnow } from '../../lib/auth'
 import { popupNotification } from '../../lib/notifications'
 
 
+interface FormData {
+  email: string;
+  password: string;
+}
+
 interface State {
+  formData: FormData;
   redirect: string;
 }
 
-class Signup extends React.Component<State> {
+class Signup extends React.Component<null, State> {
 
   state = {
     formData: {
@@ -104,8 +110,6 @@ class Signup extends React.Component<State> {
       </>
 
     )
-
-
 
 
   }
