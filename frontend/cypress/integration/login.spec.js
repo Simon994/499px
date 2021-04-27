@@ -15,7 +15,7 @@ describe('Login', () => {
   })
 
   it('logs in when valid credentials are provided', () => {
-    const email = '5bobbybobbyson@email.com'
+    const email = '6bobbybobbyson@email.com'
     const password = Cypress.env('password')
 
     cy.get('[data-cy=email').type(email)

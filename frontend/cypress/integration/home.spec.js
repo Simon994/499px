@@ -8,11 +8,12 @@ describe('Page visit', () => {
 describe('Homepage hero signup', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
-    cy.get('[data-cy=home-signup]').click()
   })
   it('test signup link exists', () => {
+    cy.get('[data-cy=home-signup]').as('signup')
   })
   it('test signup link directs to join page', () => {
+    cy.get('[data-cy=home-signup]').click()
     cy.location('pathname').should('equal', '/join')
   })
 })

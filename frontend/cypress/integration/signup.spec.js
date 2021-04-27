@@ -13,10 +13,10 @@ describe('Signup', () => {
 
     cy.visit('http://localhost:3000/')
 
+    //Navigate to signup form
     cy.get('[data-cy=home-signup]')
       .click()
     cy.location('pathname').should('equal', '/join')
-
     cy.get('[data-cy=join-email-signup]')
       .click()
     cy.location('pathname').should('equal', '/signup')
