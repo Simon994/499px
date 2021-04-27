@@ -73,7 +73,7 @@ Build a full-stack React app using Python, Django and PostgreSQL.
 
 ### Live version
 
-https://rawshot-499px.herokuapp.com/photoshome
+https://rawshot-499px.herokuapp.com/
 
 499px (aka RAWShot) attempts to clone key features and styles of the photo-sharing website 500px (https://500px.com/). In particular with 499px users can post, comment on and like photos, as well as follow photographers.
 
