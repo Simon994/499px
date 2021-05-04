@@ -36,7 +36,7 @@ class PhotoDetailView(APIView):
             raise NotFound()
 
     def is_photo_owner(self, photo, user):
-        if(photo.owner.id != user.id):
+        if photo.owner.id != user.id:
             raise PermissionDenied()
 
     def get(self, _request, pk):
