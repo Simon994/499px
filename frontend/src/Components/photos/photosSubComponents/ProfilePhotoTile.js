@@ -50,7 +50,6 @@ class ProfilePhotoTile extends React.Component {
     }
   }
 
-
   render() {
     const { image, title, id } = this.props.photo
     const { heartColor } = this.state
