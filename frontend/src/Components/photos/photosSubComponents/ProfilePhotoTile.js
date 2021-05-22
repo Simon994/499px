@@ -23,7 +23,6 @@ class ProfilePhotoTile extends React.Component {
     })
   }
 
-
   handleClick = async() => {
     const { id } = this.props.photo
     const { liked } = this.state
