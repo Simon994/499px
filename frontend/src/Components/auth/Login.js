@@ -97,7 +97,7 @@ class Login extends React.Component {
               <Button className='lozenge login-fb-btn' type='submit' animated='fade'>
                 <Button.Content visible>
                   <Icon name='facebook official' />
-                Log in with Facebook
+                Log in with MetaMask
                 </Button.Content>
                 <Button.Content hidden>
                   <Icon color='red' name='warning' />

@@ -15,6 +15,7 @@ The to-dos below describe new additions to the app.
 * Add OAuth
 
 ### 🟡 In Progress
+* Add one-click login with blockchain using MetaMask
 * Migrate to TypeScript
 * Add tests
 
@@ -51,6 +52,7 @@ Build a full-stack React app using Python, Django and PostgreSQL.
 * If you don't already have it, install PostgreSQL. [Here's a good tutorial](https://flaviocopes.com/postgres-how-to-install/) covering this.
 * Add a .env file in the root of the project. In it, add the following: `ENVIRONMENT=development` to ensure Django uses the correct (development) settings for the database, as per the settings.py file.
 * In the project root (main directory), `pipenv shell` to activate the project's virtualenv
+* Apply migrations `python manage.py migrate`
 * Load seeds data from the multiple seeds files, using `python manage.py loaddata foldername/seeds.json` and replacing `foldername` with:
   * `photo_categories`
   * `jwt_auth`
