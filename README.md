@@ -61,7 +61,7 @@ Build a full-stack React app using Python, Django and PostgreSQL.
 * Move to the frontend: `cd frontend`
 * In frontend, install dependencies: `npm i`
 * `cd ..` to move back to the project root. Start the app with `python manage.py runserver`
-* Navigate in your browser to `localhost:8000/`. You should see the frontend being served to the browser.
+* Navigate in your browser to `localhost:8000/`. You should see the frontend being served to the browser - this will be the built site. If you want to update the site and see changes to the frontend as you go, you can always start the frontend (with the backend running), by running `npm start` in the `frontend` folder.
 
 ### Testing
 
